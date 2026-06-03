@@ -31,6 +31,7 @@
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
             label1 = new Label();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -67,11 +68,22 @@
             label1.TabIndex = 1;
             label1.Text = "AgriTrack";
             // 
+            // button1
+            // 
+            button1.Location = new Point(858, 578);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 1;
+            button1.Text = "database check";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1043, 656);
+            Controls.Add(button1);
             Controls.Add(panel1);
             Name = "Form1";
             Text = "Form1";
@@ -87,5 +99,6 @@
         private Panel panel1;
         private Label label1;
         private PictureBox pictureBox1;
+        private Button button1;
     }
 }

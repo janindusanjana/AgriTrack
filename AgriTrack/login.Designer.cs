@@ -140,6 +140,7 @@
             button2.TabIndex = 8;
             button2.Text = "Login";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button1_Click;
             // 
             // label4
             // 

@@ -1,6 +1,6 @@
 ﻿namespace AgriTrack
 {
-    partial class Form1
+    partial class Dashboard
     {
         /// <summary>
         ///  Required designer variable.
@@ -78,15 +78,15 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
-            // Form1
+            // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1043, 656);
             Controls.Add(button1);
             Controls.Add(panel1);
-            Name = "Form1";
-            Text = "Form1";
+            Name = "Dashboard";
+            Text = "Dashboard";
             Load += Form1_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

@@ -1,10 +1,11 @@
 namespace AgriTrack
 {
-    public partial class Form1 : Form
+    public partial class Dashboard : Form
     {
-        public Form1()
+        public Dashboard(string role)
         {
             InitializeComponent();
+            this.Text="AgriTrack - Logged in as: "+role;
         }
 
         private void Form1_Load(object sender, EventArgs e)

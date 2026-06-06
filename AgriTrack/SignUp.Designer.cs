@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            button3 = new Button();
             button1 = new Button();
             label4 = new Label();
             button2 = new Button();
@@ -41,7 +42,6 @@
             pictureBox1 = new PictureBox();
             label5 = new Label();
             textBox3 = new TextBox();
-            button3 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -56,6 +56,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(393, 40);
             panel1.TabIndex = 10;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.Crimson;
+            button3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(344, 8);
+            button3.Name = "button3";
+            button3.Size = new Size(37, 29);
+            button3.TabIndex = 20;
+            button3.Text = "X";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button1
             // 
@@ -78,6 +91,7 @@
             label4.Size = new Size(144, 15);
             label4.TabIndex = 19;
             label4.Text = "You Have Account . Login";
+            label4.Click += label4_Click;
             // 
             // button2
             // 
@@ -87,6 +101,7 @@
             button2.TabIndex = 18;
             button2.Text = "Sign Up";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // checkBox1
             // 
@@ -166,19 +181,6 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(288, 23);
             textBox3.TabIndex = 15;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.Crimson;
-            button3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(344, 8);
-            button3.Name = "button3";
-            button3.Size = new Size(37, 29);
-            button3.TabIndex = 20;
-            button3.Text = "X";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
             // 
             // SignUp
             // 

@@ -140,6 +140,7 @@
             button2.TabIndex = 8;
             button2.Text = "Login";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // label4
             // 
@@ -149,6 +150,7 @@
             label4.Size = new Size(168, 15);
             label4.TabIndex = 9;
             label4.Text = "No Account Yet? Register Now";
+            label4.Click += label4_Click;
             // 
             // login
             // 

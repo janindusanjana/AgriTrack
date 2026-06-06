@@ -23,5 +23,18 @@ namespace AgriTrack
                 Application.Exit();
             }
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            login lg = new login();
+            lg.Show();
+
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace dashboard
 {
-    partial class Form1
+    partial class Dashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -42,6 +42,7 @@
             pictureBox7 = new PictureBox();
             label7 = new Label();
             label1 = new Label();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
@@ -208,7 +209,17 @@
             label1.TabIndex = 10;
             label1.Text = "Coustommer Name";
             // 
-            // Form1
+            // button1
+            // 
+            button1.Location = new Point(858, 578);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 1;
+            button1.Text = "database check";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;

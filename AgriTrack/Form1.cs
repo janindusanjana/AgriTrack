@@ -11,11 +11,12 @@ using AgriTrack;
 
 namespace dashboard
 {
-    public partial class Form1 : Form
+    public partial class Dashboard : Form
     {
-        public Form1()
+        public Dashboard(string role)
         {
             InitializeComponent();
+            this.Text="AgriTrack - Logged in as: "+role;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

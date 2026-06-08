@@ -15,19 +15,5 @@ namespace AgriTrack.Admin_Forms
             InitializeComponent();
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDaillyReport_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Daily_Harvest_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

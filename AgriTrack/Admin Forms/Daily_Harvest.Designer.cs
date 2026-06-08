@@ -30,11 +30,10 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Daily_Harvest));
             button1 = new Button();
             button2 = new Button();
             btnDaillyReport = new Button();
-            button4 = new Button();
-            lblDate = new Label();
             dateTimePicker1 = new DateTimePicker();
             btnLoadReport = new Button();
             dataGridView1 = new DataGridView();
@@ -45,6 +44,8 @@
             lblTotalharvest = new Label();
             textBox1 = new TextBox();
             pictureBox1 = new PictureBox();
+            btnSettlement = new Button();
+            lblDate = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -60,7 +61,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(-1, 111);
+            button2.Location = new Point(-1, 114);
             button2.Name = "button2";
             button2.Size = new Size(214, 112);
             button2.TabIndex = 1;
@@ -72,46 +73,24 @@
             btnDaillyReport.BackColor = Color.White;
             btnDaillyReport.BackgroundImageLayout = ImageLayout.None;
             btnDaillyReport.FlatAppearance.BorderSize = 0;
-            btnDaillyReport.FlatStyle = FlatStyle.Flat;
             btnDaillyReport.Font = new Font("MV Boli", 20F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             btnDaillyReport.ForeColor = SystemColors.ActiveCaptionText;
             btnDaillyReport.Image = Properties.Resources.pngwing_com;
             btnDaillyReport.ImageAlign = ContentAlignment.BottomCenter;
-            btnDaillyReport.Location = new Point(-1, 223);
+            btnDaillyReport.Location = new Point(-1, 226);
             btnDaillyReport.Name = "btnDaillyReport";
             btnDaillyReport.Size = new Size(214, 112);
             btnDaillyReport.TabIndex = 2;
             btnDaillyReport.Text = "Daily Harvest";
             btnDaillyReport.TextAlign = ContentAlignment.MiddleRight;
             btnDaillyReport.UseVisualStyleBackColor = false;
-            btnDaillyReport.Click += btnDaillyReport_Click;
-            // 
-            // button4
-            // 
-            button4.Location = new Point(-1, 337);
-            button4.Name = "button4";
-            button4.Size = new Size(214, 112);
-            button4.TabIndex = 3;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
-            // 
-            // lblDate
-            // 
-            lblDate.AutoSize = true;
-            lblDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDate.Location = new Point(233, 35);
-            lblDate.Name = "lblDate";
-            lblDate.Size = new Size(98, 21);
-            lblDate.TabIndex = 4;
-            lblDate.Text = "Enter Date :";
             // 
             // dateTimePicker1
             // 
             dateTimePicker1.CalendarFont = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateTimePicker1.CalendarMonthBackground = SystemColors.ControlLightLight;
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(333, 36);
+            dateTimePicker1.Location = new Point(333, 44);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(106, 23);
             dateTimePicker1.TabIndex = 5;
@@ -123,7 +102,7 @@
             btnLoadReport.FlatStyle = FlatStyle.Flat;
             btnLoadReport.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLoadReport.ForeColor = Color.Black;
-            btnLoadReport.Location = new Point(530, 34);
+            btnLoadReport.Location = new Point(530, 38);
             btnLoadReport.Name = "btnLoadReport";
             btnLoadReport.Size = new Size(115, 31);
             btnLoadReport.TabIndex = 6;
@@ -214,6 +193,31 @@
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
             // 
+            // btnSettlement
+            // 
+            btnSettlement.BackColor = Color.White;
+            btnSettlement.BackgroundImageLayout = ImageLayout.None;
+            btnSettlement.FlatAppearance.BorderSize = 0;
+            btnSettlement.Font = new Font("MV Boli", 20F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnSettlement.ForeColor = SystemColors.ActiveCaptionText;
+            btnSettlement.Image = (Image)resources.GetObject("btnSettlement.Image");
+            btnSettlement.Location = new Point(0, 337);
+            btnSettlement.Name = "btnSettlement";
+            btnSettlement.Size = new Size(214, 112);
+            btnSettlement.TabIndex = 10;
+            btnSettlement.Text = "Advance and Settlement";
+            btnSettlement.UseVisualStyleBackColor = false;
+            // 
+            // lblDate
+            // 
+            lblDate.AutoSize = true;
+            lblDate.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDate.Location = new Point(228, 44);
+            lblDate.Name = "lblDate";
+            lblDate.Size = new Size(98, 21);
+            lblDate.TabIndex = 11;
+            lblDate.Text = "Enter Date :";
+            // 
             // Daily_Harvest
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -221,14 +225,14 @@
             BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.None;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblDate);
+            Controls.Add(btnSettlement);
             Controls.Add(pictureBox1);
             Controls.Add(textBox1);
             Controls.Add(dataGridView1);
             Controls.Add(btnLoadReport);
             Controls.Add(dateTimePicker1);
             Controls.Add(lblTotalharvest);
-            Controls.Add(lblDate);
-            Controls.Add(button4);
             Controls.Add(btnDaillyReport);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -236,7 +240,6 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Daily_Harvest";
             Text = "Daily_Harvest";
-            Load += Daily_Harvest_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -248,7 +251,6 @@
         private Button button1;
         private Button button2;
         private Button btnDaillyReport;
-        private Button button4;
         private Label lblDate;
         private DateTimePicker dateTimePicker1;
         private Button btnLoadReport;
@@ -260,5 +262,6 @@
         private Label lblTotalharvest;
         private TextBox textBox1;
         private PictureBox pictureBox1;
+        private Button btnSettlement;
     }
 }

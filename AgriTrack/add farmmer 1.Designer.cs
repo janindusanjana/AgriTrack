@@ -206,7 +206,7 @@
             Controls.Add(addfarmmer);
             Controls.Add(panel5);
             Name = "add_farmmer_1";
-            Text = "add_farmmer_1";
+            Text = "1";
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             panel3.ResumeLayout(false);

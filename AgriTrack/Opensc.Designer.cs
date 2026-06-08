@@ -247,9 +247,9 @@
             pnlAdminTop.Name = "pnlAdminTop";
             pnlAdminTop.Size = new Size(300, 6);
             pnlAdminTop.TabIndex = 0;
-            // 
+            label2.Text = "AGRI TRACK";
             // lblAdminRole
-            // 
+            // panel1
             lblAdminRole.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAdminRole.ForeColor = Color.FromArgb(13, 71, 161);
             lblAdminRole.Location = new Point(0, 126);
@@ -258,9 +258,9 @@
             lblAdminRole.TabIndex = 1;
             lblAdminRole.Text = "ADMIN";
             lblAdminRole.TextAlign = ContentAlignment.MiddleCenter;
-            // 
+            panel1.TabIndex = 2;
             // lblAdminSub
-            // 
+            // pictureBox1
             lblAdminSub.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAdminSub.ForeColor = Color.FromArgb(120, 130, 145);
             lblAdminSub.Location = new Point(0, 156);
@@ -269,9 +269,9 @@
             lblAdminSub.TabIndex = 2;
             lblAdminSub.Text = "Manage workers & generate reports";
             lblAdminSub.TextAlign = ContentAlignment.MiddleCenter;
-            // 
+            pictureBox1.TabStop = false;
             // btnAdmin
-            // 
+            // button1
             btnAdmin.BackColor = Color.FromArgb(30, 77, 120);
             btnAdmin.Cursor = Cursors.Hand;
             btnAdmin.FlatAppearance.BorderSize = 0;
@@ -286,9 +286,9 @@
             btnAdmin.TabIndex = 3;
             btnAdmin.Text = "Sign In as Admin";
             btnAdmin.UseVisualStyleBackColor = false;
-            // 
+            button1.UseVisualStyleBackColor = true;
             // lnkAdmin
-            // 
+            // linkLabel1
             lnkAdmin.ActiveLinkColor = Color.FromArgb(13, 53, 88);
             lnkAdmin.AutoSize = true;
             lnkAdmin.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -301,9 +301,9 @@
             lnkAdmin.TabStop = true;
             lnkAdmin.Text = "I don't have an account — Register";
             lnkAdmin.TextAlign = ContentAlignment.MiddleCenter;
-            // 
+            linkLabel1.Text = "I Don't have Account";
             // picAdmin
-            // 
+            // label3
             picAdmin.BackColor = Color.FromArgb(227, 242, 253);
             picAdmin.Image = Properties.Resources.man;
             picAdmin.Location = new Point(102, 22);
@@ -312,18 +312,18 @@
             picAdmin.SizeMode = PictureBoxSizeMode.Zoom;
             picAdmin.TabIndex = 5;
             picAdmin.TabStop = false;
-            // 
+            label3.Text = "Personal Profile";
             // pnlFooter
-            // 
+            // label4
             pnlFooter.BackColor = Color.FromArgb(236, 240, 235);
             pnlFooter.Controls.Add(lblFooter);
             pnlFooter.Location = new Point(0, 334);
             pnlFooter.Name = "pnlFooter";
             pnlFooter.Size = new Size(820, 36);
             pnlFooter.TabIndex = 4;
-            // 
+            label4.Text = "Admin Profile";
             // lblFooter
-            // 
+            // pictureBox2
             lblFooter.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblFooter.ForeColor = Color.FromArgb(140, 155, 140);
             lblFooter.Location = new Point(0, 0);
@@ -332,23 +332,25 @@
             lblFooter.TabIndex = 0;
             lblFooter.Text = "© 2025 AgriTrack  ·  Smart Worker Management  ·  All rights reserved";
             lblFooter.TextAlign = ContentAlignment.MiddleCenter;
-            // 
+            pictureBox2.TabStop = false;
             // label1
-            // 
+            // button2
             label1.AutoSize = true;
             label1.Location = new Point(398, 187);
             label1.Name = "label1";
             label1.Size = new Size(23, 15);
             label1.TabIndex = 5;
             label1.Text = "OR";
-            // 
+            button2.UseVisualStyleBackColor = true;
             // panel1
-            // 
+            // linkLabel2
             panel1.BackColor = Color.FromArgb(200, 215, 200);
             panel1.Location = new Point(408, 209);
             panel1.Name = "panel1";
             panel1.Size = new Size(1, 125);
             panel1.TabIndex = 3;
+            linkLabel2.Text = "linkLabel2";
+            linkLabel2.Text = "linkLabel2";
             // 
             // Opensc
             // 
@@ -359,8 +361,6 @@
             Controls.Add(pnlHeader);
             Controls.Add(pnlBody);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            MaximizeBox = false;
-            Name = "Opensc";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AgriTrack — Smart Worker Management";
             pnlHeader.ResumeLayout(false);
@@ -374,6 +374,8 @@
             pnlAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picAdmin).EndInit();
             pnlFooter.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -382,8 +384,6 @@
         private static extern IntPtr CreateRoundRectRgn(
             int nLeftRect, int nTopRect, int nRightRect, int nBottomRect,
             int nWidthEllipse, int nHeightEllipse);
-
-        #endregion
 
         // ── Field declarations ────────────────────────────────────────────────────
         private Panel pnlHeader;
@@ -416,5 +416,7 @@
         private LinkLabel lnkAdmin;
         private Label label1;
         private Panel panel1;
+        private LinkLabel linkLabel2;
+        private LinkLabel linkLabel2;
     }
 }

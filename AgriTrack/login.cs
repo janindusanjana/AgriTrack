@@ -6,7 +6,6 @@ using System.Data.SQLite;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using dashboard;
 
 namespace AgriTrack
 {
@@ -44,8 +43,7 @@ namespace AgriTrack
                         
                         this.Hide();
 
-                        Dashboard mainForm = new Dashboard(userRole);
-                        mainForm.ShowDialog();
+                      
 
                         this.Close();
                     }
@@ -79,8 +77,7 @@ namespace AgriTrack
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
-            form.Show();
+          
 
             this.Hide();
         }

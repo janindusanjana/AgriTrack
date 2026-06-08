@@ -197,7 +197,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "Dashboard";
-            Size = new Size(692, 458);
+            Size = new Size(850, 504);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -6,15 +6,13 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace AgriTrack
+namespace AgriTrack.Admin_Forms
 {
-    public partial class farmmer_add_form : Form
+    public partial class Advance_Settlement : Form
     {
-        public farmmer_add_form()
+        public Advance_Settlement()
         {
             InitializeComponent();
         }
-
-
     }
 }

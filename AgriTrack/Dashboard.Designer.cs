@@ -69,9 +69,9 @@
             label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(48, 8);
             label1.Name = "label1";
-            label1.Size = new Size(113, 21);
+            label1.Size = new Size(103, 21);
             label1.TabIndex = 1;
-            label1.Text = "Total Farmmer";
+            label1.Text = "Total Worker";
             // 
             // pictureBox1
             // 

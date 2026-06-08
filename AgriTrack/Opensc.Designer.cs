@@ -15,6 +15,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Opensc));
             pnlHeader = new Panel();
             picLogo = new PictureBox();
             lblAppName = new Label();
@@ -39,6 +40,8 @@
             picAdmin = new PictureBox();
             pnlFooter = new Panel();
             lblFooter = new Label();
+            label1 = new Label();
+            panel1 = new Panel();
             pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
             pnlBody.SuspendLayout();
@@ -64,7 +67,8 @@
             // picLogo
             // 
             picLogo.BackColor = Color.Transparent;
-            picLogo.Location = new Point(36, 18);
+            picLogo.Image = (Image)resources.GetObject("picLogo.Image");
+            picLogo.Location = new Point(244, 14);
             picLogo.Name = "picLogo";
             picLogo.Size = new Size(72, 72);
             picLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -75,9 +79,9 @@
             // 
             lblAppName.Font = new Font("Segoe UI", 30F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAppName.ForeColor = Color.White;
-            lblAppName.Location = new Point(280, 12);
+            lblAppName.Location = new Point(319, 14);
             lblAppName.Name = "lblAppName";
-            lblAppName.Size = new Size(250, 50);
+            lblAppName.Size = new Size(350, 50);
             lblAppName.TabIndex = 1;
             lblAppName.Text = "AGRITRACK";
             // 
@@ -85,9 +89,9 @@
             // 
             lblTagline.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTagline.ForeColor = Color.FromArgb(188, 226, 195);
-            lblTagline.Location = new Point(280, 62);
+            lblTagline.Location = new Point(320, 64);
             lblTagline.Name = "lblTagline";
-            lblTagline.Size = new Size(250, 26);
+            lblTagline.Size = new Size(380, 26);
             lblTagline.TabIndex = 2;
             lblTagline.Text = "Smart Worker Management System";
             // 
@@ -102,6 +106,8 @@
             // pnlBody
             // 
             pnlBody.BackColor = Color.FromArgb(245, 247, 242);
+            pnlBody.Controls.Add(panel1);
+            pnlBody.Controls.Add(label1);
             pnlBody.Controls.Add(lblChoose);
             pnlBody.Controls.Add(pnlWorker);
             pnlBody.Controls.Add(pnlDivider);
@@ -111,6 +117,7 @@
             pnlBody.Name = "pnlBody";
             pnlBody.Size = new Size(820, 370);
             pnlBody.TabIndex = 1;
+            pnlBody.Paint += pnlBody_Paint;
             // 
             // lblChoose
             // 
@@ -149,11 +156,11 @@
             // 
             lblWorkerRole.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblWorkerRole.ForeColor = Color.FromArgb(27, 94, 32);
-            lblWorkerRole.Location = new Point(0, 126);
+            lblWorkerRole.Location = new Point(3, 126);
             lblWorkerRole.Name = "lblWorkerRole";
             lblWorkerRole.Size = new Size(300, 30);
             lblWorkerRole.TabIndex = 1;
-            lblWorkerRole.Text = "WORKER";
+            lblWorkerRole.Text = "USER";
             lblWorkerRole.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblWorkerSub
@@ -181,8 +188,9 @@
             btnWorker.Name = "btnWorker";
             btnWorker.Size = new Size(160, 38);
             btnWorker.TabIndex = 1;
-            btnWorker.Text = "Sign In as Worker";
+            btnWorker.Text = "Sign In as User";
             btnWorker.UseVisualStyleBackColor = false;
+            btnWorker.Click += btnWorker_Click;
             // 
             // lnkWorker
             // 
@@ -191,7 +199,7 @@
             lnkWorker.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lnkWorker.LinkBehavior = LinkBehavior.HoverUnderline;
             lnkWorker.LinkColor = Color.FromArgb(56, 142, 60);
-            lnkWorker.Location = new Point(58, 236);
+            lnkWorker.Location = new Point(55, 233);
             lnkWorker.Name = "lnkWorker";
             lnkWorker.Size = new Size(191, 15);
             lnkWorker.TabIndex = 2;
@@ -215,7 +223,7 @@
             pnlDivider.BackColor = Color.FromArgb(200, 215, 200);
             pnlDivider.Location = new Point(408, 56);
             pnlDivider.Name = "pnlDivider";
-            pnlDivider.Size = new Size(1, 250);
+            pnlDivider.Size = new Size(1, 125);
             pnlDivider.TabIndex = 2;
             // 
             // pnlAdmin
@@ -239,9 +247,9 @@
             pnlAdminTop.Name = "pnlAdminTop";
             pnlAdminTop.Size = new Size(300, 6);
             pnlAdminTop.TabIndex = 0;
-            // 
+            label2.Text = "AGRI TRACK";
             // lblAdminRole
-            // 
+            // panel1
             lblAdminRole.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAdminRole.ForeColor = Color.FromArgb(13, 71, 161);
             lblAdminRole.Location = new Point(0, 126);
@@ -250,9 +258,9 @@
             lblAdminRole.TabIndex = 1;
             lblAdminRole.Text = "ADMIN";
             lblAdminRole.TextAlign = ContentAlignment.MiddleCenter;
-            // 
+            panel1.TabIndex = 2;
             // lblAdminSub
-            // 
+            // pictureBox1
             lblAdminSub.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAdminSub.ForeColor = Color.FromArgb(120, 130, 145);
             lblAdminSub.Location = new Point(0, 156);
@@ -261,9 +269,9 @@
             lblAdminSub.TabIndex = 2;
             lblAdminSub.Text = "Manage workers & generate reports";
             lblAdminSub.TextAlign = ContentAlignment.MiddleCenter;
-            // 
+            pictureBox1.TabStop = false;
             // btnAdmin
-            // 
+            // button1
             btnAdmin.BackColor = Color.FromArgb(30, 77, 120);
             btnAdmin.Cursor = Cursors.Hand;
             btnAdmin.FlatAppearance.BorderSize = 0;
@@ -278,24 +286,24 @@
             btnAdmin.TabIndex = 3;
             btnAdmin.Text = "Sign In as Admin";
             btnAdmin.UseVisualStyleBackColor = false;
-            // 
+            button1.UseVisualStyleBackColor = true;
             // lnkAdmin
-            // 
+            // linkLabel1
             lnkAdmin.ActiveLinkColor = Color.FromArgb(13, 53, 88);
             lnkAdmin.AutoSize = true;
             lnkAdmin.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lnkAdmin.LinkBehavior = LinkBehavior.HoverUnderline;
             lnkAdmin.LinkColor = Color.FromArgb(30, 77, 120);
-            lnkAdmin.Location = new Point(61, 237);
+            lnkAdmin.Location = new Point(61, 233);
             lnkAdmin.Name = "lnkAdmin";
             lnkAdmin.Size = new Size(191, 15);
             lnkAdmin.TabIndex = 4;
             lnkAdmin.TabStop = true;
             lnkAdmin.Text = "I don't have an account — Register";
             lnkAdmin.TextAlign = ContentAlignment.MiddleCenter;
-            // 
+            linkLabel1.Text = "I Don't have Account";
             // picAdmin
-            // 
+            // label3
             picAdmin.BackColor = Color.FromArgb(227, 242, 253);
             picAdmin.Image = Properties.Resources.man;
             picAdmin.Location = new Point(102, 22);
@@ -304,18 +312,18 @@
             picAdmin.SizeMode = PictureBoxSizeMode.Zoom;
             picAdmin.TabIndex = 5;
             picAdmin.TabStop = false;
-            // 
+            label3.Text = "Personal Profile";
             // pnlFooter
-            // 
+            // label4
             pnlFooter.BackColor = Color.FromArgb(236, 240, 235);
             pnlFooter.Controls.Add(lblFooter);
             pnlFooter.Location = new Point(0, 334);
             pnlFooter.Name = "pnlFooter";
             pnlFooter.Size = new Size(820, 36);
             pnlFooter.TabIndex = 4;
-            // 
+            label4.Text = "Admin Profile";
             // lblFooter
-            // 
+            // pictureBox2
             lblFooter.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblFooter.ForeColor = Color.FromArgb(140, 155, 140);
             lblFooter.Location = new Point(0, 0);
@@ -324,6 +332,25 @@
             lblFooter.TabIndex = 0;
             lblFooter.Text = "© 2025 AgriTrack  ·  Smart Worker Management  ·  All rights reserved";
             lblFooter.TextAlign = ContentAlignment.MiddleCenter;
+            pictureBox2.TabStop = false;
+            // label1
+            // button2
+            label1.AutoSize = true;
+            label1.Location = new Point(398, 187);
+            label1.Name = "label1";
+            label1.Size = new Size(23, 15);
+            label1.TabIndex = 5;
+            label1.Text = "OR";
+            button2.UseVisualStyleBackColor = true;
+            // panel1
+            // linkLabel2
+            panel1.BackColor = Color.FromArgb(200, 215, 200);
+            panel1.Location = new Point(408, 209);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1, 125);
+            panel1.TabIndex = 3;
+            linkLabel2.Text = "linkLabel2";
+            linkLabel2.Text = "linkLabel2";
             // 
             // Opensc
             // 
@@ -334,13 +361,12 @@
             Controls.Add(pnlHeader);
             Controls.Add(pnlBody);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            MaximizeBox = false;
-            Name = "Opensc";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AgriTrack — Smart Worker Management";
             pnlHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             pnlBody.ResumeLayout(false);
+            pnlBody.PerformLayout();
             pnlWorker.ResumeLayout(false);
             pnlWorker.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picWorker).EndInit();
@@ -348,6 +374,8 @@
             pnlAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picAdmin).EndInit();
             pnlFooter.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -356,8 +384,6 @@
         private static extern IntPtr CreateRoundRectRgn(
             int nLeftRect, int nTopRect, int nRightRect, int nBottomRect,
             int nWidthEllipse, int nHeightEllipse);
-
-        #endregion
 
         // ── Field declarations ────────────────────────────────────────────────────
         private Panel pnlHeader;
@@ -388,5 +414,9 @@
         private Label lblAdminSub;
         private Button btnAdmin;
         private LinkLabel lnkAdmin;
+        private Label label1;
+        private Panel panel1;
+        private LinkLabel linkLabel2;
+        private LinkLabel linkLabel2;
     }
 }

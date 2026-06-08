@@ -1,3 +1,5 @@
+using AgriTrack.Admin_Forms;
+
 namespace AgriTrack
 {
     internal static class Program
@@ -11,7 +13,7 @@ namespace AgriTrack
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new login());
+            Application.Run(new Daily_Harvest());
         }
     }
 }

@@ -78,7 +78,7 @@
             // 
             pictureBox1.BorderStyle = BorderStyle.Fixed3D;
             pictureBox1.Image = Properties.Resources.man;
-            pictureBox1.Location = new Point(190, 212);
+            pictureBox1.Location = new Point(190, 189);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(115, 111);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -87,7 +87,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(195, 342);
+            button1.Location = new Point(195, 319);
             button1.Name = "button1";
             button1.Size = new Size(104, 31);
             button1.TabIndex = 4;
@@ -97,7 +97,7 @@
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(190, 376);
+            linkLabel1.Location = new Point(187, 358);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(118, 15);
             linkLabel1.TabIndex = 5;
@@ -109,11 +109,11 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ControlDarkDark;
-            label3.Location = new Point(174, 158);
+            label3.Location = new Point(194, 135);
             label3.Name = "label3";
-            label3.Size = new Size(145, 25);
+            label3.Size = new Size(111, 25);
             label3.TabIndex = 6;
-            label3.Text = "Personal Profile";
+            label3.Text = "User Profile";
             // 
             // label4
             // 
@@ -121,7 +121,7 @@
             label4.BackColor = Color.WhiteSmoke;
             label4.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ControlDarkDark;
-            label4.Location = new Point(468, 158);
+            label4.Location = new Point(467, 135);
             label4.Name = "label4";
             label4.Size = new Size(130, 25);
             label4.TabIndex = 7;
@@ -131,7 +131,7 @@
             // 
             pictureBox2.BorderStyle = BorderStyle.Fixed3D;
             pictureBox2.Image = Properties.Resources.man;
-            pictureBox2.Location = new Point(477, 210);
+            pictureBox2.Location = new Point(476, 187);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(112, 113);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -140,7 +140,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(480, 342);
+            button2.Location = new Point(479, 319);
             button2.Name = "button2";
             button2.Size = new Size(104, 31);
             button2.TabIndex = 9;
@@ -150,7 +150,7 @@
             // linkLabel2
             // 
             linkLabel2.AutoSize = true;
-            linkLabel2.Location = new Point(520, 386);
+            linkLabel2.Location = new Point(504, 358);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(60, 15);
             linkLabel2.TabIndex = 10;

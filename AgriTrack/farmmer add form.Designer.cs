@@ -31,13 +31,9 @@
             panel1 = new Panel();
             label1 = new Label();
             label2 = new Label();
-            panel2 = new Panel();
             label3 = new Label();
-            panel3 = new Panel();
             label4 = new Label();
-            panel4 = new Panel();
             label5 = new Label();
-            panel5 = new Panel();
             label6 = new Label();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
@@ -47,6 +43,10 @@
             dateTimePicker1 = new DateTimePicker();
             addsystem = new Button();
             button1 = new Button();
+            tbxName = new TextBox();
+            tbxAddress = new TextBox();
+            tbxId = new TextBox();
+            tbxPhoneNu = new TextBox();
             SuspendLayout();
             // 
             // panel1
@@ -65,9 +65,9 @@
             label1.ForeColor = Color.Teal;
             label1.Location = new Point(14, 32);
             label1.Name = "label1";
-            label1.Size = new Size(242, 21);
+            label1.Size = new Size(238, 21);
             label1.TabIndex = 1;
-            label1.Text = "NEW FARMMER ADING SYSTEM";
+            label1.Text = "NEW FARMER ADDING SYSTEM";
             // 
             // label2
             // 
@@ -78,14 +78,6 @@
             label2.TabIndex = 2;
             label2.Text = "1.NAME WITH INNITIAL :";
             // 
-            // panel2
-            // 
-            panel2.BorderStyle = BorderStyle.Fixed3D;
-            panel2.Location = new Point(160, 82);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(578, 24);
-            panel2.TabIndex = 3;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -94,14 +86,6 @@
             label3.Size = new Size(95, 15);
             label3.TabIndex = 4;
             label3.Text = "2.ADDRESS         :";
-            // 
-            // panel3
-            // 
-            panel3.BorderStyle = BorderStyle.Fixed3D;
-            panel3.Location = new Point(160, 122);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(578, 24);
-            panel3.TabIndex = 5;
             // 
             // label4
             // 
@@ -112,14 +96,6 @@
             label4.TabIndex = 6;
             label4.Text = "3.ID  NUMBER              :";
             // 
-            // panel4
-            // 
-            panel4.BorderStyle = BorderStyle.Fixed3D;
-            panel4.Location = new Point(160, 165);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(200, 24);
-            panel4.TabIndex = 7;
-            // 
             // label5
             // 
             label5.AutoSize = true;
@@ -128,14 +104,6 @@
             label5.Size = new Size(125, 15);
             label5.TabIndex = 8;
             label5.Text = "4.PHONE NUMBER     :";
-            // 
-            // panel5
-            // 
-            panel5.BorderStyle = BorderStyle.Fixed3D;
-            panel5.Location = new Point(160, 208);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(200, 24);
-            panel5.TabIndex = 9;
             // 
             // label6
             // 
@@ -225,11 +193,47 @@
             button1.Text = "CLEAR FORM";
             button1.UseVisualStyleBackColor = false;
             // 
+            // tbxName
+            // 
+            tbxName.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxName.Location = new Point(159, 78);
+            tbxName.Name = "tbxName";
+            tbxName.Size = new Size(367, 27);
+            tbxName.TabIndex = 19;
+            // 
+            // tbxAddress
+            // 
+            tbxAddress.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxAddress.Location = new Point(159, 118);
+            tbxAddress.Name = "tbxAddress";
+            tbxAddress.Size = new Size(367, 27);
+            tbxAddress.TabIndex = 19;
+            // 
+            // tbxId
+            // 
+            tbxId.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxId.Location = new Point(160, 162);
+            tbxId.Name = "tbxId";
+            tbxId.Size = new Size(367, 27);
+            tbxId.TabIndex = 19;
+            // 
+            // tbxPhoneNu
+            // 
+            tbxPhoneNu.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxPhoneNu.Location = new Point(159, 210);
+            tbxPhoneNu.Name = "tbxPhoneNu";
+            tbxPhoneNu.Size = new Size(367, 27);
+            tbxPhoneNu.TabIndex = 19;
+            // 
             // farmmer_add_form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(tbxPhoneNu);
+            Controls.Add(tbxId);
+            Controls.Add(tbxAddress);
+            Controls.Add(tbxName);
             Controls.Add(button1);
             Controls.Add(addsystem);
             Controls.Add(dateTimePicker1);
@@ -239,13 +243,9 @@
             Controls.Add(radioButton2);
             Controls.Add(radioButton1);
             Controls.Add(label6);
-            Controls.Add(panel5);
             Controls.Add(label5);
-            Controls.Add(panel4);
             Controls.Add(label4);
-            Controls.Add(panel3);
             Controls.Add(label3);
-            Controls.Add(panel2);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(panel1);
@@ -260,13 +260,9 @@
         private Panel panel1;
         private Label label1;
         private Label label2;
-        private Panel panel2;
         private Label label3;
-        private Panel panel3;
         private Label label4;
-        private Panel panel4;
         private Label label5;
-        private Panel panel5;
         private Label label6;
         private RadioButton radioButton1;
         private RadioButton radioButton2;
@@ -276,5 +272,9 @@
         private DateTimePicker dateTimePicker1;
         private Button addsystem;
         private Button button1;
+        private TextBox tbxName;
+        private TextBox tbxAddress;
+        private TextBox tbxId;
+        private TextBox tbxPhoneNu;
     }
 }

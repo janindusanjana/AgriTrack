@@ -36,13 +36,11 @@
             livest = new Button();
             crops = new Button();
             Farmmer = new Button();
-            Dashboard = new Button();
             AGRITRACK = new Label();
             panel10 = new Panel();
             pictureBox7 = new PictureBox();
             label7 = new Label();
             label1 = new Label();
-            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
@@ -57,24 +55,34 @@
             panel1.Controls.Add(livest);
             panel1.Controls.Add(crops);
             panel1.Controls.Add(Farmmer);
-            panel1.Controls.Add(Dashboard);
+            panel1.Controls.Add(this);
             panel1.Controls.Add(AGRITRACK);
             panel1.Location = new Point(6, 8);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(212, 510);
             panel1.TabIndex = 0;
+            panel1.Controls.SetChildIndex(AGRITRACK, 0);
+            panel1.Controls.SetChildIndex(this, 0);
+            panel1.Controls.SetChildIndex(Farmmer, 0);
+            panel1.Controls.SetChildIndex(crops, 0);
+            panel1.Controls.SetChildIndex(livest, 0);
+            panel1.Controls.SetChildIndex(inventory, 0);
+            panel1.Controls.SetChildIndex(sales, 0);
+            panel1.Controls.SetChildIndex(report, 0);
+            panel1.Controls.SetChildIndex(button1, 0);
             // 
             // button1
             // 
             button1.BackColor = Color.Gray;
             button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(3, 398);
+            button1.Location = new Point(858, 578);
             button1.Name = "button1";
-            button1.Size = new Size(205, 37);
-            button1.TabIndex = 17;
-            button1.Text = "Setting";
-            button1.UseVisualStyleBackColor = false;
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 1;
+            button1.Text = "database check";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // report
             // 
@@ -144,19 +152,6 @@
             Farmmer.UseVisualStyleBackColor = false;
             Farmmer.Click += Farmmer_Click;
             // 
-            // Dashboard
-            // 
-            Dashboard.BackColor = Color.Gray;
-            Dashboard.BackgroundImageLayout = ImageLayout.None;
-            Dashboard.ForeColor = Color.White;
-            Dashboard.Location = new Point(3, 93);
-            Dashboard.Name = "Dashboard";
-            Dashboard.Size = new Size(205, 37);
-            Dashboard.TabIndex = 10;
-            Dashboard.Text = "Dashboard";
-            Dashboard.UseVisualStyleBackColor = false;
-            Dashboard.Click += Dashboard_Click;
-            // 
             // AGRITRACK
             // 
             AGRITRACK.AutoSize = true;
@@ -209,35 +204,14 @@
             label1.TabIndex = 10;
             label1.Text = "Coustommer Name";
             // 
-            // button1
-            // 
-            button1.Location = new Point(858, 578);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "database check";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // Dashboard
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(933, 519);
-            Controls.Add(label1);
-            Controls.Add(label7);
-            Controls.Add(pictureBox7);
-            Controls.Add(panel10);
-            Controls.Add(panel1);
-            Margin = new Padding(4, 3, 4, 3);
-            Name = "Form1";
-            Text = "Form1";
-            Load += Form1_Load;
+            ClientSize = new Size(284, 257);
+            Name = "Dashboard";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ResumeLayout(false);
-            PerformLayout();
 
         }
 

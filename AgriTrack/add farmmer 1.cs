@@ -27,5 +27,15 @@ namespace AgriTrack
 
             this.Hide();
         }
+
+        private void pnlColHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblSubTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

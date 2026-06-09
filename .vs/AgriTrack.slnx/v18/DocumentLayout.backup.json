@@ -3,6 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\dinus\\OneDrive\\Documents\\dashboard\\",
   "Documents": [
     {
+<<<<<<< Updated upstream
       "AbsoluteMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|c:\\users\\dinus\\onedrive\\documents\\dashboard\\agritrack\\add farmmer 1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|solutionrelative:agritrack\\add farmmer 1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -25,6 +26,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|c:\\users\\dinus\\onedrive\\documents\\dashboard\\agritrack\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|solutionrelative:agritrack\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+      "AbsoluteMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|C:\\Users\\dinus\\OneDrive\\Documents\\dashboard\\agritrack\\farmmer add form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|solutionrelative:agritrack\\farmmer add form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+>>>>>>> Stashed changes
     }
   ],
   "DocumentGroupContainers": [
@@ -34,6 +39,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 326,
+<<<<<<< Updated upstream
           "SelectedChildIndex": 9,
           "Children": [
             {
@@ -49,6 +55,22 @@
               "WhenOpened": "2026-06-04T16:09:20.633Z",
               "IsPinned": true,
               "EditorCaption": ""
+=======
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "farmmer add form.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\dinus\\OneDrive\\Documents\\dashboard\\AgriTrack\\farmmer add form.cs",
+              "RelativeDocumentMoniker": "AgriTrack\\farmmer add form.cs",
+              "ToolTip": "C:\\Users\\dinus\\OneDrive\\Documents\\dashboard\\AgriTrack\\farmmer add form.cs [Design]",
+              "RelativeToolTip": "AgriTrack\\farmmer add form.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T06:44:31.808Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+>>>>>>> Stashed changes
             },
             {
               "$type": "Bookmark",
@@ -61,6 +83,7 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+<<<<<<< Updated upstream
             },
             {
               "$type": "Document",
@@ -123,6 +146,8 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-05T16:22:53.051Z",
               "EditorCaption": ""
+=======
+>>>>>>> Stashed changes
             }
           ]
         }

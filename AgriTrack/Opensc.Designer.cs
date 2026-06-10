@@ -15,6 +15,7 @@
 
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Opensc));
             pnlHeader = new Panel();
             picLogo = new PictureBox();
             lblAppName = new Label();
@@ -27,7 +28,6 @@
             lblWorkerRole = new Label();
             lblWorkerSub = new Label();
             btnWorker = new Button();
-            lnkWorker = new LinkLabel();
             picWorker = new PictureBox();
             pnlDivider = new Panel();
             pnlAdmin = new Panel();
@@ -35,7 +35,6 @@
             lblAdminRole = new Label();
             lblAdminSub = new Label();
             btnAdmin = new Button();
-            lnkAdmin = new LinkLabel();
             picAdmin = new PictureBox();
             pnlFooter = new Panel();
             lblFooter = new Label();
@@ -64,10 +63,11 @@
             // picLogo
             // 
             picLogo.BackColor = Color.Transparent;
-            picLogo.Location = new Point(36, 18);
+            picLogo.Image = (Image)resources.GetObject("picLogo.Image");
+            picLogo.Location = new Point(211, 16);
             picLogo.Name = "picLogo";
             picLogo.Size = new Size(72, 72);
-            picLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             picLogo.TabIndex = 0;
             picLogo.TabStop = false;
             // 
@@ -130,7 +130,6 @@
             pnlWorker.Controls.Add(lblWorkerRole);
             pnlWorker.Controls.Add(lblWorkerSub);
             pnlWorker.Controls.Add(btnWorker);
-            pnlWorker.Controls.Add(lnkWorker);
             pnlWorker.Controls.Add(picWorker);
             pnlWorker.Location = new Point(70, 56);
             pnlWorker.Name = "pnlWorker";
@@ -153,7 +152,7 @@
             lblWorkerRole.Name = "lblWorkerRole";
             lblWorkerRole.Size = new Size(300, 30);
             lblWorkerRole.TabIndex = 1;
-            lblWorkerRole.Text = "WORKER";
+            lblWorkerRole.Text = "USER";
             lblWorkerRole.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblWorkerSub
@@ -181,23 +180,8 @@
             btnWorker.Name = "btnWorker";
             btnWorker.Size = new Size(160, 38);
             btnWorker.TabIndex = 1;
-            btnWorker.Text = "Sign In as Worker";
+            btnWorker.Text = "Sign In as User";
             btnWorker.UseVisualStyleBackColor = false;
-            // 
-            // lnkWorker
-            // 
-            lnkWorker.ActiveLinkColor = Color.FromArgb(27, 94, 32);
-            lnkWorker.AutoSize = true;
-            lnkWorker.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lnkWorker.LinkBehavior = LinkBehavior.HoverUnderline;
-            lnkWorker.LinkColor = Color.FromArgb(56, 142, 60);
-            lnkWorker.Location = new Point(60, 242);
-            lnkWorker.Name = "lnkWorker";
-            lnkWorker.Size = new Size(191, 15);
-            lnkWorker.TabIndex = 2;
-            lnkWorker.TabStop = true;
-            lnkWorker.Text = "I don't have an account — Register";
-            lnkWorker.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // picWorker
             // 
@@ -225,7 +209,6 @@
             pnlAdmin.Controls.Add(lblAdminRole);
             pnlAdmin.Controls.Add(lblAdminSub);
             pnlAdmin.Controls.Add(btnAdmin);
-            pnlAdmin.Controls.Add(lnkAdmin);
             pnlAdmin.Controls.Add(picAdmin);
             pnlAdmin.Location = new Point(448, 56);
             pnlAdmin.Name = "pnlAdmin";
@@ -279,21 +262,6 @@
             btnAdmin.Text = "Sign In as Admin";
             btnAdmin.UseVisualStyleBackColor = false;
             // 
-            // lnkAdmin
-            // 
-            lnkAdmin.ActiveLinkColor = Color.FromArgb(13, 53, 88);
-            lnkAdmin.AutoSize = true;
-            lnkAdmin.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lnkAdmin.LinkBehavior = LinkBehavior.HoverUnderline;
-            lnkAdmin.LinkColor = Color.FromArgb(30, 77, 120);
-            lnkAdmin.Location = new Point(55, 242);
-            lnkAdmin.Name = "lnkAdmin";
-            lnkAdmin.Size = new Size(191, 15);
-            lnkAdmin.TabIndex = 4;
-            lnkAdmin.TabStop = true;
-            lnkAdmin.Text = "I don't have an account — Register";
-            lnkAdmin.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // picAdmin
             // 
             picAdmin.BackColor = Color.FromArgb(227, 242, 253);
@@ -342,10 +310,8 @@
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             pnlBody.ResumeLayout(false);
             pnlWorker.ResumeLayout(false);
-            pnlWorker.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picWorker).EndInit();
             pnlAdmin.ResumeLayout(false);
-            pnlAdmin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picAdmin).EndInit();
             pnlFooter.ResumeLayout(false);
             ResumeLayout(false);
@@ -379,7 +345,6 @@
         private Label lblWorkerRole;
         private Label lblWorkerSub;
         private Button btnWorker;
-        private LinkLabel lnkWorker;
 
         private Panel pnlAdmin;
         private Panel pnlAdminTop;
@@ -387,6 +352,5 @@
         private Label lblAdminRole;
         private Label lblAdminSub;
         private Button btnAdmin;
-        private LinkLabel lnkAdmin;
     }
 }

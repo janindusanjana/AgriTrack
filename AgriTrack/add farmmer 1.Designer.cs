@@ -28,162 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(add_farmmer_1));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            pnlTopBar = new Panel();
-            lblColEmpNo = new Label();
-            lblColDate = new Label();
-            lblColSection = new Label();
-            lblColActions = new Label();
-            lblColName = new Label();
-            lblAppTitle = new Label();
-            lblSubTitle = new Label();
-            pnlToolbar = new Panel();
+            dateTimePicker1 = new DateTimePicker();
             addfarmmer = new Button();
-            pnlSearch = new Panel();
-            lblSearchIcon = new Label();
-            txtSearch = new TextBox();
-            pnlStats = new Panel();
-            pnlStatTotal = new Panel();
-            lblStatTotalLbl = new Label();
-            lblStatTotalVal = new Label();
-            pnlStatActive = new Panel();
-            lblStatActiveLbl = new Label();
-            lblStatActiveVal = new Label();
-            pnlStatSections = new Panel();
-            lblStatSectionsLbl = new Label();
-            lblStatSectionsVal = new Label();
             pnlDivider = new Panel();
-            pnlColHeader = new Panel();
-            dgvFarmers = new DataGridView();
-            colEmpNo = new DataGridViewTextBoxColumn();
-            colFullName = new DataGridViewTextBoxColumn();
-            colJoinDate = new DataGridViewTextBoxColumn();
-            colSection = new DataGridViewTextBoxColumn();
-            colActions = new DataGridViewButtonColumn();
-            pnlPagination = new Panel();
-            lblPageInfo = new Label();
-            pnlPageBtns = new Panel();
-            btnPrev = new Button();
-            pagenb = new Button();
-            pagenb2 = new Button();
-            btnNext = new Button();
-            pnlTopBar.SuspendLayout();
-            pnlToolbar.SuspendLayout();
-            pnlSearch.SuspendLayout();
-            pnlStats.SuspendLayout();
-            pnlStatTotal.SuspendLayout();
-            pnlStatActive.SuspendLayout();
-            pnlStatSections.SuspendLayout();
-            pnlColHeader.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvFarmers).BeginInit();
-            pnlPagination.SuspendLayout();
-            pnlPageBtns.SuspendLayout();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            Settlment = new Button();
+            button4 = new Button();
+            button3 = new Button();
+            button2 = new Button();
+            btnDashBoard = new Button();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
+            Attend = new DataGridViewCheckBoxColumn();
+            Gender = new DataGridViewTextBoxColumn();
+            Name = new DataGridViewTextBoxColumn();
+            WorkerID = new DataGridViewTextBoxColumn();
+            dataGridView1 = new DataGridView();
+            panel1 = new Panel();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            textBox1 = new TextBox();
+            button1 = new Button();
+            pnlDivider.SuspendLayout();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // pnlTopBar
+            // dateTimePicker1
             // 
-            pnlTopBar.BackColor = Color.FromArgb(26, 60, 52);
-            pnlTopBar.Controls.Add(lblColEmpNo);
-            pnlTopBar.Controls.Add(lblColDate);
-            pnlTopBar.Controls.Add(lblColSection);
-            pnlTopBar.Controls.Add(lblColActions);
-            pnlTopBar.Controls.Add(lblColName);
-            pnlTopBar.Dock = DockStyle.Top;
-            pnlTopBar.Location = new Point(0, 189);
-            pnlTopBar.Name = "pnlTopBar";
-            pnlTopBar.Size = new Size(820, 30);
-            pnlTopBar.TabIndex = 0;
-            // 
-            // lblColEmpNo
-            // 
-            lblColEmpNo.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblColEmpNo.ForeColor = Color.FromArgb(159, 225, 203);
-            lblColEmpNo.Location = new Point(40, 8);
-            lblColEmpNo.Name = "lblColEmpNo";
-            lblColEmpNo.Size = new Size(90, 16);
-            lblColEmpNo.TabIndex = 0;
-            lblColEmpNo.Text = "ID NO.";
-            // 
-            // lblColDate
-            // 
-            lblColDate.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblColDate.ForeColor = Color.FromArgb(159, 225, 203);
-            lblColDate.Location = new Point(363, 8);
-            lblColDate.Name = "lblColDate";
-            lblColDate.Size = new Size(130, 16);
-            lblColDate.TabIndex = 2;
-            lblColDate.Text = "JOIN DATE";
-            // 
-            // lblColSection
-            // 
-            lblColSection.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblColSection.ForeColor = Color.FromArgb(159, 225, 203);
-            lblColSection.Location = new Point(505, 8);
-            lblColSection.Name = "lblColSection";
-            lblColSection.Size = new Size(130, 16);
-            lblColSection.TabIndex = 3;
-            lblColSection.Text = "SECTION";
-            lblColSection.Click += lblColSection_Click;
-            // 
-            // lblColActions
-            // 
-            lblColActions.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblColActions.ForeColor = Color.FromArgb(159, 225, 203);
-            lblColActions.Location = new Point(670, 8);
-            lblColActions.Name = "lblColActions";
-            lblColActions.Size = new Size(100, 16);
-            lblColActions.TabIndex = 4;
-            lblColActions.Text = "ACTIONS";
-            lblColActions.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // lblColName
-            // 
-            lblColName.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblColName.ForeColor = Color.FromArgb(159, 225, 203);
-            lblColName.Location = new Point(164, 8);
-            lblColName.Name = "lblColName";
-            lblColName.Size = new Size(220, 16);
-            lblColName.TabIndex = 1;
-            lblColName.Text = "FULL NAME";
-            // 
-            // lblAppTitle
-            // 
-            lblAppTitle.AutoSize = true;
-            lblAppTitle.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAppTitle.ForeColor = Color.FromArgb(225, 245, 238);
-            lblAppTitle.Location = new Point(14, 9);
-            lblAppTitle.Name = "lblAppTitle";
-            lblAppTitle.Size = new Size(253, 21);
-            lblAppTitle.TabIndex = 0;
-            lblAppTitle.Text = "🌿  AgriTrack — Worker Registry";
-            // 
-            // lblSubTitle
-            // 
-            lblSubTitle.AutoSize = true;
-            lblSubTitle.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblSubTitle.ForeColor = Color.FromArgb(159, 225, 203);
-            lblSubTitle.Location = new Point(50, 35);
-            lblSubTitle.Name = "lblSubTitle";
-            lblSubTitle.Size = new Size(101, 13);
-            lblSubTitle.TabIndex = 1;
-            lblSubTitle.Text = "Section A & B · 2025";
-            // 
-            // pnlToolbar
-            // 
-            pnlToolbar.BackColor = Color.FromArgb(255, 255, 255);
-            pnlToolbar.Controls.Add(addfarmmer);
-            pnlToolbar.Controls.Add(pnlSearch);
-            pnlToolbar.Dock = DockStyle.Top;
-            pnlToolbar.Location = new Point(0, 135);
-            pnlToolbar.Name = "pnlToolbar";
-            pnlToolbar.Padding = new Padding(14, 0, 14, 0);
-            pnlToolbar.Size = new Size(820, 54);
-            pnlToolbar.TabIndex = 1;
+            dateTimePicker1.Format = DateTimePickerFormat.Time;
+            dateTimePicker1.Location = new Point(225, 85);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(110, 23);
+            dateTimePicker1.TabIndex = 2;
             // 
             // addfarmmer
             // 
@@ -193,7 +75,7 @@
             addfarmmer.FlatStyle = FlatStyle.Flat;
             addfarmmer.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             addfarmmer.ForeColor = Color.FromArgb(225, 245, 238);
-            addfarmmer.Location = new Point(14, 12);
+            addfarmmer.Location = new Point(341, 83);
             addfarmmer.Name = "addfarmmer";
             addfarmmer.Size = new Size(130, 30);
             addfarmmer.TabIndex = 0;
@@ -201,437 +83,258 @@
             addfarmmer.UseVisualStyleBackColor = false;
             addfarmmer.Click += addfarmmer_Click;
             // 
-            // pnlSearch
-            // 
-            pnlSearch.BackColor = Color.FromArgb(241, 239, 232);
-            pnlSearch.BorderStyle = BorderStyle.FixedSingle;
-            pnlSearch.Controls.Add(lblSearchIcon);
-            pnlSearch.Controls.Add(txtSearch);
-            pnlSearch.Location = new Point(600, 12);
-            pnlSearch.Name = "pnlSearch";
-            pnlSearch.Size = new Size(200, 30);
-            pnlSearch.TabIndex = 1;
-            // 
-            // lblSearchIcon
-            // 
-            lblSearchIcon.AutoSize = true;
-            lblSearchIcon.Font = new Font("Segoe UI", 10F);
-            lblSearchIcon.ForeColor = Color.FromArgb(136, 135, 128);
-            lblSearchIcon.Location = new Point(6, 5);
-            lblSearchIcon.Name = "lblSearchIcon";
-            lblSearchIcon.Size = new Size(28, 19);
-            lblSearchIcon.TabIndex = 0;
-            lblSearchIcon.Text = "🔍";
-            // 
-            // txtSearch
-            // 
-            txtSearch.BackColor = Color.FromArgb(241, 239, 232);
-            txtSearch.BorderStyle = BorderStyle.None;
-            txtSearch.Font = new Font("Segoe UI", 9F);
-            txtSearch.ForeColor = Color.FromArgb(44, 44, 42);
-            txtSearch.Location = new Point(28, 6);
-            txtSearch.Name = "txtSearch";
-            txtSearch.PlaceholderText = "Search name or ID…";
-            txtSearch.Size = new Size(162, 16);
-            txtSearch.TabIndex = 1;
-            // 
-            // pnlStats
-            // 
-            pnlStats.BackColor = Color.FromArgb(255, 255, 255);
-            pnlStats.Controls.Add(pnlStatTotal);
-            pnlStats.Controls.Add(pnlStatActive);
-            pnlStats.Controls.Add(pnlStatSections);
-            pnlStats.Dock = DockStyle.Top;
-            pnlStats.Location = new Point(0, 63);
-            pnlStats.Name = "pnlStats";
-            pnlStats.Padding = new Padding(14, 10, 14, 10);
-            pnlStats.Size = new Size(820, 72);
-            pnlStats.TabIndex = 2;
-            // 
-            // pnlStatTotal
-            // 
-            pnlStatTotal.BackColor = Color.FromArgb(241, 239, 232);
-            pnlStatTotal.Controls.Add(lblStatTotalLbl);
-            pnlStatTotal.Controls.Add(lblStatTotalVal);
-            pnlStatTotal.Location = new Point(14, 10);
-            pnlStatTotal.Name = "pnlStatTotal";
-            pnlStatTotal.Size = new Size(150, 52);
-            pnlStatTotal.TabIndex = 0;
-            // 
-            // lblStatTotalLbl
-            // 
-            lblStatTotalLbl.AutoSize = true;
-            lblStatTotalLbl.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatTotalLbl.ForeColor = Color.FromArgb(95, 94, 90);
-            lblStatTotalLbl.Location = new Point(8, 6);
-            lblStatTotalLbl.Name = "lblStatTotalLbl";
-            lblStatTotalLbl.Size = new Size(91, 13);
-            lblStatTotalLbl.TabIndex = 0;
-            lblStatTotalLbl.Text = "TOTAL WORKERS";
-            // 
-            // lblStatTotalVal
-            // 
-            lblStatTotalVal.AutoSize = true;
-            lblStatTotalVal.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblStatTotalVal.ForeColor = Color.FromArgb(15, 110, 86);
-            lblStatTotalVal.Location = new Point(8, 22);
-            lblStatTotalVal.Name = "lblStatTotalVal";
-            lblStatTotalVal.Size = new Size(51, 32);
-            lblStatTotalVal.TabIndex = 1;
-            lblStatTotalVal.Text = "124";
-            // 
-            // pnlStatActive
-            // 
-            pnlStatActive.BackColor = Color.FromArgb(241, 239, 232);
-            pnlStatActive.Controls.Add(lblStatActiveLbl);
-            pnlStatActive.Controls.Add(lblStatActiveVal);
-            pnlStatActive.Location = new Point(174, 10);
-            pnlStatActive.Name = "pnlStatActive";
-            pnlStatActive.Size = new Size(150, 52);
-            pnlStatActive.TabIndex = 1;
-            // 
-            // lblStatActiveLbl
-            // 
-            lblStatActiveLbl.AutoSize = true;
-            lblStatActiveLbl.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatActiveLbl.ForeColor = Color.FromArgb(95, 94, 90);
-            lblStatActiveLbl.Location = new Point(8, 6);
-            lblStatActiveLbl.Name = "lblStatActiveLbl";
-            lblStatActiveLbl.Size = new Size(110, 13);
-            lblStatActiveLbl.TabIndex = 0;
-            lblStatActiveLbl.Text = "ACTIVE THIS MONTH";
-            // 
-            // lblStatActiveVal
-            // 
-            lblStatActiveVal.AutoSize = true;
-            lblStatActiveVal.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblStatActiveVal.ForeColor = Color.FromArgb(44, 44, 42);
-            lblStatActiveVal.Location = new Point(8, 22);
-            lblStatActiveVal.Name = "lblStatActiveVal";
-            lblStatActiveVal.Size = new Size(47, 32);
-            lblStatActiveVal.TabIndex = 1;
-            lblStatActiveVal.Text = "118";
-            // 
-            // pnlStatSections
-            // 
-            pnlStatSections.BackColor = Color.FromArgb(241, 239, 232);
-            pnlStatSections.Controls.Add(lblStatSectionsLbl);
-            pnlStatSections.Controls.Add(lblStatSectionsVal);
-            pnlStatSections.Location = new Point(334, 10);
-            pnlStatSections.Name = "pnlStatSections";
-            pnlStatSections.Size = new Size(150, 52);
-            pnlStatSections.TabIndex = 2;
-            // 
-            // lblStatSectionsLbl
-            // 
-            lblStatSectionsLbl.AutoSize = true;
-            lblStatSectionsLbl.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatSectionsLbl.ForeColor = Color.FromArgb(95, 94, 90);
-            lblStatSectionsLbl.Location = new Point(8, 6);
-            lblStatSectionsLbl.Name = "lblStatSectionsLbl";
-            lblStatSectionsLbl.Size = new Size(57, 13);
-            lblStatSectionsLbl.TabIndex = 0;
-            lblStatSectionsLbl.Text = "SECTIONS";
-            // 
-            // lblStatSectionsVal
-            // 
-            lblStatSectionsVal.AutoSize = true;
-            lblStatSectionsVal.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblStatSectionsVal.ForeColor = Color.FromArgb(44, 44, 42);
-            lblStatSectionsVal.Location = new Point(8, 22);
-            lblStatSectionsVal.Name = "lblStatSectionsVal";
-            lblStatSectionsVal.Size = new Size(28, 32);
-            lblStatSectionsVal.TabIndex = 1;
-            lblStatSectionsVal.Text = "4";
-            // 
             // pnlDivider
             // 
             pnlDivider.BackColor = Color.FromArgb(211, 209, 199);
+            pnlDivider.Controls.Add(panel2);
             pnlDivider.Dock = DockStyle.Top;
-            pnlDivider.Location = new Point(0, 62);
+            pnlDivider.Location = new Point(0, 0);
             pnlDivider.Name = "pnlDivider";
-            pnlDivider.Size = new Size(820, 1);
+            pnlDivider.Size = new Size(804, 1);
             pnlDivider.TabIndex = 3;
             // 
-            // pnlColHeader
+            // panel2
             // 
-            pnlColHeader.BackColor = Color.FromArgb(26, 60, 52);
-            pnlColHeader.Controls.Add(lblSubTitle);
-            pnlColHeader.Controls.Add(lblAppTitle);
-            pnlColHeader.Dock = DockStyle.Top;
-            pnlColHeader.Location = new Point(0, 0);
-            pnlColHeader.Name = "pnlColHeader";
-            pnlColHeader.Size = new Size(820, 62);
-            pnlColHeader.TabIndex = 4;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(225, 412);
+            panel2.TabIndex = 1;
             // 
-            // dgvFarmers
+            // panel3
             // 
-            dgvFarmers.AllowUserToAddRows = false;
-            dgvFarmers.AllowUserToDeleteRows = false;
-            dgvFarmers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(247, 245, 240);
-            dgvFarmers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvFarmers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvFarmers.BackgroundColor = Color.FromArgb(247, 245, 240);
-            dgvFarmers.BorderStyle = BorderStyle.None;
-            dgvFarmers.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            dgvFarmers.ColumnHeadersVisible = false;
-            dgvFarmers.Columns.AddRange(new DataGridViewColumn[] { colEmpNo, colFullName, colJoinDate, colSection, colActions });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(44, 44, 42);
-            dataGridViewCellStyle6.Padding = new Padding(6);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(225, 245, 238);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(26, 60, 52);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvFarmers.DefaultCellStyle = dataGridViewCellStyle6;
-            dgvFarmers.Dock = DockStyle.Fill;
-            dgvFarmers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dgvFarmers.GridColor = Color.FromArgb(211, 209, 199);
-            dgvFarmers.Location = new Point(0, 0);
-            dgvFarmers.MultiSelect = false;
-            dgvFarmers.Name = "dgvFarmers";
-            dgvFarmers.ReadOnly = true;
-            dgvFarmers.RowHeadersVisible = false;
-            dgvFarmers.RowTemplate.Height = 40;
-            dgvFarmers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvFarmers.Size = new Size(820, 494);
-            dgvFarmers.TabIndex = 5;
+            panel3.BackColor = Color.FromArgb(64, 64, 64);
+            panel3.Controls.Add(Settlment);
+            panel3.Controls.Add(button4);
+            panel3.Controls.Add(button3);
+            panel3.Controls.Add(button2);
+            panel3.Controls.Add(btnDashBoard);
+            panel3.Controls.Add(pictureBox1);
+            panel3.Controls.Add(label1);
+            panel3.Location = new Point(1, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(204, 498);
+            panel3.TabIndex = 7;
             // 
-            // colEmpNo
+            // Settlment
             // 
-            dataGridViewCellStyle2.Font = new Font("Consolas", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.FromArgb(95, 94, 90);
-            colEmpNo.DefaultCellStyle = dataGridViewCellStyle2;
-            colEmpNo.FillWeight = 12F;
-            colEmpNo.HeaderText = "Emp No.";
-            colEmpNo.Name = "colEmpNo";
-            colEmpNo.ReadOnly = true;
+            Settlment.BackColor = Color.FromArgb(45, 122, 79);
+            Settlment.ForeColor = Color.White;
+            Settlment.Location = new Point(1, 323);
+            Settlment.Name = "Settlment";
+            Settlment.Size = new Size(200, 48);
+            Settlment.TabIndex = 6;
+            Settlment.Text = "Settlement";
+            Settlment.UseVisualStyleBackColor = false;
             // 
-            // colFullName
+            // button4
             // 
-            colFullName.FillWeight = 28F;
-            colFullName.HeaderText = "Full Name";
-            colFullName.Name = "colFullName";
-            colFullName.ReadOnly = true;
+            button4.BackColor = Color.FromArgb(45, 122, 79);
+            button4.ForeColor = Color.White;
+            button4.Location = new Point(1, 271);
+            button4.Name = "button4";
+            button4.Size = new Size(200, 48);
+            button4.TabIndex = 5;
+            button4.Text = "Advance";
+            button4.UseVisualStyleBackColor = false;
             // 
-            // colJoinDate
+            // button3
             // 
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(95, 94, 90);
-            colJoinDate.DefaultCellStyle = dataGridViewCellStyle3;
-            colJoinDate.FillWeight = 18F;
-            colJoinDate.HeaderText = "Join Date";
-            colJoinDate.Name = "colJoinDate";
-            colJoinDate.ReadOnly = true;
+            button3.BackColor = Color.FromArgb(45, 122, 79);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(0, 218);
+            button3.Name = "button3";
+            button3.Size = new Size(200, 48);
+            button3.TabIndex = 4;
+            button3.Text = "Daily Harvest";
+            button3.UseVisualStyleBackColor = false;
             // 
-            // colSection
+            // button2
             // 
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(225, 245, 238);
-            dataGridViewCellStyle4.ForeColor = Color.FromArgb(8, 80, 65);
-            colSection.DefaultCellStyle = dataGridViewCellStyle4;
-            colSection.FillWeight = 18F;
-            colSection.HeaderText = "Section";
-            colSection.Name = "colSection";
-            colSection.ReadOnly = true;
+            button2.BackColor = Color.FromArgb(45, 122, 79);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(1, 166);
+            button2.Name = "button2";
+            button2.Size = new Size(200, 48);
+            button2.TabIndex = 3;
+            button2.Text = "Worker";
+            button2.UseVisualStyleBackColor = false;
             // 
-            // colActions
+            // btnDashBoard
             // 
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(45, 122, 79);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(225, 245, 238);
-            colActions.DefaultCellStyle = dataGridViewCellStyle5;
-            colActions.FillWeight = 14F;
-            colActions.FlatStyle = FlatStyle.Flat;
-            colActions.HeaderText = "Actions";
-            colActions.Name = "colActions";
-            colActions.ReadOnly = true;
-            colActions.Text = "Edit";
-            colActions.UseColumnTextForButtonValue = true;
+            btnDashBoard.BackColor = Color.FromArgb(45, 122, 79);
+            btnDashBoard.ForeColor = Color.White;
+            btnDashBoard.Location = new Point(2, 112);
+            btnDashBoard.Name = "btnDashBoard";
+            btnDashBoard.Size = new Size(200, 48);
+            btnDashBoard.TabIndex = 2;
+            btnDashBoard.Text = "Dashboard";
+            btnDashBoard.UseVisualStyleBackColor = false;
             // 
-            // pnlPagination
+            // pictureBox1
             // 
-            pnlPagination.BackColor = Color.FromArgb(255, 255, 255);
-            pnlPagination.Controls.Add(lblPageInfo);
-            pnlPagination.Controls.Add(pnlPageBtns);
-            pnlPagination.Dock = DockStyle.Bottom;
-            pnlPagination.Location = new Point(0, 494);
-            pnlPagination.Name = "pnlPagination";
-            pnlPagination.Size = new Size(820, 46);
-            pnlPagination.TabIndex = 6;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(76, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(52, 53);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
-            // lblPageInfo
+            // label1
             // 
-            lblPageInfo.AutoSize = true;
-            lblPageInfo.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPageInfo.ForeColor = Color.FromArgb(95, 94, 90);
-            lblPageInfo.Location = new Point(14, 15);
-            lblPageInfo.Name = "lblPageInfo";
-            lblPageInfo.Size = new Size(159, 15);
-            lblPageInfo.TabIndex = 0;
-            lblPageInfo.Text = "Showing 1–10 of 124 workers";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(38, 60);
+            label1.Name = "label1";
+            label1.Size = new Size(132, 30);
+            label1.TabIndex = 0;
+            label1.Text = "AGRITRACK";
             // 
-            // pnlPageBtns
+            // Attend
             // 
-            pnlPageBtns.BackColor = Color.Transparent;
-            pnlPageBtns.Controls.Add(btnPrev);
-            pnlPageBtns.Controls.Add(pagenb);
-            pnlPageBtns.Controls.Add(pagenb2);
-            pnlPageBtns.Controls.Add(btnNext);
-            pnlPageBtns.Location = new Point(620, 9);
-            pnlPageBtns.Name = "pnlPageBtns";
-            pnlPageBtns.Size = new Size(185, 28);
-            pnlPageBtns.TabIndex = 1;
+            Attend.HeaderText = "Attend";
+            Attend.Name = "Attend";
+            Attend.Resizable = DataGridViewTriState.True;
+            Attend.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
-            // btnPrev
+            // Gender
             // 
-            btnPrev.BackColor = Color.FromArgb(241, 239, 232);
-            btnPrev.Cursor = Cursors.Hand;
-            btnPrev.FlatAppearance.BorderColor = Color.FromArgb(180, 178, 168);
-            btnPrev.FlatStyle = FlatStyle.Flat;
-            btnPrev.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnPrev.ForeColor = Color.FromArgb(95, 94, 90);
-            btnPrev.Location = new Point(0, 0);
-            btnPrev.Name = "btnPrev";
-            btnPrev.Size = new Size(36, 28);
-            btnPrev.TabIndex = 0;
-            btnPrev.Text = "‹";
-            btnPrev.UseVisualStyleBackColor = false;
+            Gender.HeaderText = "Gender";
+            Gender.Name = "Gender";
             // 
-            // pagenb
+            // Name
             // 
-            pagenb.BackColor = Color.FromArgb(45, 122, 79);
-            pagenb.Cursor = Cursors.Hand;
-            pagenb.FlatAppearance.BorderSize = 0;
-            pagenb.FlatStyle = FlatStyle.Flat;
-            pagenb.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            pagenb.ForeColor = Color.FromArgb(225, 245, 238);
-            pagenb.Location = new Point(42, 0);
-            pagenb.Name = "pagenb";
-            pagenb.Size = new Size(30, 28);
-            pagenb.TabIndex = 1;
-            pagenb.Text = "1";
-            pagenb.UseVisualStyleBackColor = false;
+            Name.HeaderText = "Name";
+            Name.Name = "Name";
+            Name.Width = 200;
             // 
-            // pagenb2
+            // WorkerID
             // 
-            pagenb2.BackColor = Color.FromArgb(241, 239, 232);
-            pagenb2.Cursor = Cursors.Hand;
-            pagenb2.FlatAppearance.BorderColor = Color.FromArgb(180, 178, 168);
-            pagenb2.FlatStyle = FlatStyle.Flat;
-            pagenb2.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            pagenb2.ForeColor = Color.FromArgb(95, 94, 90);
-            pagenb2.Location = new Point(78, 0);
-            pagenb2.Name = "pagenb2";
-            pagenb2.Size = new Size(30, 28);
-            pagenb2.TabIndex = 2;
-            pagenb2.Text = "2";
-            pagenb2.UseVisualStyleBackColor = false;
+            WorkerID.HeaderText = "Worker ID";
+            WorkerID.Name = "WorkerID";
             // 
-            // btnNext
+            // dataGridView1
             // 
-            btnNext.BackColor = Color.FromArgb(241, 239, 232);
-            btnNext.Cursor = Cursors.Hand;
-            btnNext.FlatAppearance.BorderColor = Color.FromArgb(180, 178, 168);
-            btnNext.FlatStyle = FlatStyle.Flat;
-            btnNext.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnNext.ForeColor = Color.FromArgb(95, 94, 90);
-            btnNext.Location = new Point(114, 0);
-            btnNext.Name = "btnNext";
-            btnNext.Size = new Size(36, 28);
-            btnNext.TabIndex = 3;
-            btnNext.Text = "›";
-            btnNext.UseVisualStyleBackColor = false;
+            dataGridView1.BackgroundColor = Color.FromArgb(247, 245, 240);
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(247, 245, 240);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(247, 245, 240);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { WorkerID, Name, Gender, Attend });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(247, 245, 240);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(247, 245, 240);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.GridColor = Color.FromArgb(211, 209, 199);
+            dataGridView1.Location = new Point(225, 145);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(543, 216);
+            dataGridView1.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(45, 122, 79);
+            panel1.Location = new Point(209, 5);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(595, 29);
+            panel1.TabIndex = 8;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.White;
+            panel5.Location = new Point(384, 40);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(0, 0);
+            panel5.TabIndex = 10;
+            // 
+            // panel6
+            // 
+            panel6.Location = new Point(556, 36);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(0, 0);
+            panel6.TabIndex = 11;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(554, 88);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(214, 23);
+            textBox1.TabIndex = 12;
+            // 
+            // button1
+            // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Zoom;
+            button1.Location = new Point(514, 88);
+            button1.Name = "button1";
+            button1.Size = new Size(39, 23);
+            button1.TabIndex = 13;
+            button1.UseVisualStyleBackColor = true;
             // 
             // add_farmmer_1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 244, 240);
-            ClientSize = new Size(820, 540);
-            Controls.Add(pnlTopBar);
-            Controls.Add(pnlToolbar);
-            Controls.Add(pnlStats);
+            ClientSize = new Size(804, 501);
+            Controls.Add(button1);
+            Controls.Add(textBox1);
+            Controls.Add(panel6);
+            Controls.Add(panel5);
+            Controls.Add(panel1);
+            Controls.Add(panel3);
+            Controls.Add(addfarmmer);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(dataGridView1);
             Controls.Add(pnlDivider);
-            Controls.Add(pnlColHeader);
-            Controls.Add(dgvFarmers);
-            Controls.Add(pnlPagination);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MinimumSize = new Size(820, 540);
             Name = "add_farmmer_1";
             Text = "AgriTrack — Worker Registry";
-            pnlTopBar.ResumeLayout(false);
-            pnlToolbar.ResumeLayout(false);
-            pnlSearch.ResumeLayout(false);
-            pnlSearch.PerformLayout();
-            pnlStats.ResumeLayout(false);
-            pnlStatTotal.ResumeLayout(false);
-            pnlStatTotal.PerformLayout();
-            pnlStatActive.ResumeLayout(false);
-            pnlStatActive.PerformLayout();
-            pnlStatSections.ResumeLayout(false);
-            pnlStatSections.PerformLayout();
-            pnlColHeader.ResumeLayout(false);
-            pnlColHeader.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvFarmers).EndInit();
-            pnlPagination.ResumeLayout(false);
-            pnlPagination.PerformLayout();
-            pnlPageBtns.ResumeLayout(false);
+            pnlDivider.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        // ── Top bar ──
-        private Panel pnlTopBar;
-        private Label lblAppTitle;
-        private Label lblSubTitle;
-
-        // ── Toolbar ──
-        private Panel pnlToolbar;
         private Button addfarmmer;
-        private Panel pnlSearch;
-        private TextBox txtSearch;
-        private Label lblSearchIcon;
-
-        // ── Stats ──
-        private Panel pnlStats;
-        private Panel pnlStatTotal;
-        private Label lblStatTotalVal;
-        private Label lblStatTotalLbl;
-        private Panel pnlStatActive;
-        private Label lblStatActiveVal;
-        private Label lblStatActiveLbl;
-        private Panel pnlStatSections;
-        private Label lblStatSectionsVal;
-        private Label lblStatSectionsLbl;
 
         // ── Divider ──
         private Panel pnlDivider;
-
-        // ── Column header ──
-        private Panel pnlColHeader;
-        private Label lblColEmpNo;
-        private Label lblColName;
-        private Label lblColDate;
-        private Label lblColSection;
-        private Label lblColActions;
-
-        // ── Data grid ──
-        private DataGridView dgvFarmers;
-
-        // ── Pagination ──
-        private Panel pnlPagination;
-        private Label lblPageInfo;
-        private Panel pnlPageBtns;
-        private Button btnPrev;
-        private Button pagenb;
-        private Button pagenb2;
-        private Button btnNext;
-        private DataGridViewTextBoxColumn colEmpNo;
-        private DataGridViewTextBoxColumn colFullName;
-        private DataGridViewTextBoxColumn colJoinDate;
-        private DataGridViewTextBoxColumn colSection;
-        private DataGridViewButtonColumn colActions;
+        private DateTimePicker dateTimePicker1;
+        private Panel panel2;
+        private Panel panel3;
+        private PictureBox pictureBox1;
+        private Label label1;
+        private Button btnDashBoard;
+        private DataGridViewCheckBoxColumn Attend;
+        private DataGridViewTextBoxColumn Gender;
+        private DataGridViewTextBoxColumn Name;
+        private DataGridViewTextBoxColumn WorkerID;
+        private DataGridView dataGridView1;
+        private Button button3;
+        private Button button2;
+        private Button Settlment;
+        private Button button4;
+        private Panel panel1;
+        private Panel panel5;
+        private Panel panel6;
+        private TextBox textBox1;
+        private Button button1;
     }
 }

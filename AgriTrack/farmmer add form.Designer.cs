@@ -49,14 +49,12 @@
             radioMale = new RadioButton();
             panelGenderFemale = new Panel();
             radioFemale = new RadioButton();
-            lblSection = new Label();
-            cmbSection = new ComboBox();
             lblJoinDate = new Label();
             dtpJoinDate = new DateTimePicker();
             panelActions = new Panel();
+            button1 = new Button();
             btnRegister = new Button();
             btnClear = new Button();
-            button1 = new Button();
             panelHeader.SuspendLayout();
             grpPersonal.SuspendLayout();
             grpProfile.SuspendLayout();
@@ -248,8 +246,6 @@
             grpProfile.Controls.Add(lblGender);
             grpProfile.Controls.Add(panelGenderMale);
             grpProfile.Controls.Add(panelGenderFemale);
-            grpProfile.Controls.Add(lblSection);
-            grpProfile.Controls.Add(cmbSection);
             grpProfile.Controls.Add(lblJoinDate);
             grpProfile.Controls.Add(dtpJoinDate);
             grpProfile.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
@@ -260,7 +256,6 @@
             grpProfile.Size = new Size(744, 156);
             grpProfile.TabIndex = 2;
             grpProfile.TabStop = false;
-            grpProfile.Text = "Profile details";
             // 
             // lblGender
             // 
@@ -317,35 +312,12 @@
             radioFemale.Text = "Female";
             radioFemale.UseVisualStyleBackColor = true;
             // 
-            // lblSection
-            // 
-            lblSection.AutoSize = true;
-            lblSection.Font = new Font("Segoe UI", 9F);
-            lblSection.ForeColor = Color.FromArgb(100, 100, 100);
-            lblSection.Location = new Point(376, 28);
-            lblSection.Name = "lblSection";
-            lblSection.Size = new Size(94, 15);
-            lblSection.TabIndex = 3;
-            lblSection.Text = "Worker category";
-            // 
-            // cmbSection
-            // 
-            cmbSection.BackColor = Color.FromArgb(248, 249, 250);
-            cmbSection.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbSection.FlatStyle = FlatStyle.Flat;
-            cmbSection.Font = new Font("Segoe UI", 10F);
-            cmbSection.Items.AddRange(new object[] { "Subsistence farmer", "Commercial farmer", "Mixed farmer", "Dairy farmer", "Poultry farmer", "Livestock farmer", "Organic farmer", "Plantation farmer", "Horticultural farmer", "Aquaculture farmer" });
-            cmbSection.Location = new Point(376, 48);
-            cmbSection.Name = "cmbSection";
-            cmbSection.Size = new Size(200, 25);
-            cmbSection.TabIndex = 4;
-            // 
             // lblJoinDate
             // 
             lblJoinDate.AutoSize = true;
             lblJoinDate.Font = new Font("Segoe UI", 9F);
             lblJoinDate.ForeColor = Color.FromArgb(100, 100, 100);
-            lblJoinDate.Location = new Point(596, 28);
+            lblJoinDate.Location = new Point(446, 36);
             lblJoinDate.Name = "lblJoinDate";
             lblJoinDate.Size = new Size(96, 15);
             lblJoinDate.TabIndex = 5;
@@ -355,7 +327,7 @@
             // 
             dtpJoinDate.Font = new Font("Segoe UI", 10F);
             dtpJoinDate.Format = DateTimePickerFormat.Short;
-            dtpJoinDate.Location = new Point(596, 48);
+            dtpJoinDate.Location = new Point(446, 56);
             dtpJoinDate.Name = "dtpJoinDate";
             dtpJoinDate.Size = new Size(132, 25);
             dtpJoinDate.TabIndex = 6;
@@ -371,6 +343,22 @@
             panelActions.Size = new Size(744, 52);
             panelActions.TabIndex = 3;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(29, 158, 117);
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(15, 110, 86);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(178, 1);
+            button1.Name = "button1";
+            button1.Size = new Size(160, 40);
+            button1.TabIndex = 2;
+            button1.Text = "Update";
+            button1.UseVisualStyleBackColor = false;
+            // 
             // btnRegister
             // 
             btnRegister.BackColor = Color.FromArgb(29, 158, 117);
@@ -380,7 +368,7 @@
             btnRegister.FlatStyle = FlatStyle.Flat;
             btnRegister.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             btnRegister.ForeColor = Color.White;
-            btnRegister.Location = new Point(160, 0);
+            btnRegister.Location = new Point(358, 1);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(160, 40);
             btnRegister.TabIndex = 0;
@@ -396,28 +384,12 @@
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Segoe UI", 10F);
             btnClear.ForeColor = Color.FromArgb(80, 80, 80);
-            btnClear.Location = new Point(0, 0);
+            btnClear.Location = new Point(6, 1);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(150, 40);
             btnClear.TabIndex = 1;
             btnClear.Text = "Clear form";
             btnClear.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(29, 158, 117);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(15, 110, 86);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(330, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(160, 40);
-            button1.TabIndex = 2;
-            button1.Text = "Update";
-            button1.UseVisualStyleBackColor = false;
             // 
             // farmmer_add_form
             // 
@@ -477,8 +449,6 @@
         private RadioButton radioMale;
         private Panel panelGenderFemale;
         private RadioButton radioFemale;
-        private Label lblSection;
-        private ComboBox cmbSection;
         private Label lblJoinDate;
         private DateTimePicker dtpJoinDate;
 

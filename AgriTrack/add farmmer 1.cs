@@ -52,5 +52,10 @@ namespace AgriTrack
         {
 
         }
+
+        private void lblColSection_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

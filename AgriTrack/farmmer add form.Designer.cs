@@ -164,6 +164,7 @@
             txtName.PlaceholderText = "e.g.  A. B. Perera";
             txtName.Size = new Size(712, 25);
             txtName.TabIndex = 1;
+            txtName.TextChanged += txtName_TextChanged;
             // 
             // lblAddress
             // 
@@ -383,7 +384,7 @@
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(160, 40);
             btnRegister.TabIndex = 0;
-            btnRegister.Text = "Register";
+            btnRegister.Text = "Register ";
             btnRegister.UseVisualStyleBackColor = false;
             // 
             // btnClear
@@ -405,12 +406,16 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(29, 158, 117);
-            button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(15, 110, 86);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(326, 0);
+            button1.Location = new Point(330, 0);
             button1.Name = "button1";
             button1.Size = new Size(160, 40);
-            button1.TabIndex = 0;
+            button1.TabIndex = 2;
             button1.Text = "Update";
             button1.UseVisualStyleBackColor = false;
             // 

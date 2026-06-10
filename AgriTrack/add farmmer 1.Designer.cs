@@ -28,13 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle25 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle30 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle26 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle27 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle28 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle29 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             pnlTopBar = new Panel();
+            lblColEmpNo = new Label();
+            lblColDate = new Label();
+            lblColSection = new Label();
+            lblColActions = new Label();
+            lblColName = new Label();
             lblAppTitle = new Label();
             lblSubTitle = new Label();
             pnlToolbar = new Panel();
@@ -54,11 +59,6 @@
             lblStatSectionsVal = new Label();
             pnlDivider = new Panel();
             pnlColHeader = new Panel();
-            lblColEmpNo = new Label();
-            lblColName = new Label();
-            lblColDate = new Label();
-            lblColSection = new Label();
-            lblColActions = new Label();
             dgvFarmers = new DataGridView();
             colEmpNo = new DataGridViewTextBoxColumn();
             colFullName = new DataGridViewTextBoxColumn();
@@ -89,39 +89,89 @@
             // 
             pnlTopBar.BackColor = Color.FromArgb(26, 60, 52);
             pnlTopBar.Controls.Add(lblColEmpNo);
-            pnlTopBar.Controls.Add(lblColName);
             pnlTopBar.Controls.Add(lblColDate);
             pnlTopBar.Controls.Add(lblColSection);
             pnlTopBar.Controls.Add(lblColActions);
+            pnlTopBar.Controls.Add(lblColName);
             pnlTopBar.Dock = DockStyle.Top;
             pnlTopBar.Location = new Point(0, 189);
             pnlTopBar.Name = "pnlTopBar";
-            pnlTopBar.Size = new Size(820, 33);
+            pnlTopBar.Size = new Size(820, 30);
             pnlTopBar.TabIndex = 0;
+            // 
+            // lblColEmpNo
+            // 
+            lblColEmpNo.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblColEmpNo.ForeColor = Color.FromArgb(159, 225, 203);
+            lblColEmpNo.Location = new Point(40, 8);
+            lblColEmpNo.Name = "lblColEmpNo";
+            lblColEmpNo.Size = new Size(90, 16);
+            lblColEmpNo.TabIndex = 0;
+            lblColEmpNo.Text = "ID NO.";
+            // 
+            // lblColDate
+            // 
+            lblColDate.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblColDate.ForeColor = Color.FromArgb(159, 225, 203);
+            lblColDate.Location = new Point(363, 8);
+            lblColDate.Name = "lblColDate";
+            lblColDate.Size = new Size(130, 16);
+            lblColDate.TabIndex = 2;
+            lblColDate.Text = "JOIN DATE";
+            // 
+            // lblColSection
+            // 
+            lblColSection.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblColSection.ForeColor = Color.FromArgb(159, 225, 203);
+            lblColSection.Location = new Point(505, 8);
+            lblColSection.Name = "lblColSection";
+            lblColSection.Size = new Size(130, 16);
+            lblColSection.TabIndex = 3;
+            lblColSection.Text = "SECTION";
+            lblColSection.Click += lblColSection_Click;
+            // 
+            // lblColActions
+            // 
+            lblColActions.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblColActions.ForeColor = Color.FromArgb(159, 225, 203);
+            lblColActions.Location = new Point(670, 8);
+            lblColActions.Name = "lblColActions";
+            lblColActions.Size = new Size(100, 16);
+            lblColActions.TabIndex = 4;
+            lblColActions.Text = "ACTIONS";
+            lblColActions.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblColName
+            // 
+            lblColName.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblColName.ForeColor = Color.FromArgb(159, 225, 203);
+            lblColName.Location = new Point(164, 8);
+            lblColName.Name = "lblColName";
+            lblColName.Size = new Size(220, 16);
+            lblColName.TabIndex = 1;
+            lblColName.Text = "FULL NAME";
             // 
             // lblAppTitle
             // 
             lblAppTitle.AutoSize = true;
             lblAppTitle.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAppTitle.ForeColor = Color.FromArgb(225, 245, 238);
-            lblAppTitle.Location = new Point(29, 18);
+            lblAppTitle.Location = new Point(14, 9);
             lblAppTitle.Name = "lblAppTitle";
             lblAppTitle.Size = new Size(253, 21);
             lblAppTitle.TabIndex = 0;
             lblAppTitle.Text = "🌿  AgriTrack — Worker Registry";
-            lblAppTitle.Click += lblAppTitle_Click;
             // 
             // lblSubTitle
             // 
             lblSubTitle.AutoSize = true;
             lblSubTitle.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblSubTitle.ForeColor = Color.FromArgb(159, 225, 203);
-            lblSubTitle.Location = new Point(63, 42);
+            lblSubTitle.Location = new Point(50, 35);
             lblSubTitle.Name = "lblSubTitle";
             lblSubTitle.Size = new Size(101, 13);
             lblSubTitle.TabIndex = 1;
             lblSubTitle.Text = "Section A & B · 2025";
-            lblSubTitle.Click += lblSubTitle_Click_1;
             // 
             // pnlToolbar
             // 
@@ -147,7 +197,7 @@
             addfarmmer.Name = "addfarmmer";
             addfarmmer.Size = new Size(130, 30);
             addfarmmer.TabIndex = 0;
-            addfarmmer.Text = "+ Add Farmer";
+            addfarmmer.Text = "+ Add Worker";
             addfarmmer.UseVisualStyleBackColor = false;
             addfarmmer.Click += addfarmmer_Click;
             // 
@@ -314,80 +364,28 @@
             pnlColHeader.Size = new Size(820, 62);
             pnlColHeader.TabIndex = 4;
             // 
-            // lblColEmpNo
-            // 
-            lblColEmpNo.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblColEmpNo.ForeColor = Color.FromArgb(159, 225, 203);
-            lblColEmpNo.Location = new Point(22, 9);
-            lblColEmpNo.Name = "lblColEmpNo";
-            lblColEmpNo.Size = new Size(90, 16);
-            lblColEmpNo.TabIndex = 0;
-            lblColEmpNo.Text = "ID NO.";
-            // 
-            // lblColName
-            // 
-            lblColName.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblColName.ForeColor = Color.FromArgb(159, 225, 203);
-            lblColName.Location = new Point(129, 9);
-            lblColName.Name = "lblColName";
-            lblColName.Size = new Size(220, 16);
-            lblColName.TabIndex = 1;
-            lblColName.Text = "FULL NAME";
-            lblColName.Click += lblColName_Click;
-            // 
-            // lblColDate
-            // 
-            lblColDate.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblColDate.ForeColor = Color.FromArgb(159, 225, 203);
-            lblColDate.Location = new Point(355, 9);
-            lblColDate.Name = "lblColDate";
-            lblColDate.Size = new Size(130, 16);
-            lblColDate.TabIndex = 2;
-            lblColDate.Text = "JOIN DATE";
-            // 
-            // lblColSection
-            // 
-            lblColSection.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblColSection.ForeColor = Color.FromArgb(159, 225, 203);
-            lblColSection.Location = new Point(505, 9);
-            lblColSection.Name = "lblColSection";
-            lblColSection.Size = new Size(130, 16);
-            lblColSection.TabIndex = 3;
-            lblColSection.Text = "SECTION";
-            // 
-            // lblColActions
-            // 
-            lblColActions.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblColActions.ForeColor = Color.FromArgb(159, 225, 203);
-            lblColActions.Location = new Point(670, 9);
-            lblColActions.Name = "lblColActions";
-            lblColActions.Size = new Size(100, 16);
-            lblColActions.TabIndex = 4;
-            lblColActions.Text = "ACTIONS";
-            lblColActions.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // dgvFarmers
             // 
             dgvFarmers.AllowUserToAddRows = false;
             dgvFarmers.AllowUserToDeleteRows = false;
             dgvFarmers.AllowUserToResizeRows = false;
-            dataGridViewCellStyle25.BackColor = Color.FromArgb(247, 245, 240);
-            dgvFarmers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(247, 245, 240);
+            dgvFarmers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvFarmers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvFarmers.BackgroundColor = Color.FromArgb(247, 245, 240);
             dgvFarmers.BorderStyle = BorderStyle.None;
             dgvFarmers.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvFarmers.ColumnHeadersVisible = false;
             dgvFarmers.Columns.AddRange(new DataGridViewColumn[] { colEmpNo, colFullName, colJoinDate, colSection, colActions });
-            dataGridViewCellStyle30.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle30.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle30.ForeColor = Color.FromArgb(44, 44, 42);
-            dataGridViewCellStyle30.Padding = new Padding(6);
-            dataGridViewCellStyle30.SelectionBackColor = Color.FromArgb(225, 245, 238);
-            dataGridViewCellStyle30.SelectionForeColor = Color.FromArgb(26, 60, 52);
-            dataGridViewCellStyle30.WrapMode = DataGridViewTriState.False;
-            dgvFarmers.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle6.ForeColor = Color.FromArgb(44, 44, 42);
+            dataGridViewCellStyle6.Padding = new Padding(6);
+            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(225, 245, 238);
+            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(26, 60, 52);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvFarmers.DefaultCellStyle = dataGridViewCellStyle6;
             dgvFarmers.Dock = DockStyle.Fill;
             dgvFarmers.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dgvFarmers.GridColor = Color.FromArgb(211, 209, 199);
@@ -403,9 +401,9 @@
             // 
             // colEmpNo
             // 
-            dataGridViewCellStyle26.Font = new Font("Consolas", 9F);
-            dataGridViewCellStyle26.ForeColor = Color.FromArgb(95, 94, 90);
-            colEmpNo.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.Font = new Font("Consolas", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(95, 94, 90);
+            colEmpNo.DefaultCellStyle = dataGridViewCellStyle2;
             colEmpNo.FillWeight = 12F;
             colEmpNo.HeaderText = "Emp No.";
             colEmpNo.Name = "colEmpNo";
@@ -420,8 +418,8 @@
             // 
             // colJoinDate
             // 
-            dataGridViewCellStyle27.ForeColor = Color.FromArgb(95, 94, 90);
-            colJoinDate.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(95, 94, 90);
+            colJoinDate.DefaultCellStyle = dataGridViewCellStyle3;
             colJoinDate.FillWeight = 18F;
             colJoinDate.HeaderText = "Join Date";
             colJoinDate.Name = "colJoinDate";
@@ -429,9 +427,9 @@
             // 
             // colSection
             // 
-            dataGridViewCellStyle28.BackColor = Color.FromArgb(225, 245, 238);
-            dataGridViewCellStyle28.ForeColor = Color.FromArgb(8, 80, 65);
-            colSection.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(225, 245, 238);
+            dataGridViewCellStyle4.ForeColor = Color.FromArgb(8, 80, 65);
+            colSection.DefaultCellStyle = dataGridViewCellStyle4;
             colSection.FillWeight = 18F;
             colSection.HeaderText = "Section";
             colSection.Name = "colSection";
@@ -439,10 +437,10 @@
             // 
             // colActions
             // 
-            dataGridViewCellStyle29.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle29.BackColor = Color.FromArgb(45, 122, 79);
-            dataGridViewCellStyle29.ForeColor = Color.FromArgb(225, 245, 238);
-            colActions.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(45, 122, 79);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(225, 245, 238);
+            colActions.DefaultCellStyle = dataGridViewCellStyle5;
             colActions.FillWeight = 14F;
             colActions.FlatStyle = FlatStyle.Flat;
             colActions.HeaderText = "Actions";

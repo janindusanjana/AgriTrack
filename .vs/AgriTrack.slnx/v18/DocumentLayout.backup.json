@@ -1,18 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\dinus\\OneDrive\\Documents\\dashboard\\",
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\Desktop\\AgriTrackNew\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|c:\\users\\dinus\\onedrive\\documents\\dashboard\\agritrack\\farmmer add form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|solutionrelative:agritrack\\farmmer add form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|c:\\users\\asus\\desktop\\agritracknew\\agritrack\\dashboard1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|solutionrelative:agritrack\\dashboard1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|c:\\users\\dinus\\onedrive\\documents\\dashboard\\agritrack\\add farmmer 1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|solutionrelative:agritrack\\add farmmer 1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|c:\\users\\asus\\desktop\\agritracknew\\agritrack\\dashboard1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|solutionrelative:agritrack\\dashboard1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|c:\\users\\dinus\\onedrive\\documents\\dashboard\\agritrack\\farmmer add form.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|solutionrelative:agritrack\\farmmer add form.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|c:\\users\\asus\\desktop\\agritracknew\\agritrack\\agritrack.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|solutionrelative:agritrack\\agritrack.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|C:\\Users\\ASUS\\Desktop\\AgriTrackNew\\agritrack\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|solutionrelative:agritrack\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|C:\\Users\\ASUS\\Desktop\\AgriTrackNew\\agritrack\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2A33C161-0184-3D6A-C5E3-7B191691455E}|AgriTrack\\AgriTrack.csproj|solutionrelative:agritrack\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,16 +30,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 326,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
@@ -43,38 +43,63 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "farmmer add form.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\dinus\\OneDrive\\Documents\\dashboard\\AgriTrack\\farmmer add form.cs",
-              "RelativeDocumentMoniker": "AgriTrack\\farmmer add form.cs",
-              "ToolTip": "C:\\Users\\dinus\\OneDrive\\Documents\\dashboard\\AgriTrack\\farmmer add form.cs [Design]",
-              "RelativeToolTip": "AgriTrack\\farmmer add form.cs [Design]",
+              "Title": "dashboard1.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\AgriTrackNew\\AgriTrack\\dashboard1.cs",
+              "RelativeDocumentMoniker": "AgriTrack\\dashboard1.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\AgriTrackNew\\AgriTrack\\dashboard1.cs*",
+              "RelativeToolTip": "AgriTrack\\dashboard1.cs*",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwCoAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-09T15:46:28.499Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-06-10T11:46:07.851Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "farmmer add form.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\dinus\\OneDrive\\Documents\\dashboard\\AgriTrack\\farmmer add form.Designer.cs",
-              "RelativeDocumentMoniker": "AgriTrack\\farmmer add form.Designer.cs",
-              "ToolTip": "C:\\Users\\dinus\\OneDrive\\Documents\\dashboard\\AgriTrack\\farmmer add form.Designer.cs",
-              "RelativeToolTip": "AgriTrack\\farmmer add form.Designer.cs",
-              "ViewState": "AgIAAMEBAAAAAAAAAAAwwOYBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-09T15:44:39.593Z",
+              "Title": "AgriTrack",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\AgriTrackNew\\AgriTrack\\AgriTrack.csproj",
+              "RelativeDocumentMoniker": "AgriTrack\\AgriTrack.csproj",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\AgriTrackNew\\AgriTrack\\AgriTrack.csproj",
+              "RelativeToolTip": "AgriTrack\\AgriTrack.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-10T11:54:02.617Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "add farmmer 1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\dinus\\OneDrive\\Documents\\dashboard\\AgriTrack\\add farmmer 1.cs",
-              "RelativeDocumentMoniker": "AgriTrack\\add farmmer 1.cs",
-              "ToolTip": "C:\\Users\\dinus\\OneDrive\\Documents\\dashboard\\AgriTrack\\add farmmer 1.cs [Design]",
-              "RelativeToolTip": "AgriTrack\\add farmmer 1.cs [Design]",
+              "Title": "dashboard1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\AgriTrackNew\\AgriTrack\\dashboard1.cs",
+              "RelativeDocumentMoniker": "AgriTrack\\dashboard1.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\AgriTrackNew\\AgriTrack\\dashboard1.cs [Design]*",
+              "RelativeToolTip": "AgriTrack\\dashboard1.cs [Design]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-09T15:41:00.331Z",
+              "WhenOpened": "2026-06-10T11:44:42.471Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SignUp.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\AgriTrackNew\\AgriTrack\\SignUp.cs",
+              "RelativeDocumentMoniker": "AgriTrack\\SignUp.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\AgriTrackNew\\AgriTrack\\SignUp.cs [Design]",
+              "RelativeToolTip": "AgriTrack\\SignUp.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T07:21:50.603Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "login.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\AgriTrackNew\\AgriTrack\\login.cs",
+              "RelativeDocumentMoniker": "AgriTrack\\login.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\AgriTrackNew\\AgriTrack\\login.cs [Design]",
+              "RelativeToolTip": "AgriTrack\\login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-10T07:20:33.046Z",
               "EditorCaption": " [Design]"
             }
           ]

@@ -300,7 +300,7 @@
             Controls.Add(pnlDivider);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MinimumSize = new Size(820, 540);
-            Name = "add_farmmer_1";
+
             Text = "AgriTrack — Worker Registry";
             pnlDivider.ResumeLayout(false);
             panel3.ResumeLayout(false);

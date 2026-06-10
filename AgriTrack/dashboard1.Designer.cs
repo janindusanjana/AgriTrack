@@ -195,7 +195,7 @@
             panel4.Controls.Add(pictureBox3);
             panel4.Controls.Add(label4);
             panel4.Controls.Add(textBox1);
-            panel4.Location = new Point(232, 134);
+            panel4.Location = new Point(226, 134);
             panel4.Name = "panel4";
             panel4.Size = new Size(160, 81);
             panel4.TabIndex = 14;

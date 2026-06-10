@@ -298,7 +298,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 247, 242);
-            ClientSize = new Size(820, 520);
+            ClientSize = new Size(804, 501);
             Controls.Add(pnlHeader);
             Controls.Add(pnlBody);
             FormBorderStyle = FormBorderStyle.FixedSingle;

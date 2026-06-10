@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace AgriTrack
 {
-    public partial class Dashboard : UserControl
+    public partial class dashboard1 : Form
     {
-        public Dashboard()
+        public dashboard1()
         {
             InitializeComponent();
         }

@@ -248,7 +248,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(804, 501);
             Controls.Add(button5);
             Controls.Add(btnSettlementPrint);
             Controls.Add(btnUpdateSettlemet);

@@ -28,212 +28,313 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel4 = new Panel();
-            label4 = new Label();
-            panel3 = new Panel();
-            label3 = new Label();
-            panel2 = new Panel();
-            label2 = new Label();
-            panel1 = new Panel();
-            label1 = new Label();
-            label5 = new Label();
-            button1 = new Button();
-            pagenb2 = new Button();
-            pagenb = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(add_farmmer_1));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            dateTimePicker1 = new DateTimePicker();
             addfarmmer = new Button();
+            pnlDivider = new Panel();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            Settlment = new Button();
+            button4 = new Button();
+            button3 = new Button();
+            button2 = new Button();
+            btnDashBoard = new Button();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
+            Attend = new DataGridViewCheckBoxColumn();
+            Gender = new DataGridViewTextBoxColumn();
+            Name = new DataGridViewTextBoxColumn();
+            WorkerID = new DataGridViewTextBoxColumn();
+            dataGridView1 = new DataGridView();
+            panel1 = new Panel();
             panel5 = new Panel();
-            panel4.SuspendLayout();
+            panel6 = new Panel();
+            textBox1 = new TextBox();
+            button1 = new Button();
+            pnlDivider.SuspendLayout();
             panel3.SuspendLayout();
-            panel2.SuspendLayout();
-            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // panel4
+            // dateTimePicker1
             // 
-            panel4.BackColor = Color.Teal;
-            panel4.Controls.Add(label4);
-            panel4.Location = new Point(467, 85);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(140, 23);
-            panel4.TabIndex = 13;
+            dateTimePicker1.Format = DateTimePickerFormat.Time;
+            dateTimePicker1.Location = new Point(225, 85);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(110, 23);
+            dateTimePicker1.TabIndex = 2;
             // 
-            // label4
+            // addfarmmer
             // 
-            label4.AutoSize = true;
-            label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(41, 4);
-            label4.Name = "label4";
-            label4.Size = new Size(58, 15);
-            label4.TabIndex = 0;
-            label4.Text = "SECTION ";
+            addfarmmer.BackColor = Color.FromArgb(45, 122, 79);
+            addfarmmer.Cursor = Cursors.Hand;
+            addfarmmer.FlatAppearance.BorderSize = 0;
+            addfarmmer.FlatStyle = FlatStyle.Flat;
+            addfarmmer.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            addfarmmer.ForeColor = Color.FromArgb(225, 245, 238);
+            addfarmmer.Location = new Point(341, 83);
+            addfarmmer.Name = "addfarmmer";
+            addfarmmer.Size = new Size(130, 30);
+            addfarmmer.TabIndex = 0;
+            addfarmmer.Text = "+ Add Worker";
+            addfarmmer.UseVisualStyleBackColor = false;
+            addfarmmer.Click += addfarmmer_Click;
             // 
-            // panel3
+            // pnlDivider
             // 
-            panel3.BackColor = Color.Teal;
-            panel3.Controls.Add(label3);
-            panel3.Location = new Point(346, 85);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(115, 23);
-            panel3.TabIndex = 12;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(27, 4);
-            label3.Name = "label3";
-            label3.Size = new Size(63, 15);
-            label3.TabIndex = 0;
-            label3.Text = "JOIN DATE";
+            pnlDivider.BackColor = Color.FromArgb(211, 209, 199);
+            pnlDivider.Controls.Add(panel2);
+            pnlDivider.Dock = DockStyle.Top;
+            pnlDivider.Location = new Point(0, 0);
+            pnlDivider.Name = "pnlDivider";
+            pnlDivider.Size = new Size(804, 1);
+            pnlDivider.TabIndex = 3;
             // 
             // panel2
             // 
-            panel2.BackColor = Color.Teal;
-            panel2.Controls.Add(label2);
-            panel2.Location = new Point(91, 85);
+            panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(248, 23);
-            panel2.TabIndex = 11;
+            panel2.Size = new Size(225, 412);
+            panel2.TabIndex = 1;
             // 
-            // label2
+            // panel3
             // 
-            label2.AutoSize = true;
-            label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(83, 4);
-            label2.Name = "label2";
-            label2.Size = new Size(73, 15);
-            label2.TabIndex = 0;
-            label2.Text = "FULL NAME ";
-            label2.Click += label2_Click;
+            panel3.BackColor = Color.FromArgb(64, 64, 64);
+            panel3.Controls.Add(Settlment);
+            panel3.Controls.Add(button4);
+            panel3.Controls.Add(button3);
+            panel3.Controls.Add(button2);
+            panel3.Controls.Add(btnDashBoard);
+            panel3.Controls.Add(pictureBox1);
+            panel3.Controls.Add(label1);
+            panel3.Location = new Point(1, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(204, 498);
+            panel3.TabIndex = 7;
             // 
-            // panel1
+            // Settlment
             // 
-            panel1.BackColor = Color.Teal;
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(20, 85);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(65, 23);
-            panel1.TabIndex = 10;
+            Settlment.BackColor = Color.FromArgb(45, 122, 79);
+            Settlment.ForeColor = Color.White;
+            Settlment.Location = new Point(1, 323);
+            Settlment.Name = "Settlment";
+            Settlment.Size = new Size(200, 48);
+            Settlment.TabIndex = 6;
+            Settlment.Text = "Settlement";
+            Settlment.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.FromArgb(45, 122, 79);
+            button4.ForeColor = Color.White;
+            button4.Location = new Point(1, 271);
+            button4.Name = "button4";
+            button4.Size = new Size(200, 48);
+            button4.TabIndex = 5;
+            button4.Text = "Advance";
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(45, 122, 79);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(0, 218);
+            button3.Name = "button3";
+            button3.Size = new Size(200, 48);
+            button3.TabIndex = 4;
+            button3.Text = "Daily Harvest";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(45, 122, 79);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(1, 166);
+            button2.Name = "button2";
+            button2.Size = new Size(200, 48);
+            button2.TabIndex = 3;
+            button2.Text = "Worker";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // btnDashBoard
+            // 
+            btnDashBoard.BackColor = Color.FromArgb(45, 122, 79);
+            btnDashBoard.ForeColor = Color.White;
+            btnDashBoard.Location = new Point(2, 112);
+            btnDashBoard.Name = "btnDashBoard";
+            btnDashBoard.Size = new Size(200, 48);
+            btnDashBoard.TabIndex = 2;
+            btnDashBoard.Text = "Dashboard";
+            btnDashBoard.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(76, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(52, 53);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(4, 4);
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(38, 60);
             label1.Name = "label1";
-            label1.Size = new Size(57, 17);
+            label1.Size = new Size(132, 30);
             label1.TabIndex = 0;
-            label1.Text = "EMP NO.";
+            label1.Text = "AGRITRACK";
             // 
-            // label5
+            // Attend
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(517, 37);
-            label5.Name = "label5";
-            label5.Size = new Size(60, 15);
-            label5.TabIndex = 19;
-            label5.Text = "WORKERS";
+            Attend.HeaderText = "Attend";
+            Attend.Name = "Attend";
+            Attend.Resizable = DataGridViewTriState.True;
+            Attend.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
-            // button1
+            // Gender
             // 
-            button1.BackColor = Color.Teal;
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(370, 367);
-            button1.Name = "button1";
-            button1.Size = new Size(28, 25);
-            button1.TabIndex = 18;
-            button1.Text = ">";
-            button1.UseVisualStyleBackColor = false;
+            Gender.HeaderText = "Gender";
+            Gender.Name = "Gender";
             // 
-            // pagenb2
+            // Name
             // 
-            pagenb2.BackColor = Color.Teal;
-            pagenb2.ForeColor = SystemColors.ButtonHighlight;
-            pagenb2.Location = new Point(341, 367);
-            pagenb2.Name = "pagenb2";
-            pagenb2.Size = new Size(28, 25);
-            pagenb2.TabIndex = 17;
-            pagenb2.Text = "2";
-            pagenb2.UseVisualStyleBackColor = false;
+            Name.HeaderText = "Name";
+            Name.Name = "Name";
+            Name.Width = 200;
             // 
-            // pagenb
+            // WorkerID
             // 
-            pagenb.BackColor = Color.Teal;
-            pagenb.ForeColor = SystemColors.ButtonHighlight;
-            pagenb.Location = new Point(311, 367);
-            pagenb.Name = "pagenb";
-            pagenb.Size = new Size(28, 25);
-            pagenb.TabIndex = 16;
-            pagenb.Text = "1";
-            pagenb.UseVisualStyleBackColor = false;
+            WorkerID.HeaderText = "Worker ID";
+            WorkerID.Name = "WorkerID";
             // 
-            // addfarmmer
+            // dataGridView1
             // 
-            addfarmmer.BackColor = Color.Teal;
-            addfarmmer.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            addfarmmer.ForeColor = SystemColors.ButtonHighlight;
-            addfarmmer.Location = new Point(20, 27);
-            addfarmmer.Name = "addfarmmer";
-            addfarmmer.Size = new Size(138, 34);
-            addfarmmer.TabIndex = 15;
-            addfarmmer.Text = "ADD FARMMER";
-            addfarmmer.UseVisualStyleBackColor = false;
-            addfarmmer.Click += addfarmmer_Click;
+            dataGridView1.BackgroundColor = Color.FromArgb(247, 245, 240);
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(247, 245, 240);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(247, 245, 240);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { WorkerID, Name, Gender, Attend });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(247, 245, 240);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(247, 245, 240);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridView1.GridColor = Color.FromArgb(211, 209, 199);
+            dataGridView1.Location = new Point(225, 145);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(543, 216);
+            dataGridView1.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(45, 122, 79);
+            panel1.Location = new Point(209, 5);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(595, 29);
+            panel1.TabIndex = 8;
             // 
             // panel5
             // 
-            panel5.BackColor = SystemColors.ControlDarkDark;
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Location = new Point(-10, 67);
+            panel5.BackColor = Color.White;
+            panel5.Location = new Point(384, 40);
             panel5.Name = "panel5";
-            panel5.Size = new Size(697, 2);
-            panel5.TabIndex = 14;
+            panel5.Size = new Size(0, 0);
+            panel5.TabIndex = 10;
+            // 
+            // panel6
+            // 
+            panel6.Location = new Point(556, 36);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(0, 0);
+            panel6.TabIndex = 11;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(554, 88);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(214, 23);
+            textBox1.TabIndex = 12;
+            // 
+            // button1
+            // 
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Zoom;
+            button1.Location = new Point(514, 88);
+            button1.Name = "button1";
+            button1.Size = new Size(39, 23);
+            button1.TabIndex = 13;
+            button1.UseVisualStyleBackColor = true;
             // 
             // add_farmmer_1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(676, 419);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Controls.Add(label5);
+            BackColor = Color.FromArgb(245, 244, 240);
+            ClientSize = new Size(804, 501);
             Controls.Add(button1);
-            Controls.Add(pagenb2);
-            Controls.Add(pagenb);
-            Controls.Add(addfarmmer);
+            Controls.Add(textBox1);
+            Controls.Add(panel6);
             Controls.Add(panel5);
-            Name = "add_farmmer_1";
-            Text = "1";
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
+            Controls.Add(panel1);
+            Controls.Add(panel3);
+            Controls.Add(addfarmmer);
+            Controls.Add(dateTimePicker1);
+            Controls.Add(dataGridView1);
+            Controls.Add(pnlDivider);
+            Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            MinimumSize = new Size(820, 540);
+
+            Text = "AgriTrack — Worker Registry";
+            pnlDivider.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Panel panel4;
-        private Label label4;
-        private Panel panel3;
-        private Label label3;
-        private Panel panel2;
-        private Label label2;
-        private Panel panel1;
-        private Label label1;
-        private Label label5;
-        private Button button1;
-        private Button pagenb2;
-        private Button pagenb;
         private Button addfarmmer;
+
+        // ── Divider ──
+        private Panel pnlDivider;
+        private DateTimePicker dateTimePicker1;
+        private Panel panel2;
+        private Panel panel3;
+        private PictureBox pictureBox1;
+        private Label label1;
+        private Button btnDashBoard;
+        private DataGridViewCheckBoxColumn Attend;
+        private DataGridViewTextBoxColumn Gender;
+        private DataGridViewTextBoxColumn Name;
+        private DataGridViewTextBoxColumn WorkerID;
+        private DataGridView dataGridView1;
+        private Button button3;
+        private Button button2;
+        private Button Settlment;
+        private Button button4;
+        private Panel panel1;
         private Panel panel5;
+        private Panel panel6;
+        private TextBox textBox1;
+        private Button button1;
     }
 }

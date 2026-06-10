@@ -15,10 +15,7 @@ namespace AgriTrack
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+  
 
         private void addfarmmer_Click(object sender, EventArgs e)
         {
@@ -27,5 +24,7 @@ namespace AgriTrack
 
             this.Hide();
         }
+
+
     }
 }

@@ -37,5 +37,20 @@ namespace AgriTrack
         {
 
         }
+
+        private void lblAppTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSubTitle_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblColName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

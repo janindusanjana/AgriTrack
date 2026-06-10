@@ -89,14 +89,14 @@
             // 
             pnlTopBar.BackColor = Color.FromArgb(26, 60, 52);
             pnlTopBar.Controls.Add(lblColEmpNo);
+            pnlTopBar.Controls.Add(lblColName);
             pnlTopBar.Controls.Add(lblColDate);
             pnlTopBar.Controls.Add(lblColSection);
             pnlTopBar.Controls.Add(lblColActions);
-            pnlTopBar.Controls.Add(lblColName);
             pnlTopBar.Dock = DockStyle.Top;
-            pnlTopBar.Location = new Point(0, 187);
+            pnlTopBar.Location = new Point(0, 189);
             pnlTopBar.Name = "pnlTopBar";
-            pnlTopBar.Size = new Size(820, 41);
+            pnlTopBar.Size = new Size(820, 33);
             pnlTopBar.TabIndex = 0;
             // 
             // lblAppTitle
@@ -104,23 +104,24 @@
             lblAppTitle.AutoSize = true;
             lblAppTitle.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAppTitle.ForeColor = Color.FromArgb(225, 245, 238);
-            lblAppTitle.Location = new Point(22, 8);
+            lblAppTitle.Location = new Point(29, 18);
             lblAppTitle.Name = "lblAppTitle";
             lblAppTitle.Size = new Size(253, 21);
             lblAppTitle.TabIndex = 0;
             lblAppTitle.Text = "🌿  AgriTrack — Worker Registry";
+            lblAppTitle.Click += lblAppTitle_Click;
             // 
             // lblSubTitle
             // 
             lblSubTitle.AutoSize = true;
             lblSubTitle.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblSubTitle.ForeColor = Color.FromArgb(159, 225, 203);
-            lblSubTitle.Location = new Point(56, 36);
+            lblSubTitle.Location = new Point(63, 42);
             lblSubTitle.Name = "lblSubTitle";
             lblSubTitle.Size = new Size(101, 13);
             lblSubTitle.TabIndex = 1;
             lblSubTitle.Text = "Section A & B · 2025";
-            lblSubTitle.Click += lblSubTitle_Click;
+            lblSubTitle.Click += lblSubTitle_Click_1;
             // 
             // pnlToolbar
             // 
@@ -128,7 +129,7 @@
             pnlToolbar.Controls.Add(addfarmmer);
             pnlToolbar.Controls.Add(pnlSearch);
             pnlToolbar.Dock = DockStyle.Top;
-            pnlToolbar.Location = new Point(0, 133);
+            pnlToolbar.Location = new Point(0, 135);
             pnlToolbar.Name = "pnlToolbar";
             pnlToolbar.Padding = new Padding(14, 0, 14, 0);
             pnlToolbar.Size = new Size(820, 54);
@@ -191,7 +192,7 @@
             pnlStats.Controls.Add(pnlStatActive);
             pnlStats.Controls.Add(pnlStatSections);
             pnlStats.Dock = DockStyle.Top;
-            pnlStats.Location = new Point(0, 61);
+            pnlStats.Location = new Point(0, 63);
             pnlStats.Name = "pnlStats";
             pnlStats.Padding = new Padding(14, 10, 14, 10);
             pnlStats.Size = new Size(820, 72);
@@ -297,7 +298,7 @@
             // 
             pnlDivider.BackColor = Color.FromArgb(211, 209, 199);
             pnlDivider.Dock = DockStyle.Top;
-            pnlDivider.Location = new Point(0, 60);
+            pnlDivider.Location = new Point(0, 62);
             pnlDivider.Name = "pnlDivider";
             pnlDivider.Size = new Size(820, 1);
             pnlDivider.TabIndex = 3;
@@ -310,15 +311,14 @@
             pnlColHeader.Dock = DockStyle.Top;
             pnlColHeader.Location = new Point(0, 0);
             pnlColHeader.Name = "pnlColHeader";
-            pnlColHeader.Size = new Size(820, 60);
+            pnlColHeader.Size = new Size(820, 62);
             pnlColHeader.TabIndex = 4;
-            pnlColHeader.Paint += pnlColHeader_Paint;
             // 
             // lblColEmpNo
             // 
             lblColEmpNo.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblColEmpNo.ForeColor = Color.FromArgb(159, 225, 203);
-            lblColEmpNo.Location = new Point(23, 15);
+            lblColEmpNo.Location = new Point(22, 9);
             lblColEmpNo.Name = "lblColEmpNo";
             lblColEmpNo.Size = new Size(90, 16);
             lblColEmpNo.TabIndex = 0;
@@ -328,17 +328,18 @@
             // 
             lblColName.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblColName.ForeColor = Color.FromArgb(159, 225, 203);
-            lblColName.Location = new Point(150, 15);
+            lblColName.Location = new Point(129, 9);
             lblColName.Name = "lblColName";
             lblColName.Size = new Size(220, 16);
             lblColName.TabIndex = 1;
             lblColName.Text = "FULL NAME";
+            lblColName.Click += lblColName_Click;
             // 
             // lblColDate
             // 
             lblColDate.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblColDate.ForeColor = Color.FromArgb(159, 225, 203);
-            lblColDate.Location = new Point(366, 15);
+            lblColDate.Location = new Point(355, 9);
             lblColDate.Name = "lblColDate";
             lblColDate.Size = new Size(130, 16);
             lblColDate.TabIndex = 2;
@@ -348,7 +349,7 @@
             // 
             lblColSection.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblColSection.ForeColor = Color.FromArgb(159, 225, 203);
-            lblColSection.Location = new Point(505, 15);
+            lblColSection.Location = new Point(505, 9);
             lblColSection.Name = "lblColSection";
             lblColSection.Size = new Size(130, 16);
             lblColSection.TabIndex = 3;
@@ -358,7 +359,7 @@
             // 
             lblColActions.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblColActions.ForeColor = Color.FromArgb(159, 225, 203);
-            lblColActions.Location = new Point(662, 13);
+            lblColActions.Location = new Point(670, 9);
             lblColActions.Name = "lblColActions";
             lblColActions.Size = new Size(100, 16);
             lblColActions.TabIndex = 4;

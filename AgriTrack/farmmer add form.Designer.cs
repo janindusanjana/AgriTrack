@@ -56,6 +56,7 @@
             panelActions = new Panel();
             btnRegister = new Button();
             btnClear = new Button();
+            button1 = new Button();
             panelHeader.SuspendLayout();
             grpPersonal.SuspendLayout();
             grpProfile.SuspendLayout();
@@ -361,6 +362,7 @@
             // panelActions
             // 
             panelActions.BackColor = Color.White;
+            panelActions.Controls.Add(button1);
             panelActions.Controls.Add(btnRegister);
             panelActions.Controls.Add(btnClear);
             panelActions.Location = new Point(20, 470);
@@ -381,7 +383,7 @@
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(160, 40);
             btnRegister.TabIndex = 0;
-            btnRegister.Text = "Register farmer";
+            btnRegister.Text = "Register";
             btnRegister.UseVisualStyleBackColor = false;
             // 
             // btnClear
@@ -399,6 +401,18 @@
             btnClear.TabIndex = 1;
             btnClear.Text = "Clear form";
             btnClear.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(29, 158, 117);
+            button1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(326, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(160, 40);
+            button1.TabIndex = 0;
+            button1.Text = "Update";
+            button1.UseVisualStyleBackColor = false;
             // 
             // farmmer_add_form
             // 
@@ -467,5 +481,6 @@
         private Panel panelActions;
         private Button btnRegister;
         private Button btnClear;
+        private Button button1;
     }
 }

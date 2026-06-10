@@ -61,8 +61,8 @@
             btnUpdate = new Button();
             btnPrint = new Button();
             dgvSettlement = new DataGridView();
-            Worker_ID = new DataGridViewTextBoxColumn();
-            colName = new DataGridViewTextBoxColumn();
+            WorkerID = new DataGridViewTextBoxColumn();
+            Name = new DataGridViewTextBoxColumn();
             KG = new DataGridViewTextBoxColumn();
             Advance = new DataGridViewTextBoxColumn();
             NetSalary = new DataGridViewTextBoxColumn();
@@ -388,7 +388,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dgvSettlement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvSettlement.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvSettlement.Columns.AddRange(new DataGridViewColumn[] { Worker_ID, colName, KG, Advance, NetSalary, Status });
+            dgvSettlement.Columns.AddRange(new DataGridViewColumn[] { WorkerID, Name, KG, Advance, NetSalary, Status });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
@@ -402,15 +402,15 @@
             dgvSettlement.Size = new Size(582, 150);
             dgvSettlement.TabIndex = 16;
             // 
-            // Worker_ID
+            // WorkerID
             // 
-            Worker_ID.HeaderText = "Worker ID";
-            Worker_ID.Name = "Worker_ID";
+            WorkerID.HeaderText = "Worker ID";
+            WorkerID.Name = "WorkerID";
             // 
-            // colName
+            // Name
             // 
-            colName.HeaderText = "Name";
-            colName.Name = "colName";
+            Name.HeaderText = "Name";
+            Name.Name = "Name";
             // 
             // KG
             // 
@@ -461,7 +461,7 @@
             Controls.Add(lblWorkerID);
             Controls.Add(panel1);
             Controls.Add(panel3);
-            Name = "Settlement_UI";
+
             Text = "Settlement_UI";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -505,8 +505,8 @@
         private Button btnUpdate;
         private Button btnPrint;
         private DataGridView dgvSettlement;
-        private DataGridViewTextBoxColumn Worker_ID;
-        private DataGridViewTextBoxColumn colName;
+        private DataGridViewTextBoxColumn WorkerID;
+        private DataGridViewTextBoxColumn Name;
         private DataGridViewTextBoxColumn KG;
         private DataGridViewTextBoxColumn Advance;
         private DataGridViewTextBoxColumn NetSalary;

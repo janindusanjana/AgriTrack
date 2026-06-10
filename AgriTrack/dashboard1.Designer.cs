@@ -41,25 +41,26 @@
             label4 = new Label();
             pictureBox4 = new PictureBox();
             panel4 = new Panel();
+            pictureBox3 = new PictureBox();
+            textBox1 = new TextBox();
             label3 = new Label();
             panel3 = new Panel();
-            pictureBox3 = new PictureBox();
+            tbxGivenAdvance = new TextBox();
             label2 = new Label();
             pictureBox2 = new PictureBox();
             panel2 = new Panel();
+            tbxTotalHarvest = new TextBox();
             label1 = new Label();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
-            tbxTotalHarvest = new TextBox();
             tbxActiveWorkers = new TextBox();
-            tbxGivenAdvance = new TextBox();
-            textBox1 = new TextBox();
+            panelChartContainer = new Panel();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel4.SuspendLayout();
-            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -200,6 +201,29 @@
             panel4.Size = new Size(160, 81);
             panel4.TabIndex = 14;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.MintCream;
+            pictureBox3.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox3.Image = Properties.Resources.logistics;
+            pictureBox3.Location = new Point(9, 7);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(44, 43);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 0;
+            pictureBox3.TabStop = false;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.FromArgb(192, 0, 0);
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.ForeColor = Color.White;
+            textBox1.Location = new Point(58, 47);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(91, 18);
+            textBox1.TabIndex = 2;
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -223,17 +247,16 @@
             panel3.Size = new Size(160, 81);
             panel3.TabIndex = 13;
             // 
-            // pictureBox3
+            // tbxGivenAdvance
             // 
-            pictureBox3.BackColor = Color.MintCream;
-            pictureBox3.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox3.Image = Properties.Resources.logistics;
-            pictureBox3.Location = new Point(9, 7);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(44, 43);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 0;
-            pictureBox3.TabStop = false;
+            tbxGivenAdvance.BackColor = Color.Teal;
+            tbxGivenAdvance.BorderStyle = BorderStyle.None;
+            tbxGivenAdvance.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxGivenAdvance.ForeColor = Color.White;
+            tbxGivenAdvance.Location = new Point(51, 52);
+            tbxGivenAdvance.Name = "tbxGivenAdvance";
+            tbxGivenAdvance.Size = new Size(91, 18);
+            tbxGivenAdvance.TabIndex = 2;
             // 
             // label2
             // 
@@ -269,6 +292,17 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(160, 81);
             panel2.TabIndex = 12;
+            // 
+            // tbxTotalHarvest
+            // 
+            tbxTotalHarvest.BackColor = Color.FromArgb(255, 128, 0);
+            tbxTotalHarvest.BorderStyle = BorderStyle.None;
+            tbxTotalHarvest.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tbxTotalHarvest.ForeColor = Color.White;
+            tbxTotalHarvest.Location = new Point(62, 53);
+            tbxTotalHarvest.Name = "tbxTotalHarvest";
+            tbxTotalHarvest.Size = new Size(91, 18);
+            tbxTotalHarvest.TabIndex = 2;
             // 
             // label1
             // 
@@ -306,17 +340,6 @@
             panel1.Size = new Size(160, 81);
             panel1.TabIndex = 11;
             // 
-            // tbxTotalHarvest
-            // 
-            tbxTotalHarvest.BackColor = Color.FromArgb(255, 128, 0);
-            tbxTotalHarvest.BorderStyle = BorderStyle.None;
-            tbxTotalHarvest.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxTotalHarvest.ForeColor = Color.White;
-            tbxTotalHarvest.Location = new Point(62, 53);
-            tbxTotalHarvest.Name = "tbxTotalHarvest";
-            tbxTotalHarvest.Size = new Size(91, 18);
-            tbxTotalHarvest.TabIndex = 2;
-            // 
             // tbxActiveWorkers
             // 
             tbxActiveWorkers.BackColor = Color.Green;
@@ -328,33 +351,19 @@
             tbxActiveWorkers.Size = new Size(91, 18);
             tbxActiveWorkers.TabIndex = 3;
             // 
-            // tbxGivenAdvance
+            // panelChartContainer
             // 
-            tbxGivenAdvance.BackColor = Color.Teal;
-            tbxGivenAdvance.BorderStyle = BorderStyle.None;
-            tbxGivenAdvance.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxGivenAdvance.ForeColor = Color.White;
-            tbxGivenAdvance.Location = new Point(51, 52);
-            tbxGivenAdvance.Name = "tbxGivenAdvance";
-            tbxGivenAdvance.Size = new Size(91, 18);
-            tbxGivenAdvance.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.FromArgb(192, 0, 0);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(58, 47);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(91, 18);
-            textBox1.TabIndex = 2;
+            panelChartContainer.Location = new Point(404, 255);
+            panelChartContainer.Name = "panelChartContainer";
+            panelChartContainer.Size = new Size(363, 213);
+            panelChartContainer.TabIndex = 17;
             // 
             // dashboard1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(804, 501);
+            Controls.Add(panelChartContainer);
             Controls.Add(panel5);
             Controls.Add(panel6);
             Controls.Add(panel4);
@@ -363,15 +372,16 @@
             Controls.Add(panel1);
             Name = "dashboard1";
             Text = "dashboard1";
+            Load += dashboard1_Load;
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
@@ -408,5 +418,6 @@
         private TextBox tbxActiveWorkers;
         private TextBox tbxGivenAdvance;
         private TextBox textBox1;
+        private Panel panelChartContainer;
     }
 }

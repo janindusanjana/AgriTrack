@@ -317,6 +317,7 @@
             Controls.Add(dataGridView1);
             Name = "Advance_Settlement";
             Text = "Advance_Settlement";
+            Load += Advance_Settlement_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();

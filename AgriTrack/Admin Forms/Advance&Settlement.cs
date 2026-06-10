@@ -14,5 +14,10 @@ namespace AgriTrack.Admin_Forms
         {
             InitializeComponent();
         }
+
+        private void Advance_Settlement_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

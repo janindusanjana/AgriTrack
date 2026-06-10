@@ -29,7 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settlement_UI));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            dtpMonth = new DateTimePicker();
+            lblMonth = new Label();
             panel3 = new Panel();
             Settlment = new Button();
             button4 = new Button();
@@ -39,21 +43,65 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             lblWorkerID = new Label();
-            tbxWorkerID = new TextBox();
-            lbl = new Label();
-            label3 = new Label();
-            textBox1 = new TextBox();
+            txtWorkerID = new TextBox();
+            lblName = new Label();
+            lblTotalKg = new Label();
+            txtName = new TextBox();
+            btnSearch = new Button();
+            txtTotalKgPlucked = new TextBox();
+            lblTotalAdvance = new Label();
+            txtTotalAdvance = new TextBox();
+            lblGrossSalary = new Label();
+            txtGrossSalary = new TextBox();
+            lblNetSalary = new Label();
+            txtNetSalary = new TextBox();
+            lblSalaryStatus = new Label();
+            cmbstatus = new ComboBox();
+            btnCalculate = new Button();
+            btnUpdate = new Button();
+            btnPrint = new Button();
+            dgvSettlement = new DataGridView();
+            Worker_ID = new DataGridViewTextBoxColumn();
+            colName = new DataGridViewTextBoxColumn();
+            KG = new DataGridViewTextBoxColumn();
+            Advance = new DataGridViewTextBoxColumn();
+            NetSalary = new DataGridViewTextBoxColumn();
+            Status = new DataGridViewTextBoxColumn();
+            panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSettlement).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(45, 122, 79);
+            panel1.Controls.Add(dtpMonth);
+            panel1.Controls.Add(lblMonth);
             panel1.Location = new Point(209, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(595, 29);
             panel1.TabIndex = 10;
+            // 
+            // dtpMonth
+            // 
+            dtpMonth.CustomFormat = "MM/yyyy";
+            dtpMonth.Format = DateTimePickerFormat.Custom;
+            dtpMonth.Location = new Point(87, 3);
+            dtpMonth.Name = "dtpMonth";
+            dtpMonth.Size = new Size(81, 23);
+            dtpMonth.TabIndex = 1;
+            // 
+            // lblMonth
+            // 
+            lblMonth.AutoSize = true;
+            lblMonth.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMonth.ForeColor = Color.White;
+            lblMonth.Location = new Point(23, 4);
+            lblMonth.Name = "lblMonth";
+            lblMonth.Size = new Size(64, 20);
+            lblMonth.TabIndex = 0;
+            lblMonth.Text = "Month :";
             // 
             // panel3
             // 
@@ -149,66 +197,278 @@
             // lblWorkerID
             // 
             lblWorkerID.AutoSize = true;
-            lblWorkerID.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblWorkerID.Font = new Font("Segoe UI", 9.75F);
             lblWorkerID.Location = new Point(231, 50);
             lblWorkerID.Name = "lblWorkerID";
-            lblWorkerID.Size = new Size(95, 21);
+            lblWorkerID.Size = new Size(73, 17);
             lblWorkerID.TabIndex = 11;
             lblWorkerID.Text = "Worker ID :";
             // 
-            // tbxWorkerID
+            // txtWorkerID
             // 
-            tbxWorkerID.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tbxWorkerID.Location = new Point(325, 51);
-            tbxWorkerID.Name = "tbxWorkerID";
-            tbxWorkerID.Size = new Size(209, 27);
-            tbxWorkerID.TabIndex = 12;
+            txtWorkerID.Font = new Font("Segoe UI", 9.75F);
+            txtWorkerID.Location = new Point(325, 51);
+            txtWorkerID.Name = "txtWorkerID";
+            txtWorkerID.Size = new Size(209, 25);
+            txtWorkerID.TabIndex = 12;
             // 
-            // lbl
+            // lblName
             // 
-            lbl.AutoSize = true;
-            lbl.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbl.Location = new Point(231, 91);
-            lbl.Name = "lbl";
-            lbl.Size = new Size(95, 21);
-            lbl.TabIndex = 11;
-            lbl.Text = "Worker ID :";
+            lblName.AutoSize = true;
+            lblName.Font = new Font("Segoe UI", 9.75F);
+            lblName.Location = new Point(231, 83);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(50, 17);
+            lblName.TabIndex = 11;
+            lblName.Text = "Name :";
             // 
-            // label3
+            // lblTotalKg
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(231, 131);
-            label3.Name = "label3";
-            label3.Size = new Size(95, 21);
-            label3.TabIndex = 11;
-            label3.Text = "Worker ID :";
+            lblTotalKg.AutoSize = true;
+            lblTotalKg.Font = new Font("Segoe UI", 9.75F);
+            lblTotalKg.Location = new Point(231, 115);
+            lblTotalKg.Name = "lblTotalKg";
+            lblTotalKg.Size = new Size(111, 17);
+            lblTotalKg.TabIndex = 11;
+            lblTotalKg.Text = "Total KG Plucked :";
             // 
-            // textBox1
+            // txtName
             // 
-            textBox1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(325, 89);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(209, 27);
-            textBox1.TabIndex = 12;
+            txtName.Font = new Font("Segoe UI", 9.75F);
+            txtName.Location = new Point(325, 81);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(209, 25);
+            txtName.TabIndex = 12;
+            // 
+            // btnSearch
+            // 
+            btnSearch.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnSearch.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSearch.Location = new Point(545, 49);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(90, 29);
+            btnSearch.TabIndex = 13;
+            btnSearch.Text = "Search";
+            btnSearch.TextAlign = ContentAlignment.TopCenter;
+            btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // txtTotalKgPlucked
+            // 
+            txtTotalKgPlucked.Font = new Font("Segoe UI", 9.75F);
+            txtTotalKgPlucked.Location = new Point(367, 112);
+            txtTotalKgPlucked.Name = "txtTotalKgPlucked";
+            txtTotalKgPlucked.Size = new Size(209, 25);
+            txtTotalKgPlucked.TabIndex = 12;
+            // 
+            // lblTotalAdvance
+            // 
+            lblTotalAdvance.AutoSize = true;
+            lblTotalAdvance.Font = new Font("Segoe UI", 9.75F);
+            lblTotalAdvance.Location = new Point(231, 146);
+            lblTotalAdvance.Name = "lblTotalAdvance";
+            lblTotalAdvance.Size = new Size(96, 17);
+            lblTotalAdvance.TabIndex = 11;
+            lblTotalAdvance.Text = "Total Advance :";
+            // 
+            // txtTotalAdvance
+            // 
+            txtTotalAdvance.Font = new Font("Segoe UI", 9.75F);
+            txtTotalAdvance.Location = new Point(367, 143);
+            txtTotalAdvance.Name = "txtTotalAdvance";
+            txtTotalAdvance.Size = new Size(209, 25);
+            txtTotalAdvance.TabIndex = 12;
+            // 
+            // lblGrossSalary
+            // 
+            lblGrossSalary.AutoSize = true;
+            lblGrossSalary.Font = new Font("Segoe UI", 9.75F);
+            lblGrossSalary.Location = new Point(231, 177);
+            lblGrossSalary.Name = "lblGrossSalary";
+            lblGrossSalary.Size = new Size(88, 17);
+            lblGrossSalary.TabIndex = 11;
+            lblGrossSalary.Text = "Gross Salary :";
+            // 
+            // txtGrossSalary
+            // 
+            txtGrossSalary.Font = new Font("Segoe UI", 9.75F);
+            txtGrossSalary.Location = new Point(367, 174);
+            txtGrossSalary.Name = "txtGrossSalary";
+            txtGrossSalary.ReadOnly = true;
+            txtGrossSalary.Size = new Size(209, 25);
+            txtGrossSalary.TabIndex = 12;
+            // 
+            // lblNetSalary
+            // 
+            lblNetSalary.AutoSize = true;
+            lblNetSalary.Font = new Font("Segoe UI", 9.75F);
+            lblNetSalary.Location = new Point(233, 209);
+            lblNetSalary.Name = "lblNetSalary";
+            lblNetSalary.Size = new Size(75, 17);
+            lblNetSalary.TabIndex = 11;
+            lblNetSalary.Text = "Net Salary :";
+            // 
+            // txtNetSalary
+            // 
+            txtNetSalary.Font = new Font("Segoe UI", 9.75F);
+            txtNetSalary.Location = new Point(369, 206);
+            txtNetSalary.Name = "txtNetSalary";
+            txtNetSalary.ReadOnly = true;
+            txtNetSalary.Size = new Size(209, 25);
+            txtNetSalary.TabIndex = 12;
+            // 
+            // lblSalaryStatus
+            // 
+            lblSalaryStatus.AutoSize = true;
+            lblSalaryStatus.Font = new Font("Segoe UI", 9.75F);
+            lblSalaryStatus.Location = new Point(233, 241);
+            lblSalaryStatus.Name = "lblSalaryStatus";
+            lblSalaryStatus.Size = new Size(89, 17);
+            lblSalaryStatus.TabIndex = 11;
+            lblSalaryStatus.Text = "Salary Status :";
+            // 
+            // cmbstatus
+            // 
+            cmbstatus.FormattingEnabled = true;
+            cmbstatus.Items.AddRange(new object[] { "Paid", "Non-Paid" });
+            cmbstatus.Location = new Point(369, 238);
+            cmbstatus.Name = "cmbstatus";
+            cmbstatus.Size = new Size(121, 23);
+            cmbstatus.TabIndex = 14;
+            // 
+            // btnCalculate
+            // 
+            btnCalculate.BackColor = Color.FromArgb(45, 122, 79);
+            btnCalculate.FlatStyle = FlatStyle.Flat;
+            btnCalculate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCalculate.ForeColor = Color.White;
+            btnCalculate.Location = new Point(233, 270);
+            btnCalculate.Name = "btnCalculate";
+            btnCalculate.Size = new Size(85, 30);
+            btnCalculate.TabIndex = 15;
+            btnCalculate.Text = "Calculate";
+            btnCalculate.UseVisualStyleBackColor = false;
+            // 
+            // btnUpdate
+            // 
+            btnUpdate.BackColor = Color.FromArgb(45, 122, 79);
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUpdate.ForeColor = Color.White;
+            btnUpdate.Location = new Point(337, 270);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(85, 30);
+            btnUpdate.TabIndex = 15;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = false;
+            // 
+            // btnPrint
+            // 
+            btnPrint.BackColor = Color.FromArgb(45, 122, 79);
+            btnPrint.FlatStyle = FlatStyle.Flat;
+            btnPrint.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPrint.ForeColor = Color.White;
+            btnPrint.Location = new Point(438, 269);
+            btnPrint.Name = "btnPrint";
+            btnPrint.Size = new Size(85, 30);
+            btnPrint.TabIndex = 15;
+            btnPrint.Text = "Print";
+            btnPrint.UseVisualStyleBackColor = false;
+            // 
+            // dgvSettlement
+            // 
+            dgvSettlement.BackgroundColor = Color.White;
+            dgvSettlement.BorderStyle = BorderStyle.None;
+            dgvSettlement.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvSettlement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvSettlement.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSettlement.Columns.AddRange(new DataGridViewColumn[] { Worker_ID, colName, KG, Advance, NetSalary, Status });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvSettlement.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvSettlement.Location = new Point(211, 324);
+            dgvSettlement.Name = "dgvSettlement";
+            dgvSettlement.Size = new Size(582, 150);
+            dgvSettlement.TabIndex = 16;
+            // 
+            // Worker_ID
+            // 
+            Worker_ID.HeaderText = "Worker ID";
+            Worker_ID.Name = "Worker_ID";
+            // 
+            // colName
+            // 
+            colName.HeaderText = "Name";
+            colName.Name = "colName";
+            // 
+            // KG
+            // 
+            KG.HeaderText = "KG";
+            KG.Name = "KG";
+            KG.Width = 50;
+            // 
+            // Advance
+            // 
+            Advance.HeaderText = "Advance";
+            Advance.Name = "Advance";
+            // 
+            // NetSalary
+            // 
+            NetSalary.HeaderText = "Net Salary";
+            NetSalary.Name = "NetSalary";
+            // 
+            // Status
+            // 
+            Status.HeaderText = "Status";
+            Status.Name = "Status";
+            Status.Width = 80;
             // 
             // Settlement_UI
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(804, 501);
-            Controls.Add(textBox1);
-            Controls.Add(tbxWorkerID);
-            Controls.Add(label3);
-            Controls.Add(lbl);
+            Controls.Add(dgvSettlement);
+            Controls.Add(btnPrint);
+            Controls.Add(btnUpdate);
+            Controls.Add(btnCalculate);
+            Controls.Add(cmbstatus);
+            Controls.Add(btnSearch);
+            Controls.Add(txtNetSalary);
+            Controls.Add(txtGrossSalary);
+            Controls.Add(txtTotalAdvance);
+            Controls.Add(txtTotalKgPlucked);
+            Controls.Add(txtName);
+            Controls.Add(txtWorkerID);
+            Controls.Add(lblSalaryStatus);
+            Controls.Add(lblNetSalary);
+            Controls.Add(lblGrossSalary);
+            Controls.Add(lblTotalAdvance);
+            Controls.Add(lblTotalKg);
+            Controls.Add(lblName);
             Controls.Add(lblWorkerID);
             Controls.Add(panel1);
             Controls.Add(panel3);
             Name = "Settlement_UI";
             Text = "Settlement_UI";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvSettlement).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -225,9 +485,31 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Label lblWorkerID;
-        private TextBox tbxWorkerID;
-        private Label lbl;
-        private Label label3;
-        private TextBox textBox1;
+        private TextBox txtWorkerID;
+        private Label lblName;
+        private Label lblTotalKg;
+        private TextBox txtName;
+        private DateTimePicker dtpMonth;
+        private Label lblMonth;
+        private Button btnSearch;
+        private TextBox txtTotalKgPlucked;
+        private Label lblTotalAdvance;
+        private TextBox txtTotalAdvance;
+        private Label lblGrossSalary;
+        private TextBox txtGrossSalary;
+        private Label lblNetSalary;
+        private TextBox txtNetSalary;
+        private Label lblSalaryStatus;
+        private ComboBox cmbstatus;
+        private Button btnCalculate;
+        private Button btnUpdate;
+        private Button btnPrint;
+        private DataGridView dgvSettlement;
+        private DataGridViewTextBoxColumn Worker_ID;
+        private DataGridViewTextBoxColumn colName;
+        private DataGridViewTextBoxColumn KG;
+        private DataGridViewTextBoxColumn Advance;
+        private DataGridViewTextBoxColumn NetSalary;
+        private DataGridViewTextBoxColumn Status;
     }
 }

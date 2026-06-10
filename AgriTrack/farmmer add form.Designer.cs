@@ -74,7 +74,7 @@
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
             panelHeader.Padding = new Padding(20, 0, 20, 0);
-            panelHeader.Size = new Size(784, 80);
+            panelHeader.Size = new Size(804, 80);
             panelHeader.TabIndex = 0;
             // 
             // lblHeaderIcon
@@ -96,9 +96,9 @@
             lblFormTitle.ForeColor = Color.FromArgb(30, 30, 30);
             lblFormTitle.Location = new Point(74, 18);
             lblFormTitle.Name = "lblFormTitle";
-            lblFormTitle.Size = new Size(213, 25);
+            lblFormTitle.Size = new Size(223, 25);
             lblFormTitle.TabIndex = 1;
-            lblFormTitle.Text = "New farmer registration";
+            lblFormTitle.Text = "New Worker Registration";
             // 
             // lblFormSubtitle
             // 
@@ -107,9 +107,9 @@
             lblFormSubtitle.ForeColor = Color.FromArgb(110, 110, 110);
             lblFormSubtitle.Location = new Point(76, 42);
             lblFormSubtitle.Name = "lblFormSubtitle";
-            lblFormSubtitle.Size = new Size(217, 15);
+            lblFormSubtitle.Size = new Size(219, 15);
             lblFormSubtitle.TabIndex = 2;
-            lblFormSubtitle.Text = "AgriTrack · Farmer management system";
+            lblFormSubtitle.Text = "AgriTrack · Worker Management System";
             // 
             // panelAccentBar
             // 
@@ -117,7 +117,7 @@
             panelAccentBar.Dock = DockStyle.Bottom;
             panelAccentBar.Location = new Point(20, 78);
             panelAccentBar.Name = "panelAccentBar";
-            panelAccentBar.Size = new Size(744, 2);
+            panelAccentBar.Size = new Size(764, 2);
             panelAccentBar.TabIndex = 3;
             // 
             // grpPersonal
@@ -253,7 +253,7 @@
             grpProfile.Location = new Point(20, 300);
             grpProfile.Name = "grpProfile";
             grpProfile.Padding = new Padding(14, 6, 14, 14);
-            grpProfile.Size = new Size(744, 156);
+            grpProfile.Size = new Size(744, 107);
             grpProfile.TabIndex = 2;
             grpProfile.TabStop = false;
             // 
@@ -338,7 +338,7 @@
             panelActions.Controls.Add(button1);
             panelActions.Controls.Add(btnRegister);
             panelActions.Controls.Add(btnClear);
-            panelActions.Location = new Point(20, 470);
+            panelActions.Location = new Point(20, 425);
             panelActions.Name = "panelActions";
             panelActions.Size = new Size(744, 52);
             panelActions.TabIndex = 3;
@@ -396,7 +396,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 246, 248);
-            ClientSize = new Size(784, 540);
+            ClientSize = new Size(804, 501);
             Controls.Add(panelHeader);
             Controls.Add(grpPersonal);
             Controls.Add(grpProfile);

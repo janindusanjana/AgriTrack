@@ -374,6 +374,7 @@
             btnRegister.TabIndex = 0;
             btnRegister.Text = "Register ";
             btnRegister.UseVisualStyleBackColor = false;
+            btnRegister.Click += btnRegister_Click;
             // 
             // btnClear
             // 
@@ -390,6 +391,7 @@
             btnClear.TabIndex = 1;
             btnClear.Text = "Clear form";
             btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
             // farmmer_add_form
             // 
@@ -407,6 +409,7 @@
             Name = "farmmer_add_form";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AgriTrack — New farmer registration";
+            Load += farmmer_add_form_Load;
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             grpPersonal.ResumeLayout(false);

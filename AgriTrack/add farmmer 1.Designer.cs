@@ -44,18 +44,20 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             dgvWorkers = new DataGridView();
-            panel1 = new Panel();
-            panel5 = new Panel();
-            panel6 = new Panel();
-            txtSearch = new TextBox();
-            btnSearch = new Button();
-            statusStrip = new StatusStrip();
             colWorkerID = new DataGridViewTextBoxColumn();
             colName = new DataGridViewTextBoxColumn();
             colGender = new DataGridViewTextBoxColumn();
             colCheckIn = new DataGridViewTextBoxColumn();
             colCheckOut = new DataGridViewTextBoxColumn();
             colPresent = new DataGridViewCheckBoxColumn();
+            panel1 = new Panel();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            txtWorkerID = new TextBox();
+            btnSearch = new Button();
+            statusStrip = new StatusStrip();
+            lblClock = new Label();
+            btnClear = new Button();
             pnlDivider.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -84,7 +86,6 @@
             btnAddWorker.TabIndex = 0;
             btnAddWorker.Text = "+ Add Worker";
             btnAddWorker.UseVisualStyleBackColor = false;
-            btnAddWorker.Click += addfarmmer_Click;
             // 
             // pnlDivider
             // 
@@ -224,54 +225,6 @@
             dgvWorkers.Size = new Size(575, 234);
             dgvWorkers.TabIndex = 2;
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(45, 122, 79);
-            panel1.Location = new Point(209, 5);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(595, 29);
-            panel1.TabIndex = 8;
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.White;
-            panel5.Location = new Point(384, 40);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(0, 0);
-            panel5.TabIndex = 10;
-            // 
-            // panel6
-            // 
-            panel6.Location = new Point(556, 36);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(0, 0);
-            panel6.TabIndex = 11;
-            // 
-            // txtSearch
-            // 
-            txtSearch.Location = new Point(559, 85);
-            txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(214, 23);
-            txtSearch.TabIndex = 12;
-            // 
-            // btnSearch
-            // 
-            btnSearch.BackgroundImage = (Image)resources.GetObject("btnSearch.BackgroundImage");
-            btnSearch.BackgroundImageLayout = ImageLayout.Zoom;
-            btnSearch.Location = new Point(514, 83);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(39, 28);
-            btnSearch.TabIndex = 13;
-            btnSearch.UseVisualStyleBackColor = true;
-            // 
-            // statusStrip
-            // 
-            statusStrip.Location = new Point(0, 479);
-            statusStrip.Name = "statusStrip";
-            statusStrip.Size = new Size(804, 22);
-            statusStrip.TabIndex = 15;
-            statusStrip.Text = "statusStrip1";
-            // 
             // colWorkerID
             // 
             colWorkerID.HeaderText = "Worker ID";
@@ -311,15 +264,86 @@
             colPresent.Resizable = DataGridViewTriState.True;
             colPresent.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(45, 122, 79);
+            panel1.Location = new Point(209, 5);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(595, 29);
+            panel1.TabIndex = 8;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.White;
+            panel5.Location = new Point(384, 40);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(0, 0);
+            panel5.TabIndex = 10;
+            // 
+            // panel6
+            // 
+            panel6.Location = new Point(556, 36);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(0, 0);
+            panel6.TabIndex = 11;
+            // 
+            // txtWorkerID
+            // 
+            txtWorkerID.Location = new Point(559, 85);
+            txtWorkerID.Name = "txtWorkerID";
+            txtWorkerID.Size = new Size(214, 23);
+            txtWorkerID.TabIndex = 12;
+            // 
+            // btnSearch
+            // 
+            btnSearch.BackgroundImage = (Image)resources.GetObject("btnSearch.BackgroundImage");
+            btnSearch.BackgroundImageLayout = ImageLayout.Zoom;
+            btnSearch.Location = new Point(514, 83);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(39, 28);
+            btnSearch.TabIndex = 13;
+            btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // statusStrip
+            // 
+            statusStrip.Location = new Point(0, 479);
+            statusStrip.Name = "statusStrip";
+            statusStrip.Size = new Size(804, 22);
+            statusStrip.TabIndex = 15;
+            statusStrip.Text = "statusStrip1";
+            // 
+            // lblClock
+            // 
+            lblClock.AutoSize = true;
+            lblClock.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblClock.Location = new Point(234, 56);
+            lblClock.Name = "lblClock";
+            lblClock.Size = new Size(0, 17);
+            lblClock.TabIndex = 16;
+            // 
+            // btnClear
+            // 
+            btnClear.BackColor = Color.FromArgb(45, 122, 79);
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.ForeColor = Color.Transparent;
+            btnClear.Location = new Point(235, 390);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(100, 31);
+            btnClear.TabIndex = 17;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            // 
             // add_farmmer_1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 244, 240);
             ClientSize = new Size(804, 501);
+            Controls.Add(btnClear);
+            Controls.Add(lblClock);
             Controls.Add(statusStrip);
             Controls.Add(btnSearch);
-            Controls.Add(txtSearch);
+            Controls.Add(txtWorkerID);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(panel1);
@@ -331,6 +355,7 @@
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MinimumSize = new Size(820, 540);
             Name = "add_farmmer_1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AgriTrack — Worker Registry";
             pnlDivider.ResumeLayout(false);
             panel3.ResumeLayout(false);
@@ -360,7 +385,7 @@
         private Panel panel1;
         private Panel panel5;
         private Panel panel6;
-        private TextBox txtSearch;
+        private TextBox txtWorkerID;
         private Button btnSearch;
         private StatusStrip statusStrip;
         private DataGridViewTextBoxColumn colWorkerID;
@@ -369,5 +394,7 @@
         private DataGridViewTextBoxColumn colCheckIn;
         private DataGridViewTextBoxColumn colCheckOut;
         private DataGridViewCheckBoxColumn colPresent;
+        private Label lblClock;
+        private Button btnClear;
     }
 }

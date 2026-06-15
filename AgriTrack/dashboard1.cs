@@ -34,7 +34,11 @@ namespace AgriTrack
             ChartValues<double> dailyKilos = new ChartValues<double>();
             List<string> dateLabels = new List<string>();
 
-            using (SQLiteConnection conn = new SQLiteConnection(DatabaseHelper.ConnectionString))
+            dailyKilos.AddRange(new double[] { 55.2, 68.4, 62.0, 85.3, 78.1, 92.6, 88.5 });
+            dateLabels.AddRange(new string[] { "06-11", "06-12", "06-13", "06-14", "06-15", "06-16", "06-17" });
+           
+            
+            try
             {
                 conn.Open();
                 string query = "SELECT Date, SUM(KilosPlucked) as TotalKilos FROM HarvestRecords GROUP BY Date ORDER BY Date ASC LIMIT 7";
@@ -43,15 +47,26 @@ namespace AgriTrack
                 //data dekk add kra man meka graph ekla wadd balanna  
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
-                    using (SQLiteDataReader reader = cmd.ExecuteReader())
+                    conn.Open();
+
+                    string query = "SELECT HarvestDate, SUM(TeaKg) as TotalKilos FROM Harvest GROUP BY HarvestDate ORDER BY HarvestDate ASC LIMIT 7";
+
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                     {
-                        while (reader.Read())
+                        using (SQLiteDataReader reader = cmd.ExecuteReader())
                         {
-                            dailyKilos.Add(Convert.ToDouble(reader["TotalKilos"]));
-                            dateLabels.Add(reader["Date"].ToString());
+                            while (reader.Read())
+                            {
+                                dailyKilos.Add(Convert.ToDouble(reader["TotalKilos"]));
+                                dateLabels.Add(reader["HarvestDate"].ToString());
+                            }
                         }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading chart data: " + ex.Message, "Chart Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             harvestChart.Series = new SeriesCollection

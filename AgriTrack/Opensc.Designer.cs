@@ -23,12 +23,6 @@
             pnlHeaderAccent = new Panel();
             pnlBody = new Panel();
             lblChoose = new Label();
-            pnlWorker = new Panel();
-            pnlWorkerTop = new Panel();
-            lblWorkerRole = new Label();
-            lblWorkerSub = new Label();
-            btnWorker = new Button();
-            picWorker = new PictureBox();
             pnlDivider = new Panel();
             pnlFooter = new Panel();
             lblFooter = new Label();
@@ -50,6 +44,12 @@
             label5 = new Label();
             pictureBox2 = new PictureBox();
             label4 = new Label();
+            pnlWorker = new Panel();
+            pnlWorkerTop = new Panel();
+            lblWorkerRole = new Label();
+            lblWorkerSub = new Label();
+            btnWorker = new Button();
+            picWorker = new PictureBox();
             pnlAdmin = new Panel();
             pnlAdminTop = new Panel();
             lblAdminRole = new Label();
@@ -59,13 +59,13 @@
             pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
             pnlBody.SuspendLayout();
-            pnlWorker.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picWorker).BeginInit();
             pnlFooter.SuspendLayout();
             pnlWorkerLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             pnlAdminLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            pnlWorker.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picWorker).BeginInit();
             pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picAdmin).BeginInit();
             SuspendLayout();
@@ -125,11 +125,11 @@
             // 
             pnlBody.BackColor = Color.FromArgb(245, 247, 242);
             pnlBody.Controls.Add(lblChoose);
-            pnlBody.Controls.Add(pnlWorker);
             pnlBody.Controls.Add(pnlDivider);
             pnlBody.Controls.Add(pnlFooter);
-            pnlBody.Controls.Add(pnlWorkerLogin);
+            pnlBody.Controls.Add(pnlWorker);
             pnlBody.Controls.Add(pnlAdmin);
+            pnlBody.Controls.Add(pnlWorkerLogin);
             pnlBody.Controls.Add(pnlAdminLogin);
             pnlBody.Location = new Point(0, 110);
             pnlBody.Name = "pnlBody";
@@ -148,78 +148,6 @@
             lblChoose.Text = "Choose your role to continue";
             lblChoose.TextAlign = ContentAlignment.MiddleCenter;
             lblChoose.Click += lblChoose_Click;
-            // 
-            // pnlWorker
-            // 
-            pnlWorker.BackColor = Color.White;
-            pnlWorker.Controls.Add(pnlWorkerTop);
-            pnlWorker.Controls.Add(lblWorkerRole);
-            pnlWorker.Controls.Add(lblWorkerSub);
-            pnlWorker.Controls.Add(btnWorker);
-            pnlWorker.Controls.Add(picWorker);
-            pnlWorker.Location = new Point(70, 56);
-            pnlWorker.Name = "pnlWorker";
-            pnlWorker.Size = new Size(300, 268);
-            pnlWorker.TabIndex = 1;
-            // 
-            // pnlWorkerTop
-            // 
-            pnlWorkerTop.BackColor = Color.FromArgb(56, 142, 60);
-            pnlWorkerTop.Location = new Point(0, 0);
-            pnlWorkerTop.Name = "pnlWorkerTop";
-            pnlWorkerTop.Size = new Size(300, 6);
-            pnlWorkerTop.TabIndex = 0;
-            // 
-            // lblWorkerRole
-            // 
-            lblWorkerRole.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblWorkerRole.ForeColor = Color.FromArgb(27, 94, 32);
-            lblWorkerRole.Location = new Point(0, 126);
-            lblWorkerRole.Name = "lblWorkerRole";
-            lblWorkerRole.Size = new Size(300, 30);
-            lblWorkerRole.TabIndex = 1;
-            lblWorkerRole.Text = "USER";
-            lblWorkerRole.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // lblWorkerSub
-            // 
-            lblWorkerSub.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblWorkerSub.ForeColor = Color.FromArgb(120, 140, 120);
-            lblWorkerSub.Location = new Point(0, 156);
-            lblWorkerSub.Name = "lblWorkerSub";
-            lblWorkerSub.Size = new Size(300, 22);
-            lblWorkerSub.TabIndex = 2;
-            lblWorkerSub.Text = "Log attendance & view your schedule";
-            lblWorkerSub.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // btnWorker
-            // 
-            btnWorker.BackColor = Color.FromArgb(56, 142, 60);
-            btnWorker.Cursor = Cursors.Hand;
-            btnWorker.FlatAppearance.BorderSize = 0;
-            btnWorker.FlatAppearance.MouseDownBackColor = Color.FromArgb(27, 94, 32);
-            btnWorker.FlatAppearance.MouseOverBackColor = Color.FromArgb(46, 125, 50);
-            btnWorker.FlatStyle = FlatStyle.Flat;
-            btnWorker.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnWorker.ForeColor = Color.White;
-            btnWorker.Location = new Point(70, 192);
-            btnWorker.Name = "btnWorker";
-            btnWorker.Size = new Size(160, 38);
-            btnWorker.TabIndex = 1;
-            btnWorker.Text = "Sign In as User";
-            btnWorker.UseVisualStyleBackColor = false;
-            btnWorker.Click += btnWorker_Click_1;
-            // 
-            // picWorker
-            // 
-            picWorker.BackColor = Color.FromArgb(232, 245, 233);
-            picWorker.Image = Properties.Resources.man;
-            picWorker.Location = new Point(102, 22);
-            picWorker.Name = "picWorker";
-            picWorker.Size = new Size(96, 96);
-            picWorker.SizeMode = PictureBoxSizeMode.Zoom;
-            picWorker.TabIndex = 3;
-            picWorker.TabStop = false;
             // 
             // pnlDivider
             // 
@@ -289,6 +217,7 @@
             button1.TabIndex = 6;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // textBox2
             // 
@@ -384,6 +313,7 @@
             button3.TabIndex = 8;
             button3.Text = "Login";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // textBox4
             // 
@@ -438,6 +368,78 @@
             label4.TabIndex = 2;
             label4.Text = "Enter Username and Password";
             label4.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pnlWorker
+            // 
+            pnlWorker.BackColor = Color.White;
+            pnlWorker.Controls.Add(pnlWorkerTop);
+            pnlWorker.Controls.Add(lblWorkerRole);
+            pnlWorker.Controls.Add(lblWorkerSub);
+            pnlWorker.Controls.Add(btnWorker);
+            pnlWorker.Controls.Add(picWorker);
+            pnlWorker.Location = new Point(70, 56);
+            pnlWorker.Name = "pnlWorker";
+            pnlWorker.Size = new Size(300, 268);
+            pnlWorker.TabIndex = 1;
+            // 
+            // pnlWorkerTop
+            // 
+            pnlWorkerTop.BackColor = Color.FromArgb(56, 142, 60);
+            pnlWorkerTop.Location = new Point(0, 0);
+            pnlWorkerTop.Name = "pnlWorkerTop";
+            pnlWorkerTop.Size = new Size(300, 6);
+            pnlWorkerTop.TabIndex = 0;
+            // 
+            // lblWorkerRole
+            // 
+            lblWorkerRole.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblWorkerRole.ForeColor = Color.FromArgb(27, 94, 32);
+            lblWorkerRole.Location = new Point(0, 126);
+            lblWorkerRole.Name = "lblWorkerRole";
+            lblWorkerRole.Size = new Size(300, 30);
+            lblWorkerRole.TabIndex = 1;
+            lblWorkerRole.Text = "USER";
+            lblWorkerRole.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblWorkerSub
+            // 
+            lblWorkerSub.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblWorkerSub.ForeColor = Color.FromArgb(120, 140, 120);
+            lblWorkerSub.Location = new Point(0, 156);
+            lblWorkerSub.Name = "lblWorkerSub";
+            lblWorkerSub.Size = new Size(300, 22);
+            lblWorkerSub.TabIndex = 2;
+            lblWorkerSub.Text = "Log attendance & view your schedule";
+            lblWorkerSub.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnWorker
+            // 
+            btnWorker.BackColor = Color.FromArgb(56, 142, 60);
+            btnWorker.Cursor = Cursors.Hand;
+            btnWorker.FlatAppearance.BorderSize = 0;
+            btnWorker.FlatAppearance.MouseDownBackColor = Color.FromArgb(27, 94, 32);
+            btnWorker.FlatAppearance.MouseOverBackColor = Color.FromArgb(46, 125, 50);
+            btnWorker.FlatStyle = FlatStyle.Flat;
+            btnWorker.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnWorker.ForeColor = Color.White;
+            btnWorker.Location = new Point(70, 192);
+            btnWorker.Name = "btnWorker";
+            btnWorker.Size = new Size(160, 38);
+            btnWorker.TabIndex = 1;
+            btnWorker.Text = "Sign In as User";
+            btnWorker.UseVisualStyleBackColor = false;
+            btnWorker.Click += btnWorker_Click_1;
+            // 
+            // picWorker
+            // 
+            picWorker.BackColor = Color.FromArgb(232, 245, 233);
+            picWorker.Image = Properties.Resources.man;
+            picWorker.Location = new Point(102, 22);
+            picWorker.Name = "picWorker";
+            picWorker.Size = new Size(96, 96);
+            picWorker.SizeMode = PictureBoxSizeMode.Zoom;
+            picWorker.TabIndex = 3;
+            picWorker.TabStop = false;
             // 
             // pnlAdmin
             // 
@@ -528,8 +530,6 @@
             pnlHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             pnlBody.ResumeLayout(false);
-            pnlWorker.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)picWorker).EndInit();
             pnlFooter.ResumeLayout(false);
             pnlWorkerLogin.ResumeLayout(false);
             pnlWorkerLogin.PerformLayout();
@@ -537,6 +537,8 @@
             pnlAdminLogin.ResumeLayout(false);
             pnlAdminLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            pnlWorker.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picWorker).EndInit();
             pnlAdmin.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picAdmin).EndInit();
             ResumeLayout(false);

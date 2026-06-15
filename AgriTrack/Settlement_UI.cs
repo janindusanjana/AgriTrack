@@ -15,6 +15,9 @@ namespace AgriTrack
             InitializeComponent();
         }
 
+        private void btnDashBoard_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

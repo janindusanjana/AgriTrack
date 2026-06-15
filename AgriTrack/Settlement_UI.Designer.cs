@@ -462,7 +462,8 @@
             Controls.Add(lblWorkerID);
             Controls.Add(panel1);
             Controls.Add(panel3);
-        
+            
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Settlement_UI";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

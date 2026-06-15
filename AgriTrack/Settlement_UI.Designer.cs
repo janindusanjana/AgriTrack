@@ -172,6 +172,7 @@
             btnDashBoard.TabIndex = 2;
             btnDashBoard.Text = "Dashboard";
             btnDashBoard.UseVisualStyleBackColor = false;
+            btnDashBoard.Click += btnDashBoard_Click;
             // 
             // pictureBox1
             // 
@@ -461,7 +462,7 @@
             Controls.Add(lblWorkerID);
             Controls.Add(panel1);
             Controls.Add(panel3);
-
+        
             Text = "Settlement_UI";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

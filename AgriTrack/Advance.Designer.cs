@@ -120,7 +120,6 @@
             label2.Size = new Size(73, 17);
             label2.TabIndex = 22;
             label2.Text = "Worker ID :";
-
             // 
             // txtWorkerID
             // 
@@ -151,7 +150,6 @@
             label3.Size = new Size(50, 17);
             label3.TabIndex = 25;
             label3.Text = "Name :";
-
             // 
             // label4
             // 
@@ -162,7 +160,6 @@
             label4.Size = new Size(51, 17);
             label4.TabIndex = 26;
             label4.Text = "Phone :";
-
             // 
             // lblGrossSalary
             // 
@@ -247,6 +244,7 @@
             Settlment.TabIndex = 6;
             Settlment.Text = "Settlement";
             Settlment.UseVisualStyleBackColor = false;
+            Settlment.Click += Settlment_Click;
             // 
             // button4
             // 
@@ -258,6 +256,7 @@
             button4.TabIndex = 5;
             button4.Text = "Advance";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -269,6 +268,7 @@
             button3.TabIndex = 4;
             button3.Text = "Daily Harvest";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -280,6 +280,7 @@
             button2.TabIndex = 3;
             button2.Text = "Worker";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // btnDashBoard
             // 
@@ -291,6 +292,7 @@
             btnDashBoard.TabIndex = 2;
             btnDashBoard.Text = "Dashboard";
             btnDashBoard.UseVisualStyleBackColor = false;
+            btnDashBoard.Click += btnDashBoard_Click;
             // 
             // pictureBox5
             // 
@@ -425,7 +427,8 @@
             // 
             // btnClearAdvance
             // 
-            btnClearAdvance.BackColor = Color.Green;
+            btnClearAdvance.BackColor = Color.FromArgb(45, 122, 79);
+            btnClearAdvance.ForeColor = SystemColors.ButtonFace;
             btnClearAdvance.Location = new Point(373, 442);
             btnClearAdvance.Margin = new Padding(3, 2, 3, 2);
             btnClearAdvance.Name = "btnClearAdvance";
@@ -437,7 +440,8 @@
             // 
             // btnCancelAdvance
             // 
-            btnCancelAdvance.BackColor = Color.Green;
+            btnCancelAdvance.BackColor = Color.FromArgb(45, 122, 79);
+            btnCancelAdvance.ForeColor = SystemColors.ButtonFace;
             btnCancelAdvance.Location = new Point(544, 442);
             btnCancelAdvance.Margin = new Padding(3, 2, 3, 2);
             btnCancelAdvance.Name = "btnCancelAdvance";
@@ -449,7 +453,8 @@
             // 
             // btnSaveAdvance
             // 
-            btnSaveAdvance.BackColor = Color.Green;
+            btnSaveAdvance.BackColor = Color.FromArgb(45, 122, 79);
+            btnSaveAdvance.ForeColor = SystemColors.ButtonFace;
             btnSaveAdvance.Location = new Point(221, 442);
             btnSaveAdvance.Margin = new Padding(3, 2, 3, 2);
             btnSaveAdvance.Name = "btnSaveAdvance";
@@ -492,6 +497,7 @@
             Controls.Add(pnlDivider);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Advance";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Advance";
             pnlDivider.ResumeLayout(false);
             panel3.ResumeLayout(false);

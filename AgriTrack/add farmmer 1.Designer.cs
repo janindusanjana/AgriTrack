@@ -44,18 +44,18 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             dgvWorkers = new DataGridView();
-            panel1 = new Panel();
-            panel5 = new Panel();
-            panel6 = new Panel();
-            txtSearch = new TextBox();
-            btnSearch = new Button();
-            statusStrip = new StatusStrip();
             colWorkerID = new DataGridViewTextBoxColumn();
             colName = new DataGridViewTextBoxColumn();
             colGender = new DataGridViewTextBoxColumn();
             colCheckIn = new DataGridViewTextBoxColumn();
             colCheckOut = new DataGridViewTextBoxColumn();
             colPresent = new DataGridViewCheckBoxColumn();
+            panel1 = new Panel();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            txtSearch = new TextBox();
+            btnSearch = new Button();
+            statusStrip = new StatusStrip();
             pnlDivider.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -128,6 +128,7 @@
             Settlment.TabIndex = 6;
             Settlment.Text = "Settlement";
             Settlment.UseVisualStyleBackColor = false;
+            Settlment.Click += Settlment_Click;
             // 
             // button4
             // 
@@ -139,6 +140,7 @@
             button4.TabIndex = 5;
             button4.Text = "Advance";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -150,6 +152,7 @@
             button3.TabIndex = 4;
             button3.Text = "Daily Harvest";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -172,6 +175,7 @@
             btnDashBoard.TabIndex = 2;
             btnDashBoard.Text = "Dashboard";
             btnDashBoard.UseVisualStyleBackColor = false;
+            btnDashBoard.Click += btnDashBoard_Click;
             // 
             // pictureBox1
             // 
@@ -224,6 +228,45 @@
             dgvWorkers.Size = new Size(575, 234);
             dgvWorkers.TabIndex = 2;
             // 
+            // colWorkerID
+            // 
+            colWorkerID.HeaderText = "Worker ID";
+            colWorkerID.Name = "colWorkerID";
+            colWorkerID.ReadOnly = true;
+            colWorkerID.Width = 80;
+            // 
+            // colName
+            // 
+            colName.HeaderText = "Name";
+            colName.Name = "colName";
+            colName.ReadOnly = true;
+            colName.Width = 150;
+            // 
+            // colGender
+            // 
+            colGender.HeaderText = "Gender";
+            colGender.Name = "colGender";
+            colGender.ReadOnly = true;
+            // 
+            // colCheckIn
+            // 
+            colCheckIn.HeaderText = "Check In";
+            colCheckIn.Name = "colCheckIn";
+            colCheckIn.ReadOnly = true;
+            // 
+            // colCheckOut
+            // 
+            colCheckOut.HeaderText = "Check Out";
+            colCheckOut.Name = "colCheckOut";
+            colCheckOut.ReadOnly = true;
+            // 
+            // colPresent
+            // 
+            colPresent.HeaderText = "Present";
+            colPresent.Name = "colPresent";
+            colPresent.Resizable = DataGridViewTriState.True;
+            colPresent.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(45, 122, 79);
@@ -271,45 +314,6 @@
             statusStrip.Size = new Size(804, 22);
             statusStrip.TabIndex = 15;
             statusStrip.Text = "statusStrip1";
-            // 
-            // colWorkerID
-            // 
-            colWorkerID.HeaderText = "Worker ID";
-            colWorkerID.Name = "colWorkerID";
-            colWorkerID.ReadOnly = true;
-            colWorkerID.Width = 80;
-            // 
-            // colName
-            // 
-            colName.HeaderText = "Name";
-            colName.Name = "colName";
-            colName.ReadOnly = true;
-            colName.Width = 150;
-            // 
-            // colGender
-            // 
-            colGender.HeaderText = "Gender";
-            colGender.Name = "colGender";
-            colGender.ReadOnly = true;
-            // 
-            // colCheckIn
-            // 
-            colCheckIn.HeaderText = "Check In";
-            colCheckIn.Name = "colCheckIn";
-            colCheckIn.ReadOnly = true;
-            // 
-            // colCheckOut
-            // 
-            colCheckOut.HeaderText = "Check Out";
-            colCheckOut.Name = "colCheckOut";
-            colCheckOut.ReadOnly = true;
-            // 
-            // colPresent
-            // 
-            colPresent.HeaderText = "Present";
-            colPresent.Name = "colPresent";
-            colPresent.Resizable = DataGridViewTriState.True;
-            colPresent.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // add_farmmer_1
             // 

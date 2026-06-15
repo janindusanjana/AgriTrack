@@ -13,7 +13,7 @@ namespace AgriTrack
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new add_farmmer_1());
+            Application.Run(new Daily_Harvest());
         }
     }
 }

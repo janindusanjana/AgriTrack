@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Advance));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel6 = new Panel();
             panel5 = new Panel();
             panel2 = new Panel();
@@ -58,7 +58,6 @@
             txtWorkerName = new TextBox();
             txtWorkerNIC = new TextBox();
             txtWorkerPhone = new TextBox();
-            numAdvanceAmount = new NumericUpDown();
             dtpAdvanceDate = new DateTimePicker();
             lblOutstandingAdvance = new Label();
             dgvAdvanceHistory = new DataGridView();
@@ -68,10 +67,13 @@
             btnClearAdvance = new Button();
             btnCancelAdvance = new Button();
             btnSaveAdvance = new Button();
+            txtAdvanceAmount = new TextBox();
+            txtGrossSalary = new TextBox();
+            txtAdvance = new TextBox();
+            txtNetSalary = new TextBox();
             pnlDivider.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numAdvanceAmount).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvAdvanceHistory).BeginInit();
             SuspendLayout();
             // 
@@ -120,7 +122,6 @@
             label2.Size = new Size(73, 17);
             label2.TabIndex = 22;
             label2.Text = "Worker ID :";
-
             // 
             // txtWorkerID
             // 
@@ -151,7 +152,6 @@
             label3.Size = new Size(50, 17);
             label3.TabIndex = 25;
             label3.Text = "Name :";
-
             // 
             // label4
             // 
@@ -162,7 +162,6 @@
             label4.Size = new Size(51, 17);
             label4.TabIndex = 26;
             label4.Text = "Phone :";
-
             // 
             // lblGrossSalary
             // 
@@ -350,13 +349,6 @@
             txtWorkerPhone.Size = new Size(198, 23);
             txtWorkerPhone.TabIndex = 23;
             // 
-            // numAdvanceAmount
-            // 
-            numAdvanceAmount.Location = new Point(326, 157);
-            numAdvanceAmount.Name = "numAdvanceAmount";
-            numAdvanceAmount.Size = new Size(72, 23);
-            numAdvanceAmount.TabIndex = 55;
-            // 
             // dtpAdvanceDate
             // 
             dtpAdvanceDate.Format = DateTimePickerFormat.Short;
@@ -380,24 +372,24 @@
             dgvAdvanceHistory.BackgroundColor = SystemColors.Control;
             dgvAdvanceHistory.BorderStyle = BorderStyle.None;
             dgvAdvanceHistory.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Desktop;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvAdvanceHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.Desktop;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvAdvanceHistory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvAdvanceHistory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAdvanceHistory.Columns.AddRange(new DataGridViewColumn[] { WorkerID, WorkerName, HarvestKg });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvAdvanceHistory.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvAdvanceHistory.DefaultCellStyle = dataGridViewCellStyle4;
             dgvAdvanceHistory.EnableHeadersVisualStyles = false;
             dgvAdvanceHistory.GridColor = SystemColors.Control;
             dgvAdvanceHistory.Location = new Point(221, 271);
@@ -459,6 +451,38 @@
             btnSaveAdvance.UseVisualStyleBackColor = false;
             btnSaveAdvance.Click += btnSaveAdvance_Click;
             // 
+            // txtAdvanceAmount
+            // 
+            txtAdvanceAmount.Location = new Point(319, 155);
+            txtAdvanceAmount.Margin = new Padding(3, 2, 3, 2);
+            txtAdvanceAmount.Name = "txtAdvanceAmount";
+            txtAdvanceAmount.Size = new Size(121, 23);
+            txtAdvanceAmount.TabIndex = 23;
+            // 
+            // txtGrossSalary
+            // 
+            txtGrossSalary.Location = new Point(594, 157);
+            txtGrossSalary.Margin = new Padding(3, 2, 3, 2);
+            txtGrossSalary.Name = "txtGrossSalary";
+            txtGrossSalary.Size = new Size(121, 23);
+            txtGrossSalary.TabIndex = 23;
+            // 
+            // txtAdvance
+            // 
+            txtAdvance.Location = new Point(621, 185);
+            txtAdvance.Margin = new Padding(3, 2, 3, 2);
+            txtAdvance.Name = "txtAdvance";
+            txtAdvance.Size = new Size(121, 23);
+            txtAdvance.TabIndex = 23;
+            // 
+            // txtNetSalary
+            // 
+            txtNetSalary.Location = new Point(587, 212);
+            txtNetSalary.Margin = new Padding(3, 2, 3, 2);
+            txtNetSalary.Name = "txtNetSalary";
+            txtNetSalary.Size = new Size(121, 23);
+            txtNetSalary.TabIndex = 23;
+            // 
             // Advance
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -466,7 +490,6 @@
             ClientSize = new Size(804, 501);
             Controls.Add(dgvAdvanceHistory);
             Controls.Add(dtpAdvanceDate);
-            Controls.Add(numAdvanceAmount);
             Controls.Add(lblOutstandingAdvance);
             Controls.Add(label1);
             Controls.Add(lblNetSalary);
@@ -485,6 +508,10 @@
             Controls.Add(txtWorkerNIC);
             Controls.Add(txtWorkerPhone);
             Controls.Add(txtWorkerName);
+            Controls.Add(txtNetSalary);
+            Controls.Add(txtAdvance);
+            Controls.Add(txtGrossSalary);
+            Controls.Add(txtAdvanceAmount);
             Controls.Add(txtWorkerID);
             Controls.Add(label2);
             Controls.Add(panel6);
@@ -497,7 +524,6 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numAdvanceAmount).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvAdvanceHistory).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -534,7 +560,6 @@
         private TextBox txtWorkerName;
         private TextBox txtWorkerNIC;
         private TextBox txtWorkerPhone;
-        private NumericUpDown numAdvanceAmount;
         private DateTimePicker dtpAdvanceDate;
         private Label lblOutstandingAdvance;
         private DataGridView dgvAdvanceHistory;
@@ -544,5 +569,9 @@
         private Button btnClearAdvance;
         private Button btnCancelAdvance;
         private Button btnSaveAdvance;
+        private TextBox txtAdvanceAmount;
+        private TextBox txtGrossSalary;
+        private TextBox txtAdvance;
+        private TextBox txtNetSalary;
     }
 }

@@ -18,6 +18,7 @@ namespace AgriTrack
             InitializeComponent();
         }
 
+
         private void dashboard1_Load(object sender, EventArgs e)
         {
             LoadHarvestChart();
@@ -39,7 +40,12 @@ namespace AgriTrack
             
             try
             {
-                using (SQLiteConnection conn = new SQLiteConnection(DatabaseHelper.ConnectionString))
+                conn.Open();
+                string query = "SELECT Date, SUM(KilosPlucked) as TotalKilos FROM HarvestRecords GROUP BY Date ORDER BY Date ASC LIMIT 7";
+                dailyKilos.AddRange(new double[] { 45.5, 60.2, 55.0, 75.8, 68.4, 90.1, 85.3 });
+                dateLabels.AddRange(new string[] { "06-04", "06-05", "06-06", "06-07", "06-08", "06-09", "06-10" });
+                //data dekk add kra man meka graph ekla wadd balanna  
+                using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
                     conn.Open();
 
@@ -85,6 +91,11 @@ namespace AgriTrack
                 Title = "Kilograms (Kg)",
                 LabelFormatter = value => value.ToString("N")
             });
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -32,7 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dateTimePicker1 = new DateTimePicker();
-            addfarmmer = new Button();
+            btnAddWorker = new Button();
             pnlDivider = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
@@ -43,20 +43,23 @@
             btnDashBoard = new Button();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            Attend = new DataGridViewCheckBoxColumn();
-            Gender = new DataGridViewTextBoxColumn();
-            Name = new DataGridViewTextBoxColumn();
-            WorkerID = new DataGridViewTextBoxColumn();
-            dataGridView1 = new DataGridView();
+            dgvWorkers = new DataGridView();
             panel1 = new Panel();
             panel5 = new Panel();
             panel6 = new Panel();
-            textBox1 = new TextBox();
-            button1 = new Button();
+            txtSearch = new TextBox();
+            btnSearch = new Button();
+            statusStrip = new StatusStrip();
+            colWorkerID = new DataGridViewTextBoxColumn();
+            colName = new DataGridViewTextBoxColumn();
+            colGender = new DataGridViewTextBoxColumn();
+            colCheckIn = new DataGridViewTextBoxColumn();
+            colCheckOut = new DataGridViewTextBoxColumn();
+            colPresent = new DataGridViewCheckBoxColumn();
             pnlDivider.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvWorkers).BeginInit();
             SuspendLayout();
             // 
             // dateTimePicker1
@@ -67,21 +70,21 @@
             dateTimePicker1.Size = new Size(110, 23);
             dateTimePicker1.TabIndex = 2;
             // 
-            // addfarmmer
+            // btnAddWorker
             // 
-            addfarmmer.BackColor = Color.FromArgb(45, 122, 79);
-            addfarmmer.Cursor = Cursors.Hand;
-            addfarmmer.FlatAppearance.BorderSize = 0;
-            addfarmmer.FlatStyle = FlatStyle.Flat;
-            addfarmmer.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            addfarmmer.ForeColor = Color.FromArgb(225, 245, 238);
-            addfarmmer.Location = new Point(341, 83);
-            addfarmmer.Name = "addfarmmer";
-            addfarmmer.Size = new Size(130, 30);
-            addfarmmer.TabIndex = 0;
-            addfarmmer.Text = "+ Add Worker";
-            addfarmmer.UseVisualStyleBackColor = false;
-            addfarmmer.Click += addfarmmer_Click;
+            btnAddWorker.BackColor = Color.FromArgb(45, 122, 79);
+            btnAddWorker.Cursor = Cursors.Hand;
+            btnAddWorker.FlatAppearance.BorderSize = 0;
+            btnAddWorker.FlatStyle = FlatStyle.Flat;
+            btnAddWorker.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAddWorker.ForeColor = Color.FromArgb(225, 245, 238);
+            btnAddWorker.Location = new Point(341, 83);
+            btnAddWorker.Name = "btnAddWorker";
+            btnAddWorker.Size = new Size(130, 30);
+            btnAddWorker.TabIndex = 0;
+            btnAddWorker.Text = "+ Add Worker";
+            btnAddWorker.UseVisualStyleBackColor = false;
+            btnAddWorker.Click += addfarmmer_Click;
             // 
             // pnlDivider
             // 
@@ -191,33 +194,10 @@
             label1.TabIndex = 0;
             label1.Text = "AGRITRACK";
             // 
-            // Attend
+            // dgvWorkers
             // 
-            Attend.HeaderText = "Attend";
-            Attend.Name = "Attend";
-            Attend.Resizable = DataGridViewTriState.True;
-            Attend.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
-            // Gender
-            // 
-            Gender.HeaderText = "Gender";
-            Gender.Name = "Gender";
-            // 
-            // Name
-            // 
-            Name.HeaderText = "Name";
-            Name.Name = "Name";
-            Name.Width = 200;
-            // 
-            // WorkerID
-            // 
-            WorkerID.HeaderText = "Worker ID";
-            WorkerID.Name = "WorkerID";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = Color.FromArgb(247, 245, 240);
-            dataGridView1.BorderStyle = BorderStyle.None;
+            dgvWorkers.BackgroundColor = Color.FromArgb(247, 245, 240);
+            dgvWorkers.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -225,9 +205,9 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(247, 245, 240);
             dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(247, 245, 240);
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { WorkerID, Name, Gender, Attend });
+            dgvWorkers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvWorkers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvWorkers.Columns.AddRange(new DataGridViewColumn[] { colWorkerID, colName, colGender, colCheckIn, colCheckOut, colPresent });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(247, 245, 240);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -235,12 +215,14 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(247, 245, 240);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView1.GridColor = Color.FromArgb(211, 209, 199);
-            dataGridView1.Location = new Point(225, 145);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(543, 216);
-            dataGridView1.TabIndex = 2;
+            dgvWorkers.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvWorkers.GridColor = Color.FromArgb(211, 209, 199);
+            dgvWorkers.Location = new Point(211, 140);
+            dgvWorkers.MultiSelect = false;
+            dgvWorkers.Name = "dgvWorkers";
+            dgvWorkers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvWorkers.Size = new Size(575, 234);
+            dgvWorkers.TabIndex = 2;
             // 
             // panel1
             // 
@@ -265,22 +247,69 @@
             panel6.Size = new Size(0, 0);
             panel6.TabIndex = 11;
             // 
-            // textBox1
+            // txtSearch
             // 
-            textBox1.Location = new Point(554, 88);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(214, 23);
-            textBox1.TabIndex = 12;
+            txtSearch.Location = new Point(559, 85);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(214, 23);
+            txtSearch.TabIndex = 12;
             // 
-            // button1
+            // btnSearch
             // 
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Zoom;
-            button1.Location = new Point(514, 88);
-            button1.Name = "button1";
-            button1.Size = new Size(39, 23);
-            button1.TabIndex = 13;
-            button1.UseVisualStyleBackColor = true;
+            btnSearch.BackgroundImage = (Image)resources.GetObject("btnSearch.BackgroundImage");
+            btnSearch.BackgroundImageLayout = ImageLayout.Zoom;
+            btnSearch.Location = new Point(514, 83);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(39, 28);
+            btnSearch.TabIndex = 13;
+            btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // statusStrip
+            // 
+            statusStrip.Location = new Point(0, 479);
+            statusStrip.Name = "statusStrip";
+            statusStrip.Size = new Size(804, 22);
+            statusStrip.TabIndex = 15;
+            statusStrip.Text = "statusStrip1";
+            // 
+            // colWorkerID
+            // 
+            colWorkerID.HeaderText = "Worker ID";
+            colWorkerID.Name = "colWorkerID";
+            colWorkerID.ReadOnly = true;
+            colWorkerID.Width = 80;
+            // 
+            // colName
+            // 
+            colName.HeaderText = "Name";
+            colName.Name = "colName";
+            colName.ReadOnly = true;
+            colName.Width = 150;
+            // 
+            // colGender
+            // 
+            colGender.HeaderText = "Gender";
+            colGender.Name = "colGender";
+            colGender.ReadOnly = true;
+            // 
+            // colCheckIn
+            // 
+            colCheckIn.HeaderText = "Check In";
+            colCheckIn.Name = "colCheckIn";
+            colCheckIn.ReadOnly = true;
+            // 
+            // colCheckOut
+            // 
+            colCheckOut.HeaderText = "Check Out";
+            colCheckOut.Name = "colCheckOut";
+            colCheckOut.ReadOnly = true;
+            // 
+            // colPresent
+            // 
+            colPresent.HeaderText = "Present";
+            colPresent.Name = "colPresent";
+            colPresent.Resizable = DataGridViewTriState.True;
+            colPresent.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // add_farmmer_1
             // 
@@ -288,31 +317,32 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 244, 240);
             ClientSize = new Size(804, 501);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(statusStrip);
+            Controls.Add(btnSearch);
+            Controls.Add(txtSearch);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(panel1);
             Controls.Add(panel3);
-            Controls.Add(addfarmmer);
+            Controls.Add(btnAddWorker);
             Controls.Add(dateTimePicker1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvWorkers);
             Controls.Add(pnlDivider);
             Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             MinimumSize = new Size(820, 540);
-
+            Name = "add_farmmer_1";
             Text = "AgriTrack — Worker Registry";
             pnlDivider.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvWorkers).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Button addfarmmer;
+        private Button btnAddWorker;
 
         // ── Divider ──
         private Panel pnlDivider;
@@ -322,11 +352,7 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Button btnDashBoard;
-        private DataGridViewCheckBoxColumn Attend;
-        private DataGridViewTextBoxColumn Gender;
-        private DataGridViewTextBoxColumn Name;
-        private DataGridViewTextBoxColumn WorkerID;
-        private DataGridView dataGridView1;
+        private DataGridView dgvWorkers;
         private Button button3;
         private Button button2;
         private Button Settlment;
@@ -334,7 +360,14 @@
         private Panel panel1;
         private Panel panel5;
         private Panel panel6;
-        private TextBox textBox1;
-        private Button button1;
+        private TextBox txtSearch;
+        private Button btnSearch;
+        private StatusStrip statusStrip;
+        private DataGridViewTextBoxColumn colWorkerID;
+        private DataGridViewTextBoxColumn colName;
+        private DataGridViewTextBoxColumn colGender;
+        private DataGridViewTextBoxColumn colCheckIn;
+        private DataGridViewTextBoxColumn colCheckOut;
+        private DataGridViewCheckBoxColumn colPresent;
     }
 }

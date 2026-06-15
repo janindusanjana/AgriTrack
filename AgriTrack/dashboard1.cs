@@ -33,10 +33,13 @@ namespace AgriTrack
             ChartValues<double> dailyKilos = new ChartValues<double>();
             List<string> dateLabels = new List<string>();
 
+
+            //data add kra graph eka wdd balanna
+
             dailyKilos.AddRange(new double[] { 55.2, 68.4, 62.0, 85.3, 78.1, 92.6, 88.5 });
             dateLabels.AddRange(new string[] { "06-11", "06-12", "06-13", "06-14", "06-15", "06-16", "06-17" });
            
-            
+            //database ek connect krma auto data tika ganna
             try
             {
                 using (SQLiteConnection conn = new SQLiteConnection(DatabaseHelper.ConnectionString))

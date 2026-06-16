@@ -51,6 +51,7 @@
             btnDashBoard = new Button();
             pictureBox2 = new PictureBox();
             label1 = new Label();
+            btnPrint = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel3.SuspendLayout();
@@ -74,7 +75,7 @@
             btnLoadReport.FlatStyle = FlatStyle.Flat;
             btnLoadReport.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLoadReport.ForeColor = Color.Black;
-            btnLoadReport.Location = new Point(530, 38);
+            btnLoadReport.Location = new Point(490, 39);
             btnLoadReport.Name = "btnLoadReport";
             btnLoadReport.Size = new Size(115, 31);
             btnLoadReport.TabIndex = 6;
@@ -276,6 +277,20 @@
             label1.TabIndex = 0;
             label1.Text = "AGRITRACK";
             // 
+            // btnPrint
+            // 
+            btnPrint.BackColor = Color.FromArgb(46, 125, 50);
+            btnPrint.FlatAppearance.BorderSize = 0;
+            btnPrint.FlatStyle = FlatStyle.Flat;
+            btnPrint.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnPrint.ForeColor = Color.Black;
+            btnPrint.Location = new Point(621, 38);
+            btnPrint.Name = "btnPrint";
+            btnPrint.Size = new Size(115, 31);
+            btnPrint.TabIndex = 6;
+            btnPrint.Text = "Print";
+            btnPrint.UseVisualStyleBackColor = false;
+            // 
             // Daily_Harvest
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -289,6 +304,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(textBox1);
             Controls.Add(dataGridView1);
+            Controls.Add(btnPrint);
             Controls.Add(btnLoadReport);
             Controls.Add(dateTimePicker1);
             Controls.Add(lblTotalharvest);
@@ -325,5 +341,6 @@
         private Button btnDashBoard;
         private PictureBox pictureBox2;
         private Label label1;
+        private Button btnPrint;
     }
 }

@@ -162,5 +162,20 @@ namespace AgriTrack.Admin_Forms
                 }
             }
         }
+
+        private void btnDashBoard_Click(object sender, EventArgs e)
+        {
+            admindash dashboard = new admindash();
+            dashboard.Show();
+
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Advance_Settlement advance_Settlement = new Advance_Settlement();
+            advance_Settlement.Show();
+            this.Hide();
+        }
     }
 }

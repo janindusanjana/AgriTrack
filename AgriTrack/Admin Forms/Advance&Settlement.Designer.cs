@@ -143,9 +143,11 @@
             // 
             dateTimePicker2.CalendarFont = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dateTimePicker2.CalendarMonthBackground = SystemColors.ControlLightLight;
-            dateTimePicker2.Format = DateTimePickerFormat.Short;
+            dateTimePicker2.CustomFormat = "MM/yyyy";
+            dateTimePicker2.Format = DateTimePickerFormat.Custom;
             dateTimePicker2.Location = new Point(347, 43);
             dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.ShowUpDown = true;
             dateTimePicker2.Size = new Size(106, 23);
             dateTimePicker2.TabIndex = 10;
             // 

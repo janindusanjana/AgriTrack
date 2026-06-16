@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settlement_UI));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             dtpMonth = new DateTimePicker();
             lblMonth = new Label();
@@ -60,13 +60,13 @@
             btnCalculate = new Button();
             btnUpdate = new Button();
             btnPrint = new Button();
-            dgvSettlement = new DataGridView();
-            WorkerID = new DataGridViewTextBoxColumn();
-            Name = new DataGridViewTextBoxColumn();
-            KG = new DataGridViewTextBoxColumn();
-            Advance = new DataGridViewTextBoxColumn();
-            NetSalary = new DataGridViewTextBoxColumn();
             Status = new DataGridViewTextBoxColumn();
+            NetSalary = new DataGridViewTextBoxColumn();
+            Advance = new DataGridViewTextBoxColumn();
+            KG = new DataGridViewTextBoxColumn();
+            colName = new DataGridViewTextBoxColumn();
+            WorkerID = new DataGridViewTextBoxColumn();
+            dgvSettlement = new DataGridView();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -85,8 +85,8 @@
             // 
             // dtpMonth
             // 
-            dtpMonth.CustomFormat = "MM/yyyy";
-            dtpMonth.Format = DateTimePickerFormat.Custom;
+            dtpMonth.CustomFormat = "";
+            dtpMonth.Format = DateTimePickerFormat.Short;
             dtpMonth.Location = new Point(87, 3);
             dtpMonth.Name = "dtpMonth";
             dtpMonth.Size = new Size(81, 23);
@@ -139,10 +139,7 @@
             button4.TabIndex = 5;
             button4.Text = "Advance";
             button4.UseVisualStyleBackColor = false;
-<<<<<<< Navigation-&-Security
-=======
             button4.Click += button4_Click;
->>>>>>> master
             // 
             // button3
             // 
@@ -154,10 +151,7 @@
             button3.TabIndex = 4;
             button3.Text = "Daily Harvest";
             button3.UseVisualStyleBackColor = false;
-<<<<<<< Navigation-&-Security
-=======
             button3.Click += button3_Click;
->>>>>>> master
             // 
             // button2
             // 
@@ -181,10 +175,7 @@
             btnDashBoard.TabIndex = 2;
             btnDashBoard.Text = "Dashboard";
             btnDashBoard.UseVisualStyleBackColor = false;
-<<<<<<< Navigation-&-Security
-=======
             btnDashBoard.Click += btnDashBoard_Click;
->>>>>>> master
             // 
             // pictureBox1
             // 
@@ -264,6 +255,7 @@
             btnSearch.Text = "Search";
             btnSearch.TextAlign = ContentAlignment.TopCenter;
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // txtTotalKgPlucked
             // 
@@ -360,6 +352,7 @@
             btnCalculate.TabIndex = 15;
             btnCalculate.Text = "Calculate";
             btnCalculate.UseVisualStyleBackColor = false;
+            btnCalculate.Click += btnCalculate_Click;
             // 
             // btnUpdate
             // 
@@ -373,6 +366,7 @@
             btnUpdate.TabIndex = 15;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnPrint
             // 
@@ -387,43 +381,21 @@
             btnPrint.Text = "Print";
             btnPrint.UseVisualStyleBackColor = false;
             // 
-            // dgvSettlement
+            // Status
             // 
-            dgvSettlement.BackgroundColor = Color.White;
-            dgvSettlement.BorderStyle = BorderStyle.None;
-            dgvSettlement.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvSettlement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvSettlement.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvSettlement.Columns.AddRange(new DataGridViewColumn[] { WorkerID, Name, KG, Advance, NetSalary, Status });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvSettlement.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvSettlement.Location = new Point(211, 324);
-            dgvSettlement.Name = "dgvSettlement";
-            dgvSettlement.Size = new Size(582, 150);
-            dgvSettlement.TabIndex = 16;
+            Status.HeaderText = "Status";
+            Status.Name = "Status";
+            Status.Width = 80;
             // 
-            // WorkerID
+            // NetSalary
             // 
-            WorkerID.HeaderText = "Worker ID";
-            WorkerID.Name = "WorkerID";
+            NetSalary.HeaderText = "Net Salary";
+            NetSalary.Name = "NetSalary";
             // 
-            // Name
+            // Advance
             // 
-            Name.HeaderText = "Name";
-            Name.Name = "Name";
+            Advance.HeaderText = "Advance";
+            Advance.Name = "Advance";
             // 
             // KG
             // 
@@ -431,21 +403,43 @@
             KG.Name = "KG";
             KG.Width = 50;
             // 
-            // Advance
+            // colName
             // 
-            Advance.HeaderText = "Advance";
-            Advance.Name = "Advance";
+            colName.HeaderText = "Name";
+            colName.Name = "colName";
             // 
-            // NetSalary
+            // WorkerID
             // 
-            NetSalary.HeaderText = "Net Salary";
-            NetSalary.Name = "NetSalary";
+            WorkerID.HeaderText = "Worker ID";
+            WorkerID.Name = "WorkerID";
             // 
-            // Status
+            // dgvSettlement
             // 
-            Status.HeaderText = "Status";
-            Status.Name = "Status";
-            Status.Width = 80;
+            dgvSettlement.BackgroundColor = Color.White;
+            dgvSettlement.BorderStyle = BorderStyle.None;
+            dgvSettlement.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvSettlement.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvSettlement.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvSettlement.Columns.AddRange(new DataGridViewColumn[] { WorkerID, colName, KG, Advance, NetSalary, Status });
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvSettlement.DefaultCellStyle = dataGridViewCellStyle4;
+            dgvSettlement.Location = new Point(211, 324);
+            dgvSettlement.Name = "dgvSettlement";
+            dgvSettlement.Size = new Size(582, 150);
+            dgvSettlement.TabIndex = 16;
             // 
             // Settlement_UI
             // 
@@ -474,12 +468,10 @@
             Controls.Add(lblWorkerID);
             Controls.Add(panel1);
             Controls.Add(panel3);
-<<<<<<< Navigation-&-Security
             Name = "Settlement_UI";
-=======
            
->>>>>>> master
             Text = "Settlement_UI";
+            Load += Settlement_UI_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
@@ -521,12 +513,12 @@
         private Button btnCalculate;
         private Button btnUpdate;
         private Button btnPrint;
-        private DataGridView dgvSettlement;
-        private DataGridViewTextBoxColumn WorkerID;
-        private DataGridViewTextBoxColumn Name;
-        private DataGridViewTextBoxColumn KG;
-        private DataGridViewTextBoxColumn Advance;
-        private DataGridViewTextBoxColumn NetSalary;
         private DataGridViewTextBoxColumn Status;
+        private DataGridViewTextBoxColumn NetSalary;
+        private DataGridViewTextBoxColumn Advance;
+        private DataGridViewTextBoxColumn KG;
+        private DataGridViewTextBoxColumn colName;
+        private DataGridViewTextBoxColumn WorkerID;
+        private DataGridView dgvSettlement;
     }
 }

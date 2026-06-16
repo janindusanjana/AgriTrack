@@ -129,6 +129,7 @@
             Settlment.TabIndex = 6;
             Settlment.Text = "Settlement";
             Settlment.UseVisualStyleBackColor = false;
+            Settlment.Click += Settlment_Click;
             // 
             // button4
             // 
@@ -140,6 +141,7 @@
             button4.TabIndex = 5;
             button4.Text = "Advance";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -151,6 +153,7 @@
             button3.TabIndex = 4;
             button3.Text = "Daily Harvest";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -173,6 +176,7 @@
             btnDashBoard.TabIndex = 2;
             btnDashBoard.Text = "Dashboard";
             btnDashBoard.UseVisualStyleBackColor = false;
+            btnDashBoard.Click += btnDashBoard_Click;
             // 
             // pictureBox1
             // 

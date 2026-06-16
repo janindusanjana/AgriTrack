@@ -375,6 +375,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "dashboard1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "dashboard1";
             Load += dashboard1_Load;
             panel6.ResumeLayout(false);

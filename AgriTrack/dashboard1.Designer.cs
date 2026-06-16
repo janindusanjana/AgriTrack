@@ -55,6 +55,8 @@
             panel1 = new Panel();
             tbxActiveWorkers = new TextBox();
             panelChartContainer = new Panel();
+            btnLogout = new Button();
+            panel5.SuspendLayout();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -129,6 +131,7 @@
             // panel5
             // 
             panel5.BackColor = Color.FromArgb(45, 122, 79);
+            panel5.Controls.Add(btnLogout);
             panel5.Location = new Point(209, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(595, 29);
@@ -357,10 +360,24 @@
             // 
             // panelChartContainer
             // 
-            panelChartContainer.Location = new Point(404, 255);
+            panelChartContainer.Location = new Point(226, 221);
             panelChartContainer.Name = "panelChartContainer";
-            panelChartContainer.Size = new Size(363, 213);
+            panelChartContainer.Size = new Size(566, 268);
             panelChartContainer.TabIndex = 17;
+            // 
+            // btnLogout
+            // 
+            btnLogout.BackColor = Color.IndianRed;
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogout.ForeColor = Color.White;
+            btnLogout.Location = new Point(515, 3);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(75, 23);
+            btnLogout.TabIndex = 18;
+            btnLogout.Text = "LogOut";
+            btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Click += btnLogout_Click;
             // 
             // dashboard1
             // 
@@ -378,6 +395,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "dashboard1";
             Load += dashboard1_Load;
+            panel5.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
@@ -424,5 +442,6 @@
         private TextBox tbxGivenAdvance;
         private TextBox textBox1;
         private Panel panelChartContainer;
+        private Button btnLogout;
     }
 }

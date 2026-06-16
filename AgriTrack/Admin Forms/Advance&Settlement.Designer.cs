@@ -318,6 +318,7 @@
             Controls.Add(lblDate);
             Controls.Add(dataGridView1);
             Name = "Advance_Settlement";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Advance_Settlement";
             Load += Advance_Settlement_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

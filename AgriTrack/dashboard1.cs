@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
@@ -13,6 +10,9 @@ namespace AgriTrack
 {
     public partial class dashboard1 : Form
     {
+        
+        string connectionString = @"Data Source=C:\Users\wwwja\Desktop\AgriTrack\AgriTrackDB.db;Version=3;";
+
         public dashboard1()
         {
             InitializeComponent();
@@ -20,7 +20,62 @@ namespace AgriTrack
 
         private void dashboard1_Load(object sender, EventArgs e)
         {
+            LoadDashboardTotals();
             LoadHarvestChart();
+        }
+
+        private void LoadDashboardTotals()
+        {
+            
+            string currentMonthPattern = DateTime.Now.ToString("yyyy-MM") + "%";
+
+            try
+            {
+                using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+                {
+                    conn.Open();
+
+                   
+                    string harvestQuery = "SELECT SUM(TeaKg) FROM Harvest WHERE HarvestDate LIKE @monthPattern";
+                    using (SQLiteCommand cmd = new SQLiteCommand(harvestQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@monthPattern", currentMonthPattern);
+                        object result = cmd.ExecuteScalar();
+                        tbxTotalHarvest.Text = (result != DBNull.Value && result != null)
+                                               ? Convert.ToDouble(result).ToString("0.00") + " Kg"
+                                               : "0.00 Kg";
+                    }
+
+                   
+                    string advanceQuery = "SELECT SUM(Amount) FROM Advance WHERE AdvanceDate LIKE @monthPattern";
+                    using (SQLiteCommand cmd = new SQLiteCommand(advanceQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@monthPattern", currentMonthPattern);
+                        object result = cmd.ExecuteScalar();
+                        tbxGivenAdvance.Text = (result != DBNull.Value && result != null)
+                                               ? "Rs " + Convert.ToDouble(result).ToString("0.00")
+                                               : "Rs 0.00";
+                    }
+
+                   
+                    string workerQuery = "SELECT COUNT(DISTINCT WorkerID) FROM Harvest WHERE HarvestDate LIKE @monthPattern";
+                    using (SQLiteCommand cmd = new SQLiteCommand(workerQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@monthPattern", currentMonthPattern);
+                        object result = cmd.ExecuteScalar();
+                        tbxActiveWorkers.Text = (result != DBNull.Value && result != null)
+                                                ? result.ToString()
+                                                : "0";
+                    }
+
+                    
+                    textBox1.Text = "Rs 50.00";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading dashboard totals: " + ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void LoadHarvestChart()
@@ -33,44 +88,49 @@ namespace AgriTrack
             ChartValues<double> dailyKilos = new ChartValues<double>();
             List<string> dateLabels = new List<string>();
 
-            // graph ekt pitin data add krl 
-            dailyKilos.AddRange(new double[] { 55.2, 68.4, 62.0, 85.3, 78.1, 92.6, 88.5 });
-            dateLabels.AddRange(new string[] { "06-11", "06-12", "06-13", "06-14", "06-15", "06-16", "06-17" });
+            try
+            {
+                using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+                {
+                    conn.Open();
+                   
+                    string query = "SELECT HarvestDate, SUM(TeaKg) as TotalKilos FROM Harvest GROUP BY HarvestDate ORDER BY HarvestDate DESC LIMIT 7";
 
-            // comment krl tin tik ain krnna database link krama
+                    using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
+                    {
+                        using (SQLiteDataReader reader = cmd.ExecuteReader())
+                        {
+                            
+                            List<double> tempKilos = new List<double>();
+                            List<string> tempDates = new List<string>();
 
+                            while (reader.Read())
+                            {
+                                tempKilos.Add(Convert.ToDouble(reader["TotalKilos"]));
+                                tempDates.Add(reader["HarvestDate"].ToString());
+                            }
 
+                            
+                            tempKilos.Reverse();
+                            tempDates.Reverse();
 
-            /*
-             try
-             {
-                 using (SQLiteConnection conn = new SQLiteConnection(DatabaseHelper.ConnectionString))
-                 {
-                     conn.Open();
-                     string query = "SELECT HarvestDate, SUM(TeaKg) as TotalKilos FROM Harvest GROUP BY HarvestDate ORDER BY HarvestDate ASC LIMIT 7";
+                            dailyKilos.AddRange(tempKilos);
+                            dateLabels.AddRange(tempDates);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading chart data: " + ex.Message, "Chart Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
-                     {
-                         using (SQLiteDataReader reader = cmd.ExecuteReader())
-                         {
-                             // Database එකෙන් දත්ත ගන්නවා නම් උඩ තියෙන බොරු දත්ත මකන්න ඕනේ නිසා මේවා Clear කරනවා
-                             dailyKilos.Clear();
-                             dateLabels.Clear();
-
-                             while (reader.Read())
-                             {
-                                 dailyKilos.Add(Convert.ToDouble(reader["TotalKilos"]));
-                                 dateLabels.Add(reader["HarvestDate"].ToString());
-                             }
-                         }
-                     }
-                 }
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show("Error loading chart data: " + ex.Message, "Chart Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-             }
-             */
+            
+            if (dailyKilos.Count == 0)
+            {
+                dailyKilos.AddRange(new double[] { 0, 0, 0, 0, 0, 0, 0 });
+                dateLabels.AddRange(new string[] { "N/A", "N/A", "N/A", "N/A", "N/A", "N/A", "N/A" });
+            }
 
             harvestChart.Series = new SeriesCollection
             {
@@ -107,7 +167,6 @@ namespace AgriTrack
         {
             DailyHarvestAdding dailyHarvestAdding = new DailyHarvestAdding();
             dailyHarvestAdding.Show();
-
             this.Hide();
         }
 
@@ -122,7 +181,13 @@ namespace AgriTrack
         {
             Settlement_UI settlement_UI = new Settlement_UI();
             settlement_UI.Show();
+            this.Hide();
+        }
 
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Opensc login = new Opensc();
+            login.Show();
             this.Hide();
         }
     }

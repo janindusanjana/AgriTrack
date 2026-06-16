@@ -7,6 +7,7 @@ namespace AgriTrack
 {
     public static class DatabaseHelper
     {
+
         // This looks for the database file in the same folder where the app is running
         private static string dbPath = Path.Combine(Application.StartupPath, "AgriTrackDB.db");
 

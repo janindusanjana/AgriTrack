@@ -7,7 +7,7 @@ namespace AgriTrack
 {
     public partial class add_farmmer_1 : Form
     {
-      
+
         private readonly string connectionString = @"data source=C:\Users\wwwja\Desktop\AgriTrack\AgriTrackDB.db;";
 
         public add_farmmer_1()
@@ -15,18 +15,18 @@ namespace AgriTrack
             InitializeComponent();
             InitializeClock();
 
-           
+
             btnSearch.Click += btnSearch_Click;
             dgvWorkers.CellContentClick += dgvWorkers_CellContentClick;
 
-            
+
             btnClear.Click += btnClear_Click;
 
-            
+
             LoadAllWorkersData();
         }
 
-   
+
         private void InitializeClock()
         {
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
@@ -35,17 +35,17 @@ namespace AgriTrack
             timer.Start();
         }
 
-       
+
         private void btnClear_Click(object? sender, EventArgs e)
         {
-          
+
             txtWorkerID.Clear();
 
-          
+
             LoadAllWorkersData();
         }
 
-       
+
         private void btnSearch_Click(object? sender, EventArgs e)
         {
             string workerId = txtWorkerID.Text.Trim();
@@ -60,7 +60,7 @@ namespace AgriTrack
             }
         }
 
-        
+
         private void LoadAllWorkersData()
         {
             dgvWorkers.Rows.Clear();
@@ -104,7 +104,7 @@ namespace AgriTrack
             }
         }
 
-        
+
         private void LoadWorkerData(string workerId)
         {
             dgvWorkers.Rows.Clear();
@@ -154,7 +154,7 @@ namespace AgriTrack
             }
         }
 
-        
+
         private void dgvWorkers_CellContentClick(object? sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 5 && e.RowIndex >= 0)
@@ -257,6 +257,13 @@ namespace AgriTrack
             dashboard1.Show();
 
             this.Hide();
+        }
+
+        private void btnAddWorker_Click(object sender, EventArgs e)
+        {
+            farmmer_add_form add1=new farmmer_add_form();
+            add1.Show();
+            this.Show();
         }
     }
 }

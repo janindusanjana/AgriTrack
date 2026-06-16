@@ -308,6 +308,7 @@
             Controls.Add(lblTotalharvest);
             DoubleBuffered = true;
             Name = "Daily_Harvest";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Daily_Harvest";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

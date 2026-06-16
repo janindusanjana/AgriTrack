@@ -113,6 +113,7 @@ namespace AgriTrack
 
             if (username == "User" && password == "1234")
             {
+                Userdata.Role= "User";
                 MessageBox.Show("Worker Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 dashboard1 dash = new dashboard1();
@@ -120,14 +121,14 @@ namespace AgriTrack
 
                 this.Hide();
             }
-            else if (username == "Admin" && password == "1234")
+            /*else if (username == "Admin" && password == "1234")
             {
                 MessageBox.Show("Admin Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 dashboard1 mainApp = new dashboard1();
                 mainApp.Show();
                 this.Hide();
-            }
+            }*/
             else
             {
                 MessageBox.Show("Invalid Username or Password!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -148,21 +149,22 @@ namespace AgriTrack
 
             if (username == "Admin" && password == "1234")
             {
-                MessageBox.Show("Worker Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Userdata.Role = "Admin";
+                MessageBox.Show("Admin Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 dashboard1 dash = new dashboard1();
                 dash.Show();
 
                 this.Hide();
             }
-            else if (username == "Admin" && password == "1234")
+           /* else if (username == "Admin" && password == "1234")
             {
                 MessageBox.Show("Admin Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 dashboard1 mainApp = new dashboard1();
                 mainApp.Show();
                 this.Hide();
-            }
+            }*/
             else
             {
                 MessageBox.Show("Invalid Username or Password!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);

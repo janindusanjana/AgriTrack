@@ -12,7 +12,7 @@ namespace AgriTrack
         {
              https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Settlement_UI());
+            Application.Run(new Opensc());
         }
     }
 }

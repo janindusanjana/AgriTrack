@@ -2,12 +2,13 @@
 using System.Data;
 using Microsoft.Data.Sqlite;
 using System.Windows.Forms;
+using AgriTrack.Admin_Forms;
 
 namespace AgriTrack
 {
     public partial class add_farmmer_1 : Form
     {
-      
+
         private readonly string connectionString = @"data source=C:\Users\wwwja\Desktop\AgriTrack\AgriTrackDB.db;";
 
         public add_farmmer_1()
@@ -15,18 +16,19 @@ namespace AgriTrack
             InitializeComponent();
             InitializeClock();
 
-           
+        
+
             btnSearch.Click += btnSearch_Click;
             dgvWorkers.CellContentClick += dgvWorkers_CellContentClick;
 
-            
+
             btnClear.Click += btnClear_Click;
 
-            
+
             LoadAllWorkersData();
         }
 
-   
+
         private void InitializeClock()
         {
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
@@ -35,17 +37,17 @@ namespace AgriTrack
             timer.Start();
         }
 
-       
+
         private void btnClear_Click(object? sender, EventArgs e)
         {
-          
+
             txtWorkerID.Clear();
 
-          
+
             LoadAllWorkersData();
         }
 
-       
+
         private void btnSearch_Click(object? sender, EventArgs e)
         {
             string workerId = txtWorkerID.Text.Trim();
@@ -60,7 +62,7 @@ namespace AgriTrack
             }
         }
 
-        
+
         private void LoadAllWorkersData()
         {
             dgvWorkers.Rows.Clear();
@@ -104,7 +106,7 @@ namespace AgriTrack
             }
         }
 
-        
+
         private void LoadWorkerData(string workerId)
         {
             dgvWorkers.Rows.Clear();
@@ -154,7 +156,7 @@ namespace AgriTrack
             }
         }
 
-        
+
         private void dgvWorkers_CellContentClick(object? sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 5 && e.RowIndex >= 0)
@@ -228,27 +230,57 @@ namespace AgriTrack
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            DailyHarvestAdding daily = new DailyHarvestAdding();
+            if (Userdata.Role == "Admin")
+            {
+                
+                Daily_Harvest adminSet = new Daily_Harvest();
+                adminSet.Show();
+                this.Hide();
+            }
+            else if (Userdata.Role == "User")
+            {
+                DailyHarvestAdding daily = new DailyHarvestAdding();
             daily.Show();
 
             this.Hide();
         }
 
+        }
         private void button4_Click(object sender, EventArgs e)
         {
-            Advance advanced = new Advance();
+            if (Userdata.Role == "Admin")
+            {
+
+                Advance_Settlement adminSet = new Advance_Settlement();
+                adminSet.Show();
+                this.Hide();
+            }
+            else if (Userdata.Role == "User")
+            {
+                Advance advanced = new Advance();
             advanced.Show();
 
             this.Hide();
         }
 
+        }
         private void Settlment_Click(object sender, EventArgs e)
         {
-            Settlement_UI settlement_UI = new Settlement_UI();
+            if (Userdata.Role == "Admin")
+            {
 
-            settlement_UI.Show();
+                Advance_Settlement adminSet = new Advance_Settlement();
+                adminSet.Show();
+                this.Hide();
+            }
+            else if (Userdata.Role == "User")
+            {
+                Settlement_UI settlement_UI = new Settlement_UI();
 
-            this.Hide();
+                settlement_UI.Show();
+
+                this.Hide();
+            }
         }
 
         private void btnDashBoard_Click(object sender, EventArgs e)
@@ -257,6 +289,13 @@ namespace AgriTrack
             dashboard1.Show();
 
             this.Hide();
+        }
+
+        private void btnAddWorker_Click(object sender, EventArgs e)
+        {
+            farmmer_add_form add1=new farmmer_add_form();
+            add1.Show();
+            this.Show();
         }
     }
 }

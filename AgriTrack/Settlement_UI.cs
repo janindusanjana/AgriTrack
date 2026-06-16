@@ -347,6 +347,20 @@ namespace AgriTrack
 
             dgvSettlement.AutoGenerateColumns = true;
             LoadData();
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DailyHarvestAdding dailyHarvestAdding = new DailyHarvestAdding();
+            dailyHarvestAdding.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Advance advance = new Advance();
+            advance.Show();
+            this.Hide();
+        }
         }   
     }
 }

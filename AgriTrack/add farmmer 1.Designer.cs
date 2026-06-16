@@ -86,6 +86,7 @@
             btnAddWorker.TabIndex = 0;
             btnAddWorker.Text = "+ Add Worker";
             btnAddWorker.UseVisualStyleBackColor = false;
+            btnAddWorker.Click += btnAddWorker_Click;
             // 
             // pnlDivider
             // 

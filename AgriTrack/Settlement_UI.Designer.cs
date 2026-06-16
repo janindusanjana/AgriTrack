@@ -380,6 +380,7 @@
             btnPrint.TabIndex = 15;
             btnPrint.Text = "Print";
             btnPrint.UseVisualStyleBackColor = false;
+            btnPrint.Click += btnPrint_Click;
             // 
             // Status
             // 
@@ -468,6 +469,7 @@
             Controls.Add(lblWorkerID);
             Controls.Add(panel1);
             Controls.Add(panel3);
+            
             Name = "Settlement_UI";
            
             Text = "Settlement_UI";

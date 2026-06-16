@@ -20,6 +20,7 @@ namespace AgriTrack
             txtWageRate.ReadOnly = true;
 
         
+
             btnSave.Click += btnSave_Click;
             btnClear.Click += btnClear_Click;
             btnSearch.Click += btnSearch_Click;
@@ -97,6 +98,7 @@ namespace AgriTrack
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+
             if (!long.TryParse(txtWorkerId.Text.Trim(), out long workerId))
             {
                 MessageBox.Show("Invalid Worker Id", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -126,6 +128,7 @@ namespace AgriTrack
                     try
                     {
                      
+
                         string insertHarvest = @"
 INSERT INTO Harvest (WorkerID, HarvestDate, TeaKg)
 VALUES (@wid, @hdate, @kg);";
@@ -155,6 +158,7 @@ WHERE WorkerID = @wid AND strftime('%Y', HarvestDate) = @y AND strftime('%m', Ha
                             var scalar = cmd.ExecuteScalar();
                             totalKg = Convert.ToDecimal(scalar ?? 0m);
                         }
+
 
                         string sumAdvSql = @"
 SELECT COALESCE(SUM(Amount), 0) FROM Advance
@@ -244,6 +248,37 @@ WHERE strftime('%Y', HarvestDate) = @y AND strftime('%m', HarvestDate) = @m AND 
                     txtTotalHarvest.Text = todayTotal.ToString("0.##");
                 }
             }
+        private void btnDashBoard_Click(object sender, EventArgs e)
+        {
+            dashboard1 add1 = new dashboard1();
+            add1.Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            add_farmmer_1 add1 = new add_farmmer_1();
+            add1.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Advance add1 = new Advance();
+            add1.Show();
+            this.Hide();
+        }
+
+        private void Settlment_Click(object sender, EventArgs e)
+        {
+            Settlement_UI add1 = new Settlement_UI();
+            add1.Show();
+            this.Hide();
         }
     }
 }

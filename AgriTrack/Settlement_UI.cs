@@ -15,9 +15,33 @@ namespace AgriTrack
             InitializeComponent();
         }
 
+        private void btnDashBoard_Click(object sender, EventArgs e)
+        {
+            dashboard1 dashboard = new dashboard1();
+            dashboard.Show();
+            this.Hide();
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            add_farmmer_1 add_farmer_1 = new add_farmmer_1();
+            add_farmer_1.Show();
+
+            this.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DailyHarvestAdding dailyHarvestAdding = new DailyHarvestAdding();
+            dailyHarvestAdding.Show();
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Advance advance = new Advance();
+            advance.Show();
+            this.Hide();
         }
     }
 }

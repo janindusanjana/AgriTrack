@@ -96,41 +96,40 @@ namespace AgriTrack
             }
         }
 
+        private void btnDashBoard_Click(object sender, EventArgs e)
+        {
+            dashboard1 dashboard = new dashboard1();
+            dashboard.Show();
+            this.Close();
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-            add_farmmer_1 add = new add_farmmer_1();
-            add.Show();
+            add_farmmer_1 add_farmer_1 = new add_farmmer_1();
+            add_farmer_1.Show();
 
             this.Hide();
-
-
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DailyHarvestAdding add = new DailyHarvestAdding();
-            add.Show();
-
+            DailyHarvestAdding dailyHarvestAdding = new DailyHarvestAdding();
+            dailyHarvestAdding.Show();
             this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void Settlment_Click(object sender, EventArgs e)
-        {
-            Settlement_UI add = new Settlement_UI();
-            add.Show();
+            Advance advance = new Advance();
+            advance.Show();
 
             this.Hide();
         }
 
-        private void btnDashBoard_Click(object sender, EventArgs e)
+        private void Settlment_Click(object sender, EventArgs e)
         {
-            dashboard1 add = new dashboard1();
-            add.Show();
+            Settlement_UI settlement_UI = new Settlement_UI();
+            settlement_UI.Show();
 
             this.Hide();
         }

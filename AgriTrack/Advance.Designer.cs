@@ -427,7 +427,8 @@
             // 
             // btnClearAdvance
             // 
-            btnClearAdvance.BackColor = Color.Green;
+            btnClearAdvance.BackColor = Color.FromArgb(45, 122, 79);
+            btnClearAdvance.ForeColor = SystemColors.ButtonFace;
             btnClearAdvance.Location = new Point(373, 442);
             btnClearAdvance.Margin = new Padding(3, 2, 3, 2);
             btnClearAdvance.Name = "btnClearAdvance";
@@ -439,7 +440,8 @@
             // 
             // btnCancelAdvance
             // 
-            btnCancelAdvance.BackColor = Color.Green;
+            btnCancelAdvance.BackColor = Color.FromArgb(45, 122, 79);
+            btnCancelAdvance.ForeColor = SystemColors.ButtonFace;
             btnCancelAdvance.Location = new Point(544, 442);
             btnCancelAdvance.Margin = new Padding(3, 2, 3, 2);
             btnCancelAdvance.Name = "btnCancelAdvance";
@@ -451,7 +453,8 @@
             // 
             // btnSaveAdvance
             // 
-            btnSaveAdvance.BackColor = Color.Green;
+            btnSaveAdvance.BackColor = Color.FromArgb(45, 122, 79);
+            btnSaveAdvance.ForeColor = SystemColors.ButtonFace;
             btnSaveAdvance.Location = new Point(221, 442);
             btnSaveAdvance.Margin = new Padding(3, 2, 3, 2);
             btnSaveAdvance.Name = "btnSaveAdvance";
@@ -494,6 +497,7 @@
             Controls.Add(pnlDivider);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Advance";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Advance";
             pnlDivider.ResumeLayout(false);
             panel3.ResumeLayout(false);

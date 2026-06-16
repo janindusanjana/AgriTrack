@@ -135,26 +135,36 @@ ELSE
             }
         }
 
+        private void btnDashBoard_Click(object sender, EventArgs e)
+        {
+            dashboard1 add1 = new dashboard1();
+            add1.Show();
+            this.Hide();
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-            add_farmmer_1 add = new add_farmmer_1();
-            add.Show();
+            add_farmmer_1 add1 = new add_farmmer_1();
+            add1.Show();
             this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            Advance add = new Advance();
-            add.Show();
-
+            Advance add1 = new Advance();
+            add1.Show();
             this.Hide();
         }
 
         private void Settlment_Click(object sender, EventArgs e)
         {
-            Settlement_UI add = new Settlement_UI();
-            add.Show();
-
+            Settlement_UI add1 = new Settlement_UI();
+            add1.Show();
             this.Hide();
         }
     }

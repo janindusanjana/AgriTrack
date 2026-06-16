@@ -1,16 +1,23 @@
 ﻿using System;
+using System.IO;
+using System.Windows.Forms;
 using MigraDoc.DocumentObjectModel;
 using MigraDoc.DocumentObjectModel.Tables;
 using MigraDoc.Rendering;
 
 public static class SettlementPDFGenerator
 {
-    public static void GenerateReceipt(string filename, string month, string workerId, string name, string kg, string advance, string gross, string net, string status)
+    public static void GenerateGridReport(string filename, string targetMonth, DataGridView uiGrid)
     {
+        
+        if (PdfSharp.Fonts.GlobalFontSettings.FontResolver == null)
+        {
+            PdfSharp.Fonts.GlobalFontSettings.FontResolver = new WindowsFontResolver();
+        }
+
        
         Document document = new Document();
-        document.Info.Title = $"AgriTrack Settlement - {workerId}";
-
+        document.Info.Title = $"AgriTrack Ledger Summary - {targetMonth.Replace("/", "-")}";
 
        
         MigraDoc.DocumentObjectModel.Color agritrackGreen = MigraDoc.DocumentObjectModel.Color.FromRgb(30, 112, 67);
@@ -19,133 +26,156 @@ public static class SettlementPDFGenerator
         
         Style style = document.Styles["Normal"];
         style.Font.Name = "Segoe UI";
-        style.Font.Size = 11;
+        style.Font.Size = 10.5;
         style.Font.Color = darkGray;
 
-       
         Section section = document.AddSection();
         section.PageSetup.PageFormat = PageFormat.A4;
-        section.PageSetup.LeftMargin = "2cm";
-        section.PageSetup.RightMargin = "2cm";
+        section.PageSetup.LeftMargin = "1.5cm";
+        section.PageSetup.RightMargin = "1.5cm";
 
-       
+        
         Paragraph brand = section.AddParagraph();
         brand.AddText("AGRITRACK");
-        brand.Format.Font.Size = 20;
+        brand.Format.Font.Size = 22;
         brand.Format.Font.Bold = true;
         brand.Format.Font.Color = agritrackGreen;
-        brand.Format.SpaceAfter = 2;
 
-        Paragraph title = section.AddParagraph();
-        title.AddText("WORKER SETTLEMENT STATEMENT");
-        title.Format.Font.Size = 13;
-        title.Format.Font.Bold = true;
-        title.Format.Font.Color = Colors.Gray;
-        title.Format.SpaceAfter = 20;
-
-        
-        Table metaTable = section.AddTable();
-        metaTable.AddColumn("9cm");
-        metaTable.AddColumn("7cm");
-        Row metaRow = metaTable.AddRow();
-
-        Paragraph workerInfo = metaRow.Cells[0].AddParagraph();
-        workerInfo.AddFormattedText("WORKER DETAILS:\n", TextFormat.Bold);
-        workerInfo.AddText($"Worker ID: {workerId}\n");
-        workerInfo.AddText($"Name: {name}");
-        workerInfo.Format.LineSpacing = 1.3;
-
-        Paragraph sheetInfo = metaRow.Cells[1].AddParagraph();
-        sheetInfo.Format.Alignment = ParagraphAlignment.Right;
-        sheetInfo.AddFormattedText("STATEMENT PERIOD:\n", TextFormat.Bold);
-        sheetInfo.AddText($"Month: {month}\n");
-        sheetInfo.AddText($"Issued Date: {DateTime.Now.ToString("yyyy-MM-dd")}");
-        sheetInfo.Format.LineSpacing = 1.3;
-
-        section.AddParagraph().Format.SpaceAfter = 30; 
+        Paragraph docTitle = section.AddParagraph();
+        docTitle.AddText($"SETTLEMENT SUMMARY REPORT — PERIOD: {targetMonth}");
+        docTitle.Format.Font.Size = 11;
+        docTitle.Format.Font.Bold = true;
+        docTitle.Format.Font.Color = MigraDoc.DocumentObjectModel.Colors.Gray;
+        docTitle.Format.SpaceAfter = 20;
 
         
-        Table table = section.AddTable();
-        table.Borders.Width = 0.5;
-        table.Borders.Color = Colors.LightGray;
-        table.AddColumn("11cm"); 
-        table.AddColumn("5cm");  
+        Table pdfTable = section.AddTable();
+        pdfTable.Borders.Width = 0.5;
+        pdfTable.Borders.Color = MigraDoc.DocumentObjectModel.Colors.LightGray;
 
-       
-        Row headerRow = table.AddRow();
+        
+        pdfTable.AddColumn("3.0cm");  
+        pdfTable.AddColumn("3.5cm");  
+        pdfTable.AddColumn("3.5cm");   
+        pdfTable.AddColumn("4.0cm");  
+        pdfTable.AddColumn("4.0cm");  
+
+        
+        Row headerRow = pdfTable.AddRow();
         headerRow.Shading.Color = agritrackGreen;
-        headerRow.Format.Font.Color = Colors.White;
+        headerRow.Format.Font.Color = MigraDoc.DocumentObjectModel.Colors.White;
         headerRow.Format.Font.Bold = true;
-        headerRow.HeadingFormat = true;
-        headerRow.Height = "0.7cm";
-        headerRow.VerticalAlignment = VerticalAlignment.Center;
+        headerRow.Height = "0.8cm";
+        headerRow.VerticalAlignment = VerticalAlignment.Center; 
 
-        headerRow.Cells[0].AddParagraph(" Description");
-        var h2 = headerRow.Cells[1].AddParagraph("Amount / Metrics");
-        h2.Format.Alignment = ParagraphAlignment.Right;
-        h2.Format.RightIndent = "0.2cm";
+        headerRow.Cells[0].AddParagraph(" Worker ID");
+        headerRow.Cells[1].AddParagraph(" Total KG").Format.Alignment = ParagraphAlignment.Right;
+        headerRow.Cells[2].AddParagraph(" Advance Amount").Format.Alignment = ParagraphAlignment.Right;
+        headerRow.Cells[3].AddParagraph(" Net Salary").Format.Alignment = ParagraphAlignment.Right;
+        headerRow.Cells[4].AddParagraph(" Status").Format.Alignment = ParagraphAlignment.Center;
 
-        
-        AddDataRow(table, "Total Harvest Weight", $"{kg} KG");
-        AddDataRow(table, "Gross Salary Earnings", gross);
-        AddDataRow(table, "Less: Cash Advance Issued", $"- {advance}");
-
-        
-        Row netRow = table.AddRow();
-        netRow.Shading.Color = Colors.WhiteSmoke;
-        netRow.Height = "0.8cm";
-        netRow.VerticalAlignment = VerticalAlignment.Center;
-
-        var n1 = netRow.Cells[0].AddParagraph(" Net Pay Amount");
-        n1.Format.Font.Bold = true;
-        var n2 = netRow.Cells[1].AddParagraph(net);
-        n2.Format.Font.Bold = true;
-        n2.Format.Alignment = ParagraphAlignment.Right;
-        n2.Format.RightIndent = "0.2cm";
-
-       
-        Row statusRow = table.AddRow();
-        statusRow.Height = "0.7cm";
-        statusRow.VerticalAlignment = VerticalAlignment.Center;
-        statusRow.Cells[0].AddParagraph(" Settlement Status");
-
-        var statusCell = statusRow.Cells[1].AddParagraph(status.ToUpper());
-        statusCell.Format.Alignment = ParagraphAlignment.Right;
-        statusCell.Format.RightIndent = "0.2cm";
-        statusCell.Format.Font.Bold = true;
-       
-        if (status.ToLower().Contains("paid")) statusCell.Format.Font.Color = agritrackGreen;
+        headerRow.Cells[1].Format.RightIndent = "0.2cm";
+        headerRow.Cells[2].Format.RightIndent = "0.2cm";
+        headerRow.Cells[3].Format.RightIndent = "0.2cm";
 
         
-        section.AddParagraph().Format.SpaceAfter = 50;
+        int addedRowsCount = 0;
+        foreach (DataGridViewRow uiRow in uiGrid.Rows)
+        {
+            if (uiRow.IsNewRow) continue;
 
-        Table sigTable = section.AddTable();
-        sigTable.AddColumn("6cm");
-        sigTable.AddColumn("4cm"); 
-        sigTable.AddColumn("6cm");
-        Row sigRow = sigTable.AddRow();
+            string cellWorkerId = uiRow.Cells[0].Value?.ToString() ?? "—";
+            string cellTotalKg = uiRow.Cells[1].Value?.ToString() ?? "0.00";
+            string cellAdvance = uiRow.Cells[2].Value?.ToString() ?? "0.00";
+            string cellNetSalary = uiRow.Cells[3].Value?.ToString() ?? "0.00";
+            string cellStatus = uiRow.Cells[4].Value?.ToString() ?? "Unknown";
 
-        var sig1 = sigRow.Cells[0].AddParagraph("_____________________\nAuthorized Signature");
-        sig1.Format.Alignment = ParagraphAlignment.Center;
+            Row pdfDataRow = pdfTable.AddRow();
+            pdfDataRow.Height = "0.75cm";
+            pdfDataRow.VerticalAlignment = VerticalAlignment.Center;
 
-        var sig2 = sigRow.Cells[2].AddParagraph("_____________________\nWorker Signature");
-        sig2.Format.Alignment = ParagraphAlignment.Center;
+            
+            if (addedRowsCount % 2 == 1)
+            {
+                pdfDataRow.Shading.Color = MigraDoc.DocumentObjectModel.Color.FromRgb(248, 249, 250);
+            }
+
+            pdfDataRow.Cells[0].AddParagraph(" " + cellWorkerId);
+
+            var pKg = pdfDataRow.Cells[1].AddParagraph(cellTotalKg);
+            pKg.Format.Alignment = ParagraphAlignment.Right;
+            pKg.Format.RightIndent = "0.2cm";
+
+            var pAdv = pdfDataRow.Cells[2].AddParagraph(cellAdvance);
+            pAdv.Format.Alignment = ParagraphAlignment.Right;
+            pAdv.Format.RightIndent = "0.2cm";
+
+            var pNet = pdfDataRow.Cells[3].AddParagraph(cellNetSalary);
+            pNet.Format.Alignment = ParagraphAlignment.Right;
+            pNet.Format.RightIndent = "0.2cm";
+
+            if (cellNetSalary.Contains("-"))
+            {
+                pNet.Format.Font.Color = MigraDoc.DocumentObjectModel.Color.FromRgb(198, 40, 40);
+            }
+
+            var pStat = pdfDataRow.Cells[4].AddParagraph(cellStatus);
+            pStat.Format.Alignment = ParagraphAlignment.Center;
+            pStat.Format.Font.Bold = true;
+
+            if (cellStatus.ToLower().Trim() == "paid")
+                pStat.Format.Font.Color = agritrackGreen;
+            else
+                pStat.Format.Font.Color = MigraDoc.DocumentObjectModel.Color.FromRgb(198, 40, 40);
+
+            addedRowsCount++;
+        }
+
+        
+        section.AddParagraph().Format.SpaceAfter = 25;
+        Paragraph totalsLine = section.AddParagraph();
+        totalsLine.Format.Borders.Top.Width = 1;
+        totalsLine.Format.Borders.Top.Color = agritrackGreen;
+        totalsLine.Format.SpaceBefore = 10;
+
+        totalsLine.AddText($"Total Processed Ledger Entries: {addedRowsCount} records.");
+        totalsLine.Format.Font.Size = 9.5;
+        totalsLine.Format.Font.Color = MigraDoc.DocumentObjectModel.Colors.SlateGray;
 
         
         PdfDocumentRenderer renderer = new PdfDocumentRenderer(true) { Document = document };
         renderer.RenderDocument();
         renderer.PdfDocument.Save(filename);
     }
+}
 
-    private static void AddDataRow(Table table, string label, string value)
+
+public class WindowsFontResolver : PdfSharp.Fonts.IFontResolver
+{
+    public byte[] GetFont(string faceName)
     {
-        Row row = table.AddRow();
-        row.Height = "0.7cm";
-        row.VerticalAlignment = VerticalAlignment.Center;
+        string fontFolder = Environment.GetFolderPath(Environment.SpecialFolder.Fonts);
+        string mainPath = Path.Combine(fontFolder, faceName);
 
-        row.Cells[0].AddParagraph(" " + label);
-        var c2 = row.Cells[1].AddParagraph(value);
-        c2.Format.Alignment = ParagraphAlignment.Right;
-        c2.Format.RightIndent = "0.2cm";
+        if (File.Exists(mainPath))
+            return File.ReadAllBytes(mainPath);
+
+        
+        if (faceName.Contains("cour"))
+            return File.ReadAllBytes(Path.Combine(fontFolder, "cour.ttf"));
+
+        return File.ReadAllBytes(Path.Combine(fontFolder, "arial.ttf"));
+    }
+
+    public PdfSharp.Fonts.FontResolverInfo ResolveTypeface(string familyName, bool isBold, bool isItalic)
+    {
+        if (familyName.Equals("Segoe UI", StringComparison.OrdinalIgnoreCase))
+        {
+            if (isBold) return new PdfSharp.Fonts.FontResolverInfo("segoeuib.ttf");
+            return new PdfSharp.Fonts.FontResolverInfo("segoeui.ttf");
+        }
+
+        
+        return new PdfSharp.Fonts.FontResolverInfo("cour.ttf");
     }
 }

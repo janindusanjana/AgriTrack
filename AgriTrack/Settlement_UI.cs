@@ -307,16 +307,17 @@ namespace AgriTrack
 
         private void Settlement_UI_Load(object sender, EventArgs e)
         {
-       
+
             if (cmbstatus.Items.Count >= 2)
             {
                 cmbstatus.SelectedIndex = 1;
             }
 
-       
+
             dgvSettlement.AutoGenerateColumns = true;
 
             LoadData();
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             DailyHarvestAdding dailyHarvestAdding = new DailyHarvestAdding();

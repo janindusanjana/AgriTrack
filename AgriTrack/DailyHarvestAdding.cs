@@ -224,7 +224,7 @@ VALUES (@wid, @sm, @tkg, @gross, @adv, @net, 0);";
             }
         }
 
-      
+
         private void UpdateTotalHarvestToday()
         {
             DateTime today = DateTime.Today;
@@ -248,6 +248,7 @@ WHERE strftime('%Y', HarvestDate) = @y AND strftime('%m', HarvestDate) = @m AND 
                     txtTotalHarvest.Text = todayTotal.ToString("0.##");
                 }
             }
+        }
         private void btnDashBoard_Click(object sender, EventArgs e)
         {
             dashboard1 add1 = new dashboard1();

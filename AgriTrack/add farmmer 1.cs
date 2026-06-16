@@ -184,7 +184,7 @@ namespace AgriTrack
             }
         }
 
-       
+
         private void SaveAttendanceToDatabase(string workerId, string time, bool isCheckIn)
         {
             using (SqliteConnection con = new SqliteConnection(connectionString))
@@ -225,6 +225,7 @@ namespace AgriTrack
                     }
                 }
             }
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             DailyHarvestAdding daily = new DailyHarvestAdding();

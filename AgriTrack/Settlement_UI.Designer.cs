@@ -139,7 +139,10 @@
             button4.TabIndex = 5;
             button4.Text = "Advance";
             button4.UseVisualStyleBackColor = false;
+<<<<<<< Navigation-&-Security
+=======
             button4.Click += button4_Click;
+>>>>>>> master
             // 
             // button3
             // 
@@ -151,7 +154,10 @@
             button3.TabIndex = 4;
             button3.Text = "Daily Harvest";
             button3.UseVisualStyleBackColor = false;
+<<<<<<< Navigation-&-Security
+=======
             button3.Click += button3_Click;
+>>>>>>> master
             // 
             // button2
             // 
@@ -175,7 +181,10 @@
             btnDashBoard.TabIndex = 2;
             btnDashBoard.Text = "Dashboard";
             btnDashBoard.UseVisualStyleBackColor = false;
+<<<<<<< Navigation-&-Security
+=======
             btnDashBoard.Click += btnDashBoard_Click;
+>>>>>>> master
             // 
             // pictureBox1
             // 
@@ -465,7 +474,11 @@
             Controls.Add(lblWorkerID);
             Controls.Add(panel1);
             Controls.Add(panel3);
+<<<<<<< Navigation-&-Security
+            Name = "Settlement_UI";
+=======
            
+>>>>>>> master
             Text = "Settlement_UI";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

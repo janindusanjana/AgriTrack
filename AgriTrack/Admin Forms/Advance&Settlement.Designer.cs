@@ -131,7 +131,7 @@
             btnLoadAdvanceReport.FlatAppearance.BorderSize = 0;
             btnLoadAdvanceReport.FlatStyle = FlatStyle.Flat;
             btnLoadAdvanceReport.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLoadAdvanceReport.ForeColor = Color.Black;
+            btnLoadAdvanceReport.ForeColor = Color.Transparent;
             btnLoadAdvanceReport.Location = new Point(583, 38);
             btnLoadAdvanceReport.Name = "btnLoadAdvanceReport";
             btnLoadAdvanceReport.Size = new Size(115, 31);
@@ -167,7 +167,7 @@
             btnUpdateSettlemet.FlatAppearance.BorderSize = 0;
             btnUpdateSettlemet.FlatStyle = FlatStyle.Flat;
             btnUpdateSettlemet.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnUpdateSettlemet.ForeColor = Color.Black;
+            btnUpdateSettlemet.ForeColor = Color.Transparent;
             btnUpdateSettlemet.Location = new Point(266, 394);
             btnUpdateSettlemet.Name = "btnUpdateSettlemet";
             btnUpdateSettlemet.Size = new Size(115, 31);
@@ -181,7 +181,7 @@
             btnSettlementPrint.FlatAppearance.BorderSize = 0;
             btnSettlementPrint.FlatStyle = FlatStyle.Flat;
             btnSettlementPrint.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSettlementPrint.ForeColor = Color.Black;
+            btnSettlementPrint.ForeColor = Color.Transparent;
             btnSettlementPrint.Location = new Point(388, 394);
             btnSettlementPrint.Name = "btnSettlementPrint";
             btnSettlementPrint.Size = new Size(115, 31);

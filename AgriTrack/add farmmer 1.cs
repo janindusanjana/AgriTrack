@@ -2,6 +2,7 @@
 using System.Data;
 using Microsoft.Data.Sqlite;
 using System.Windows.Forms;
+using AgriTrack.Admin_Forms;
 
 namespace AgriTrack
 {
@@ -15,6 +16,7 @@ namespace AgriTrack
             InitializeComponent();
             InitializeClock();
 
+        
 
             btnSearch.Click += btnSearch_Click;
             dgvWorkers.CellContentClick += dgvWorkers_CellContentClick;
@@ -228,27 +230,57 @@ namespace AgriTrack
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            DailyHarvestAdding daily = new DailyHarvestAdding();
+            if (Userdata.Role == "Admin")
+            {
+                
+                Daily_Harvest adminSet = new Daily_Harvest();
+                adminSet.Show();
+                this.Hide();
+            }
+            else if (Userdata.Role == "User")
+            {
+                DailyHarvestAdding daily = new DailyHarvestAdding();
             daily.Show();
 
             this.Hide();
         }
 
+        }
         private void button4_Click(object sender, EventArgs e)
         {
-            Advance advanced = new Advance();
+            if (Userdata.Role == "Admin")
+            {
+
+                Advance_Settlement adminSet = new Advance_Settlement();
+                adminSet.Show();
+                this.Hide();
+            }
+            else if (Userdata.Role == "User")
+            {
+                Advance advanced = new Advance();
             advanced.Show();
 
             this.Hide();
         }
 
+        }
         private void Settlment_Click(object sender, EventArgs e)
         {
-            Settlement_UI settlement_UI = new Settlement_UI();
+            if (Userdata.Role == "Admin")
+            {
 
-            settlement_UI.Show();
+                Advance_Settlement adminSet = new Advance_Settlement();
+                adminSet.Show();
+                this.Hide();
+            }
+            else if (Userdata.Role == "User")
+            {
+                Settlement_UI settlement_UI = new Settlement_UI();
 
-            this.Hide();
+                settlement_UI.Show();
+
+                this.Hide();
+            }
         }
 
         private void btnDashBoard_Click(object sender, EventArgs e)

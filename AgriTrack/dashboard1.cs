@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using LiveCharts;
 using LiveCharts.Wpf;
 using System.Data.SQLite;
+using AgriTrack.Admin_Forms;
 
 namespace AgriTrack
 {
@@ -12,10 +13,11 @@ namespace AgriTrack
     {
         
         string connectionString = @"Data Source=C:\Users\wwwja\Desktop\AgriTrack\AgriTrackDB.db;Version=3;";
-
+        
         public dashboard1()
         {
             InitializeComponent();
+            
         }
 
         private void dashboard1_Load(object sender, EventArgs e)
@@ -165,23 +167,54 @@ namespace AgriTrack
 
         private void button3_Click(object sender, EventArgs e)
         {
-            DailyHarvestAdding dailyHarvestAdding = new DailyHarvestAdding();
+            if (Userdata.Role == "Admin")
+            {
+              
+                Daily_Harvest adminSet = new Daily_Harvest();
+                adminSet.Show();
+                this.Hide();
+            }
+            else if (Userdata.Role == "User")
+            {
+                DailyHarvestAdding dailyHarvestAdding = new DailyHarvestAdding();
             dailyHarvestAdding.Show();
             this.Hide();
         }
 
+        }
         private void button4_Click(object sender, EventArgs e)
         {
-            Advance advance = new Advance();
-            advance.Show();
-            this.Hide();
+            if (Userdata.Role == "Admin")
+            {
+                
+                Advance_Settlement adminAdv = new Advance_Settlement();
+                adminAdv.Show();
+                this.Hide();
+            }
+
+            else if (Userdata.Role == "User")
+            {
+                Advance advance = new Advance();
+                advance.Show();
+                this.Hide();
+            }
         }
 
         private void Settlment_Click(object sender, EventArgs e)
         {
-            Settlement_UI settlement_UI = new Settlement_UI();
-            settlement_UI.Show();
-            this.Hide();
+            if (Userdata.Role == "Admin")
+            {
+               
+                Advance_Settlement adminSet = new Advance_Settlement();
+                adminSet.Show();
+                this.Hide();
+            }
+            else if (Userdata.Role == "User")
+            {
+                Settlement_UI settlement_UI = new Settlement_UI();
+                settlement_UI.Show();
+                this.Hide();
+            }
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

@@ -56,7 +56,7 @@ namespace AgriTrack
             
             try
             {
-                string connectionString = "data source=C:\\Users\\wwwja\\Desktop\\AgriTrack\\AgriTrackDB.db;";
+                string connectionString = "Data Source=" + System.IO.Path.Combine(Application.StartupPath, "AgriTrackDB.db") + ";";
 
                 using (SQLiteConnection conn = new SQLiteConnection(connectionString))
                 {

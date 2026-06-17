@@ -11,7 +11,7 @@ namespace AgriTrack
 {
     public partial class Settlement_UI : Form
     {
-        string connectionString = @"Data Source=C:\Users\ASUS\Desktop\Vap project\AgriTrack\AgriTrack\AgriTrackDB.db;";
+        string connectionString = "Data Source=" + System.IO.Path.Combine(Application.StartupPath, "AgriTrackDB.db") + ";";
         double ratePerKg = 120;
 
         public Settlement_UI()
@@ -348,19 +348,6 @@ namespace AgriTrack
             dgvSettlement.AutoGenerateColumns = true;
             LoadData();
         }
-        private void button3_Click(object sender, EventArgs e)
-        {
-            DailyHarvestAdding dailyHarvestAdding = new DailyHarvestAdding();
-            dailyHarvestAdding.Show();
-            this.Hide();
-        }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Advance advance = new Advance();
-            advance.Show();
-            this.Hide();
-        }
         }   
     }
-}

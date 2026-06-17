@@ -8,8 +8,8 @@ namespace AgriTrack.Admin_Forms
 {
     public partial class Advance_Settlement : Form
     {
-       
-        private string connectionString = @"Data Source=C:\Users\wwwja\Desktop\AgriTrack\AgriTrackDB.db;Version=3;";
+
+        string connectionString = "Data Source=" + System.IO.Path.Combine(Application.StartupPath, "AgriTrackDB.db") + ";";
 
         public Advance_Settlement()
         {

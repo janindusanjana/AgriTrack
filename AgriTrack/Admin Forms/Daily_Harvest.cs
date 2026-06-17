@@ -8,7 +8,7 @@ namespace AgriTrack.Admin_Forms
     public partial class Daily_Harvest : Form
     {
 
-        private string connectionString = @"Data Source=C:\Users\wwwja\Desktop\AgriTrack\AgriTrackDB.db;Version=3;";
+        private string connectionString = "Data Source=" + System.IO.Path.Combine(Application.StartupPath, "AgriTrackDB.db") + ";";
 
         public Daily_Harvest()
         {

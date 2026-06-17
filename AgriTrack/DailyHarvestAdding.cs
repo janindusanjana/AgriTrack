@@ -7,9 +7,9 @@ namespace AgriTrack
     public partial class DailyHarvestAdding : Form
     {
       
-        private string connectionString = "Data Source=C:\\Users\\wwwja\\Desktop\\AgriTrack\\AgriTrackDB.db";
+        private string connectionString = "Data Source=" + System.IO.Path.Combine(Application.StartupPath, "AgriTrackDB.db") + ";";
 
-        
+
         private const decimal DEFAULT_WAGE_RATE = 50.00m;
 
         public DailyHarvestAdding()

@@ -8,7 +8,7 @@ namespace AgriTrack
 {
     public partial class Advance : Form
     {
-        private string connectionString = "data source=C:\\Users\\wwwja\\Desktop\\AgriTrack\\AgriTrackDB.db;";
+        private string connectionString = "Data Source=" + System.IO.Path.Combine(Application.StartupPath, "AgriTrackDB.db") + ";";
         private decimal wagePerKg = 50m;
         private long? selectedAdvanceId = null;
 

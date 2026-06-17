@@ -9,7 +9,7 @@ namespace AgriTrack
     public partial class add_farmmer_1 : Form
     {
 
-        private readonly string connectionString = @"data source=C:\Users\wwwja\Desktop\AgriTrack\AgriTrackDB.db;";
+        private readonly string connectionString = "Data Source=" + System.IO.Path.Combine(Application.StartupPath, "AgriTrackDB.db") + ";";
 
         public add_farmmer_1()
         {
@@ -20,10 +20,12 @@ namespace AgriTrack
 
             btnSearch.Click += btnSearch_Click;
             dgvWorkers.CellContentClick += dgvWorkers_CellContentClick;
-
-
             btnClear.Click += btnClear_Click;
-
+            btnDashBoard.Click += btnDashBoard_Click;
+            button3.Click += button3_Click; 
+            button4.Click += button4_Click;  
+            Settlment.Click += Settlment_Click; 
+            btnAddWorker.Click += btnAddWorker_Click;
 
             LoadAllWorkersData();
         }

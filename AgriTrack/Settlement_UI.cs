@@ -172,6 +172,7 @@ namespace AgriTrack
                         }
                     }
                 }
+                LoadData(workerId.ToString());
             }
             catch (Exception ex)
             {
@@ -227,7 +228,7 @@ namespace AgriTrack
                 MessageBox.Show("Settlement Updated Successfully");
             }
 
-            LoadData();
+            LoadData(txtWorkerID.Text.Trim());
         }
 
         
@@ -303,43 +304,59 @@ namespace AgriTrack
         }
 
         
-        private void LoadData()
+        private void LoadData(string filterWorkerID = "")
         {
             using (var con = new SQLiteConnection(connectionString))
             {
                 con.Open();
 
-                const string query = @"
+                string query = @"
                     SELECT
                         WorkerID,
                         TotalKg,
                         AdvanceAmount,
                         NetSalary,
                         CASE WHEN IsPaid = 1 THEN 'Paid' ELSE 'Non-Paid' END AS Status
-                    FROM  SalarySettlement
-                    ORDER BY WorkerID, SalaryMonth;";
+                    FROM  SalarySettlement ";
 
-                using (var da = new SQLiteDataAdapter(query, con))
+               
+                if (!string.IsNullOrEmpty(filterWorkerID))
                 {
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
+                    query += " WHERE WorkerID = @workerId ";
+                }
 
-                    dgvSettlement.DataSource = null;
-                    dgvSettlement.Columns.Clear();
-                    dgvSettlement.AutoGenerateColumns = true;
-                    dgvSettlement.DataSource = dt;
+                query += " ORDER BY WorkerID, SalaryMonth;";
 
-                    if (dgvSettlement.Columns["TotalKg"] != null)
-                        dgvSettlement.Columns["TotalKg"].DefaultCellStyle.Format = "N2";
-                    if (dgvSettlement.Columns["AdvanceAmount"] != null)
-                        dgvSettlement.Columns["AdvanceAmount"].DefaultCellStyle.Format = "N2";
-                    if (dgvSettlement.Columns["NetSalary"] != null)
-                        dgvSettlement.Columns["NetSalary"].DefaultCellStyle.Format = "N2";
+                using (var cmd = new SQLiteCommand(query, con))
+                {
+                    
+                    if (!string.IsNullOrEmpty(filterWorkerID))
+                    {
+                        cmd.Parameters.AddWithValue("@workerId", filterWorkerID);
+                    }
+
+                    using (var da = new SQLiteDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+
+                        dgvSettlement.DataSource = null;
+                        dgvSettlement.Columns.Clear();
+                        dgvSettlement.AutoGenerateColumns = true;
+                        dgvSettlement.DataSource = dt;
+
+                        if (dgvSettlement.Columns["TotalKg"] != null)
+                            dgvSettlement.Columns["TotalKg"].DefaultCellStyle.Format = "N2";
+                        if (dgvSettlement.Columns["AdvanceAmount"] != null)
+                            dgvSettlement.Columns["AdvanceAmount"].DefaultCellStyle.Format = "N2";
+                        if (dgvSettlement.Columns["NetSalary"] != null)
+                            dgvSettlement.Columns["NetSalary"].DefaultCellStyle.Format = "N2";
+                    }
                 }
             }
         }
 
-        
+
         private void Settlement_UI_Load(object sender, EventArgs e)
         {
             if (cmbstatus.Items.Count >= 2)

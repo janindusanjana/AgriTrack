@@ -7,9 +7,13 @@ namespace AgriTrack
     public partial class DailyHarvestAdding : Form
     {
       
+<<<<<<< Updated upstream
         private string connectionString = "Data Source=" + System.IO.Path.Combine(Application.StartupPath, "AgriTrackDB.db") + ";";
 
 
+=======
+        
+>>>>>>> Stashed changes
         private const decimal DEFAULT_WAGE_RATE = 50.00m;
 
         public DailyHarvestAdding()
@@ -41,7 +45,7 @@ namespace AgriTrack
 
             try
             {
-                using (var conn = new SqliteConnection(connectionString))
+                using (var conn = new SqliteConnection(DatabaseHelper.ConnectionString))
                 {
                     conn.Open();
                     string sql = "SELECT Value FROM Settings WHERE Key = 'DefaultWageRate' LIMIT 1;";
@@ -83,7 +87,7 @@ namespace AgriTrack
                 return;
             }
 
-            using (var conn = new SqliteConnection(connectionString))
+            using (var conn = new SqliteConnection(DatabaseHelper.ConnectionString))
             {
                 conn.Open();
                 string sql = "SELECT Name FROM Worker WHERE WorkerID = @wid LIMIT 1;";
@@ -120,7 +124,7 @@ namespace AgriTrack
 
             DateTime harvestDate = dtpDate.Value.Date;
 
-            using (var conn = new SqliteConnection(connectionString))
+            using (var conn = new SqliteConnection(DatabaseHelper.ConnectionString))
             {
                 conn.Open();
                 using (var tx = conn.BeginTransaction())
@@ -232,7 +236,7 @@ VALUES (@wid, @sm, @tkg, @gross, @adv, @net, 0);";
             string m = today.Month.ToString("D2");
             string d = today.Day.ToString("D2");
 
-            using (var conn = new SqliteConnection(connectionString))
+            using (var conn = new SqliteConnection(DatabaseHelper.ConnectionString))
             {
                 conn.Open();
                 string sql = @"

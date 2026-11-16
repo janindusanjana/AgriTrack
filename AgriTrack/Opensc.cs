@@ -125,7 +125,7 @@ namespace AgriTrack
             {
                 MessageBox.Show("Admin Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                dashboard1 mainApp = new dashboard1();
+                admindash mainApp = new admindash();
                 mainApp.Show();
                 this.Hide();
             }*/
@@ -161,7 +161,7 @@ namespace AgriTrack
             {
                 MessageBox.Show("Admin Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                dashboard1 mainApp = new dashboard1();
+                admindash mainApp = new admindash();
                 mainApp.Show();
                 this.Hide();
             }*/

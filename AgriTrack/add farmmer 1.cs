@@ -8,9 +8,13 @@ namespace AgriTrack
 {
     public partial class add_farmmer_1 : Form
     {
+<<<<<<< Updated upstream
 
         private readonly string connectionString = "Data Source=" + System.IO.Path.Combine(Application.StartupPath, "AgriTrackDB.db") + ";";
 
+=======
+      
+>>>>>>> Stashed changes
         public add_farmmer_1()
         {
             InitializeComponent();
@@ -69,7 +73,7 @@ namespace AgriTrack
         {
             dgvWorkers.Rows.Clear();
 
-            using (SqliteConnection con = new SqliteConnection(connectionString))
+            using (SqliteConnection con = new SqliteConnection(DatabaseHelper.ConnectionString))
             {
                 string query = @"
                     SELECT w.WorkerID, w.Name, w.Gender, a.check_in, a.check_out 
@@ -113,7 +117,7 @@ namespace AgriTrack
         {
             dgvWorkers.Rows.Clear();
 
-            using (SqliteConnection con = new SqliteConnection(connectionString))
+            using (SqliteConnection con = new SqliteConnection(DatabaseHelper.ConnectionString))
             {
                 string query = @"
                     SELECT w.WorkerID, w.Name, w.Gender, a.check_in, a.check_out 
@@ -191,7 +195,7 @@ namespace AgriTrack
 
         private void SaveAttendanceToDatabase(string workerId, string time, bool isCheckIn)
         {
-            using (SqliteConnection con = new SqliteConnection(connectionString))
+            using (SqliteConnection con = new SqliteConnection(DatabaseHelper.ConnectionString))
             {
                 string query = "";
 

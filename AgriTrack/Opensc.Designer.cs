@@ -26,6 +26,18 @@
             pnlDivider = new Panel();
             pnlFooter = new Panel();
             lblFooter = new Label();
+            pnlWorker = new Panel();
+            pnlWorkerTop = new Panel();
+            lblWorkerRole = new Label();
+            lblWorkerSub = new Label();
+            btnWorker = new Button();
+            picWorker = new PictureBox();
+            pnlAdmin = new Panel();
+            pnlAdminTop = new Panel();
+            lblAdminRole = new Label();
+            lblAdminSub = new Label();
+            btnAdmin = new Button();
+            picAdmin = new PictureBox();
             pnlWorkerLogin = new Panel();
             button2 = new Button();
             button1 = new Button();
@@ -44,30 +56,18 @@
             label5 = new Label();
             pictureBox2 = new PictureBox();
             label4 = new Label();
-            pnlWorker = new Panel();
-            pnlWorkerTop = new Panel();
-            lblWorkerRole = new Label();
-            lblWorkerSub = new Label();
-            btnWorker = new Button();
-            picWorker = new PictureBox();
-            pnlAdmin = new Panel();
-            pnlAdminTop = new Panel();
-            lblAdminRole = new Label();
-            lblAdminSub = new Label();
-            btnAdmin = new Button();
-            picAdmin = new PictureBox();
             pnlHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
             pnlBody.SuspendLayout();
             pnlFooter.SuspendLayout();
-            pnlWorkerLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            pnlAdminLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             pnlWorker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picWorker).BeginInit();
             pnlAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picAdmin).BeginInit();
+            pnlWorkerLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pnlAdminLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pnlHeader
@@ -128,9 +128,9 @@
             pnlBody.Controls.Add(pnlDivider);
             pnlBody.Controls.Add(pnlFooter);
             pnlBody.Controls.Add(pnlWorker);
-            pnlBody.Controls.Add(pnlAdmin);
             pnlBody.Controls.Add(pnlWorkerLogin);
             pnlBody.Controls.Add(pnlAdminLogin);
+            pnlBody.Controls.Add(pnlAdmin);
             pnlBody.Location = new Point(0, 110);
             pnlBody.Name = "pnlBody";
             pnlBody.Size = new Size(820, 370);
@@ -176,6 +176,150 @@
             lblFooter.TabIndex = 0;
             lblFooter.Text = "© 2025 AgriTrack  ·  Smart Worker Management  ·  All rights reserved";
             lblFooter.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // pnlWorker
+            // 
+            pnlWorker.BackColor = Color.White;
+            pnlWorker.Controls.Add(pnlWorkerTop);
+            pnlWorker.Controls.Add(lblWorkerRole);
+            pnlWorker.Controls.Add(lblWorkerSub);
+            pnlWorker.Controls.Add(btnWorker);
+            pnlWorker.Controls.Add(picWorker);
+            pnlWorker.Location = new Point(70, 56);
+            pnlWorker.Name = "pnlWorker";
+            pnlWorker.Size = new Size(300, 268);
+            pnlWorker.TabIndex = 1;
+            // 
+            // pnlWorkerTop
+            // 
+            pnlWorkerTop.BackColor = Color.FromArgb(56, 142, 60);
+            pnlWorkerTop.Location = new Point(0, 0);
+            pnlWorkerTop.Name = "pnlWorkerTop";
+            pnlWorkerTop.Size = new Size(300, 6);
+            pnlWorkerTop.TabIndex = 0;
+            // 
+            // lblWorkerRole
+            // 
+            lblWorkerRole.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblWorkerRole.ForeColor = Color.FromArgb(27, 94, 32);
+            lblWorkerRole.Location = new Point(0, 126);
+            lblWorkerRole.Name = "lblWorkerRole";
+            lblWorkerRole.Size = new Size(300, 30);
+            lblWorkerRole.TabIndex = 1;
+            lblWorkerRole.Text = "USER";
+            lblWorkerRole.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblWorkerSub
+            // 
+            lblWorkerSub.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblWorkerSub.ForeColor = Color.FromArgb(120, 140, 120);
+            lblWorkerSub.Location = new Point(0, 156);
+            lblWorkerSub.Name = "lblWorkerSub";
+            lblWorkerSub.Size = new Size(300, 22);
+            lblWorkerSub.TabIndex = 2;
+            lblWorkerSub.Text = "Log attendance & view your schedule";
+            lblWorkerSub.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnWorker
+            // 
+            btnWorker.BackColor = Color.FromArgb(56, 142, 60);
+            btnWorker.Cursor = Cursors.Hand;
+            btnWorker.FlatAppearance.BorderSize = 0;
+            btnWorker.FlatAppearance.MouseDownBackColor = Color.FromArgb(27, 94, 32);
+            btnWorker.FlatAppearance.MouseOverBackColor = Color.FromArgb(46, 125, 50);
+            btnWorker.FlatStyle = FlatStyle.Flat;
+            btnWorker.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnWorker.ForeColor = Color.White;
+            btnWorker.Location = new Point(70, 192);
+            btnWorker.Name = "btnWorker";
+            btnWorker.Size = new Size(160, 38);
+            btnWorker.TabIndex = 1;
+            btnWorker.Text = "Sign In as User";
+            btnWorker.UseVisualStyleBackColor = false;
+            btnWorker.Click += btnWorker_Click_1;
+            // 
+            // picWorker
+            // 
+            picWorker.BackColor = Color.FromArgb(232, 245, 233);
+            picWorker.Image = Properties.Resources.man;
+            picWorker.Location = new Point(102, 22);
+            picWorker.Name = "picWorker";
+            picWorker.Size = new Size(96, 96);
+            picWorker.SizeMode = PictureBoxSizeMode.Zoom;
+            picWorker.TabIndex = 3;
+            picWorker.TabStop = false;
+            // 
+            // pnlAdmin
+            // 
+            pnlAdmin.BackColor = Color.White;
+            pnlAdmin.Controls.Add(pnlAdminTop);
+            pnlAdmin.Controls.Add(lblAdminRole);
+            pnlAdmin.Controls.Add(lblAdminSub);
+            pnlAdmin.Controls.Add(btnAdmin);
+            pnlAdmin.Controls.Add(picAdmin);
+            pnlAdmin.Location = new Point(448, 56);
+            pnlAdmin.Name = "pnlAdmin";
+            pnlAdmin.Size = new Size(300, 268);
+            pnlAdmin.TabIndex = 3;
+            // 
+            // pnlAdminTop
+            // 
+            pnlAdminTop.BackColor = Color.FromArgb(30, 77, 120);
+            pnlAdminTop.Location = new Point(0, 0);
+            pnlAdminTop.Name = "pnlAdminTop";
+            pnlAdminTop.Size = new Size(300, 6);
+            pnlAdminTop.TabIndex = 0;
+            // 
+            // lblAdminRole
+            // 
+            lblAdminRole.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAdminRole.ForeColor = Color.FromArgb(13, 71, 161);
+            lblAdminRole.Location = new Point(0, 126);
+            lblAdminRole.Name = "lblAdminRole";
+            lblAdminRole.Size = new Size(300, 30);
+            lblAdminRole.TabIndex = 1;
+            lblAdminRole.Text = "ADMIN";
+            lblAdminRole.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblAdminSub
+            // 
+            lblAdminSub.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAdminSub.ForeColor = Color.FromArgb(120, 130, 145);
+            lblAdminSub.Location = new Point(0, 156);
+            lblAdminSub.Name = "lblAdminSub";
+            lblAdminSub.Size = new Size(300, 22);
+            lblAdminSub.TabIndex = 2;
+            lblAdminSub.Text = "Manage workers & generate reports";
+            lblAdminSub.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // btnAdmin
+            // 
+            btnAdmin.BackColor = Color.FromArgb(30, 77, 120);
+            btnAdmin.Cursor = Cursors.Hand;
+            btnAdmin.FlatAppearance.BorderSize = 0;
+            btnAdmin.FlatAppearance.MouseDownBackColor = Color.FromArgb(13, 53, 88);
+            btnAdmin.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 65, 105);
+            btnAdmin.FlatStyle = FlatStyle.Flat;
+            btnAdmin.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdmin.ForeColor = Color.White;
+            btnAdmin.Location = new Point(70, 192);
+            btnAdmin.Name = "btnAdmin";
+            btnAdmin.Size = new Size(160, 38);
+            btnAdmin.TabIndex = 3;
+            btnAdmin.Text = "Sign In as Admin";
+            btnAdmin.UseVisualStyleBackColor = false;
+            btnAdmin.Click += btnAdmin_Click;
+            // 
+            // picAdmin
+            // 
+            picAdmin.BackColor = Color.FromArgb(227, 242, 253);
+            picAdmin.Image = Properties.Resources.man;
+            picAdmin.Location = new Point(102, 22);
+            picAdmin.Name = "picAdmin";
+            picAdmin.Size = new Size(96, 96);
+            picAdmin.SizeMode = PictureBoxSizeMode.Zoom;
+            picAdmin.TabIndex = 5;
+            picAdmin.TabStop = false;
             // 
             // pnlWorkerLogin
             // 
@@ -369,150 +513,6 @@
             label4.Text = "Enter Username and Password";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pnlWorker
-            // 
-            pnlWorker.BackColor = Color.White;
-            pnlWorker.Controls.Add(pnlWorkerTop);
-            pnlWorker.Controls.Add(lblWorkerRole);
-            pnlWorker.Controls.Add(lblWorkerSub);
-            pnlWorker.Controls.Add(btnWorker);
-            pnlWorker.Controls.Add(picWorker);
-            pnlWorker.Location = new Point(70, 56);
-            pnlWorker.Name = "pnlWorker";
-            pnlWorker.Size = new Size(300, 268);
-            pnlWorker.TabIndex = 1;
-            // 
-            // pnlWorkerTop
-            // 
-            pnlWorkerTop.BackColor = Color.FromArgb(56, 142, 60);
-            pnlWorkerTop.Location = new Point(0, 0);
-            pnlWorkerTop.Name = "pnlWorkerTop";
-            pnlWorkerTop.Size = new Size(300, 6);
-            pnlWorkerTop.TabIndex = 0;
-            // 
-            // lblWorkerRole
-            // 
-            lblWorkerRole.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblWorkerRole.ForeColor = Color.FromArgb(27, 94, 32);
-            lblWorkerRole.Location = new Point(0, 126);
-            lblWorkerRole.Name = "lblWorkerRole";
-            lblWorkerRole.Size = new Size(300, 30);
-            lblWorkerRole.TabIndex = 1;
-            lblWorkerRole.Text = "USER";
-            lblWorkerRole.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // lblWorkerSub
-            // 
-            lblWorkerSub.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblWorkerSub.ForeColor = Color.FromArgb(120, 140, 120);
-            lblWorkerSub.Location = new Point(0, 156);
-            lblWorkerSub.Name = "lblWorkerSub";
-            lblWorkerSub.Size = new Size(300, 22);
-            lblWorkerSub.TabIndex = 2;
-            lblWorkerSub.Text = "Log attendance & view your schedule";
-            lblWorkerSub.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // btnWorker
-            // 
-            btnWorker.BackColor = Color.FromArgb(56, 142, 60);
-            btnWorker.Cursor = Cursors.Hand;
-            btnWorker.FlatAppearance.BorderSize = 0;
-            btnWorker.FlatAppearance.MouseDownBackColor = Color.FromArgb(27, 94, 32);
-            btnWorker.FlatAppearance.MouseOverBackColor = Color.FromArgb(46, 125, 50);
-            btnWorker.FlatStyle = FlatStyle.Flat;
-            btnWorker.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnWorker.ForeColor = Color.White;
-            btnWorker.Location = new Point(70, 192);
-            btnWorker.Name = "btnWorker";
-            btnWorker.Size = new Size(160, 38);
-            btnWorker.TabIndex = 1;
-            btnWorker.Text = "Sign In as User";
-            btnWorker.UseVisualStyleBackColor = false;
-            btnWorker.Click += btnWorker_Click_1;
-            // 
-            // picWorker
-            // 
-            picWorker.BackColor = Color.FromArgb(232, 245, 233);
-            picWorker.Image = Properties.Resources.man;
-            picWorker.Location = new Point(102, 22);
-            picWorker.Name = "picWorker";
-            picWorker.Size = new Size(96, 96);
-            picWorker.SizeMode = PictureBoxSizeMode.Zoom;
-            picWorker.TabIndex = 3;
-            picWorker.TabStop = false;
-            // 
-            // pnlAdmin
-            // 
-            pnlAdmin.BackColor = Color.White;
-            pnlAdmin.Controls.Add(pnlAdminTop);
-            pnlAdmin.Controls.Add(lblAdminRole);
-            pnlAdmin.Controls.Add(lblAdminSub);
-            pnlAdmin.Controls.Add(btnAdmin);
-            pnlAdmin.Controls.Add(picAdmin);
-            pnlAdmin.Location = new Point(448, 56);
-            pnlAdmin.Name = "pnlAdmin";
-            pnlAdmin.Size = new Size(300, 268);
-            pnlAdmin.TabIndex = 3;
-            // 
-            // pnlAdminTop
-            // 
-            pnlAdminTop.BackColor = Color.FromArgb(30, 77, 120);
-            pnlAdminTop.Location = new Point(0, 0);
-            pnlAdminTop.Name = "pnlAdminTop";
-            pnlAdminTop.Size = new Size(300, 6);
-            pnlAdminTop.TabIndex = 0;
-            // 
-            // lblAdminRole
-            // 
-            lblAdminRole.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAdminRole.ForeColor = Color.FromArgb(13, 71, 161);
-            lblAdminRole.Location = new Point(0, 126);
-            lblAdminRole.Name = "lblAdminRole";
-            lblAdminRole.Size = new Size(300, 30);
-            lblAdminRole.TabIndex = 1;
-            lblAdminRole.Text = "ADMIN";
-            lblAdminRole.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // lblAdminSub
-            // 
-            lblAdminSub.Font = new Font("Segoe UI", 8.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAdminSub.ForeColor = Color.FromArgb(120, 130, 145);
-            lblAdminSub.Location = new Point(0, 156);
-            lblAdminSub.Name = "lblAdminSub";
-            lblAdminSub.Size = new Size(300, 22);
-            lblAdminSub.TabIndex = 2;
-            lblAdminSub.Text = "Manage workers & generate reports";
-            lblAdminSub.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // btnAdmin
-            // 
-            btnAdmin.BackColor = Color.FromArgb(30, 77, 120);
-            btnAdmin.Cursor = Cursors.Hand;
-            btnAdmin.FlatAppearance.BorderSize = 0;
-            btnAdmin.FlatAppearance.MouseDownBackColor = Color.FromArgb(13, 53, 88);
-            btnAdmin.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 65, 105);
-            btnAdmin.FlatStyle = FlatStyle.Flat;
-            btnAdmin.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAdmin.ForeColor = Color.White;
-            btnAdmin.Location = new Point(70, 192);
-            btnAdmin.Name = "btnAdmin";
-            btnAdmin.Size = new Size(160, 38);
-            btnAdmin.TabIndex = 3;
-            btnAdmin.Text = "Sign In as Admin";
-            btnAdmin.UseVisualStyleBackColor = false;
-            btnAdmin.Click += btnAdmin_Click;
-            // 
-            // picAdmin
-            // 
-            picAdmin.BackColor = Color.FromArgb(227, 242, 253);
-            picAdmin.Image = Properties.Resources.man;
-            picAdmin.Location = new Point(102, 22);
-            picAdmin.Name = "picAdmin";
-            picAdmin.Size = new Size(96, 96);
-            picAdmin.SizeMode = PictureBoxSizeMode.Zoom;
-            picAdmin.TabIndex = 5;
-            picAdmin.TabStop = false;
-            // 
             // Opensc
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -531,16 +531,16 @@
             ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
             pnlBody.ResumeLayout(false);
             pnlFooter.ResumeLayout(false);
+            pnlWorker.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picWorker).EndInit();
+            pnlAdmin.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picAdmin).EndInit();
             pnlWorkerLogin.ResumeLayout(false);
             pnlWorkerLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             pnlAdminLogin.ResumeLayout(false);
             pnlAdminLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            pnlWorker.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)picWorker).EndInit();
-            pnlAdmin.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)picAdmin).EndInit();
             ResumeLayout(false);
         }
 

@@ -13,6 +13,10 @@ namespace AgriTrack
              https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Opensc());
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         }
     }
 }

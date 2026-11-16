@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data;
-using System.Data.SQLite;
+using Microsoft.Data.Sqlite;
 using System.Globalization;
 using System.Windows.Forms;
 
@@ -8,7 +8,10 @@ namespace AgriTrack
 {
     public partial class Advance : Form
     {
+<<<<<<< Updated upstream
         private string connectionString = "Data Source=" + System.IO.Path.Combine(Application.StartupPath, "AgriTrackDB.db") + ";";
+=======
+>>>>>>> Stashed changes
         private decimal wagePerKg = 50m;
         private long? selectedAdvanceId = null;
 
@@ -25,6 +28,8 @@ namespace AgriTrack
             txtAdvanceAmount.TextChanged += txtAdvanceAmount_TextChanged;
             dtpAdvanceDate.ValueChanged += dtpAdvanceDate_ValueChanged;
         }
+
+
 
         #region Event handlers
 
@@ -136,12 +141,12 @@ namespace AgriTrack
 
         private void LoadWorkerAndRelatedData(string workerId)
         {
-            using (var conn = new SQLiteConnection(connectionString))
+            using (var conn = new SqliteConnection(DatabaseHelper.ConnectionString))
             {
                 conn.Open();
 
                 string query = "SELECT Name, NIC, Phone FROM Worker WHERE WorkerID=@WorkerID";
-                using (var cmd = new SQLiteCommand(query, conn))
+                using (var cmd = new SqliteCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@WorkerID", workerId);
                     using (var reader = cmd.ExecuteReader())
@@ -163,7 +168,7 @@ namespace AgriTrack
 
                 
                 string sumQuery = "SELECT IFNULL(SUM(Amount),0) FROM Advance WHERE WorkerID=@WorkerID";
-                using (var cmd = new SQLiteCommand(sumQuery, conn))
+                using (var cmd = new SqliteCommand(sumQuery, conn))
                 {
                     cmd.Parameters.AddWithValue("@WorkerID", workerId);
                     var sumObj = cmd.ExecuteScalar();
@@ -173,7 +178,7 @@ namespace AgriTrack
 
               
                 string historyQuery = "SELECT AdvanceID, Amount, AdvanceDate FROM Advance WHERE WorkerID=@WorkerID ORDER BY AdvanceDate DESC";
-                using (var da = new SQLiteDataAdapter(historyQuery, conn))
+                using (var da = new SqliteDataAdapter(historyQuery, conn))
                 {
                     da.SelectCommand.Parameters.AddWithValue("@WorkerID", workerId);
                     DataTable dt = new DataTable();
@@ -201,11 +206,11 @@ namespace AgriTrack
 
         private void InsertAdvance(string workerId, decimal amount, DateTime advDate)
         {
-            using (var conn = new SQLiteConnection(connectionString))
+            using (var conn = new SqliteConnection(DatabaseHelper.ConnectionString))
             {
                 conn.Open();
                 string insertQuery = "INSERT INTO Advance (WorkerID, Amount, AdvanceDate) VALUES (@WorkerID, @Amount, @AdvanceDate)";
-                using (var cmd = new SQLiteCommand(insertQuery, conn))
+                using (var cmd = new SqliteCommand(insertQuery, conn))
                 {
                     cmd.Parameters.AddWithValue("@WorkerID", workerId);
                     cmd.Parameters.AddWithValue("@Amount", amount);
@@ -217,11 +222,11 @@ namespace AgriTrack
 
         private void UpdateAdvance(long advanceId, string workerId, decimal amount, DateTime advDate)
         {
-            using (var conn = new SQLiteConnection(connectionString))
+            using (var conn = new SqliteConnection(DatabaseHelper.ConnectionString))
             {
                 conn.Open();
                 string updateQuery = "UPDATE Advance SET WorkerID=@WorkerID, Amount=@Amount, AdvanceDate=@AdvanceDate WHERE AdvanceID=@AdvanceID";
-                using (var cmd = new SQLiteCommand(updateQuery, conn))
+                using (var cmd = new SqliteCommand(updateQuery, conn))
                 {
                     cmd.Parameters.AddWithValue("@WorkerID", workerId);
                     cmd.Parameters.AddWithValue("@Amount", amount);
@@ -234,11 +239,11 @@ namespace AgriTrack
 
         private void DeleteAdvance(long advanceId)
         {
-            using (var conn = new SQLiteConnection(connectionString))
+            using (var conn = new SqliteConnection(DatabaseHelper.ConnectionString))
             {
                 conn.Open();
                 string deleteQuery = "DELETE FROM Advance WHERE AdvanceID=@AdvanceID";
-                using (var cmd = new SQLiteCommand(deleteQuery, conn))
+                using (var cmd = new SqliteCommand(deleteQuery, conn))
                 {
                     cmd.Parameters.AddWithValue("@AdvanceID", advanceId);
                     cmd.ExecuteNonQuery();
@@ -282,12 +287,12 @@ namespace AgriTrack
         private decimal ComputeGrossSalary(string workerId, DateTime monthDate)
         {
             string monthKey = monthDate.ToString("yyyy-MM", CultureInfo.InvariantCulture);
-            using (var conn = new SQLiteConnection(connectionString))
+            using (var conn = new SqliteConnection(DatabaseHelper.ConnectionString))
             {
                 conn.Open();
 
                 string sel = "SELECT GrossSalary FROM SalarySettlement WHERE WorkerID=@WorkerID AND SalaryMonth=@SalaryMonth LIMIT 1";
-                using (var cmd = new SQLiteCommand(sel, conn))
+                using (var cmd = new SqliteCommand(sel, conn))
                 {
                     cmd.Parameters.AddWithValue("@WorkerID", workerId);
                     cmd.Parameters.AddWithValue("@SalaryMonth", monthKey);
@@ -301,7 +306,7 @@ namespace AgriTrack
 
                 
                 string harvestQuery = "SELECT IFNULL(SUM(TeaKg),0) FROM Harvest WHERE WorkerID=@WorkerID AND strftime('%Y-%m', HarvestDate)=@SalaryMonth";
-                using (var cmd = new SQLiteCommand(harvestQuery, conn))
+                using (var cmd = new SqliteCommand(harvestQuery, conn))
                 {
                     cmd.Parameters.AddWithValue("@WorkerID", workerId);
                     cmd.Parameters.AddWithValue("@SalaryMonth", monthKey);
@@ -316,11 +321,11 @@ namespace AgriTrack
 
         private decimal GetTotalAdvancesForWorker(string workerId)
         {
-            using (var conn = new SQLiteConnection(connectionString))
+            using (var conn = new SqliteConnection(DatabaseHelper.ConnectionString))
             {
                 conn.Open();
                 string sumQuery = "SELECT IFNULL(SUM(Amount),0) FROM Advance WHERE WorkerID=@WorkerID";
-                using (var cmd = new SQLiteCommand(sumQuery, conn))
+                using (var cmd = new SqliteCommand(sumQuery, conn))
                 {
                     cmd.Parameters.AddWithValue("@WorkerID", workerId);
                     var obj = cmd.ExecuteScalar();
@@ -336,13 +341,13 @@ namespace AgriTrack
             decimal totalAdvances = GetTotalAdvancesForWorker(workerId);
             decimal net = gross - totalAdvances;
 
-            using (var conn = new SQLiteConnection(connectionString))
+            using (var conn = new SqliteConnection(DatabaseHelper.ConnectionString))
             {
                 conn.Open();
 
                 string check = "SELECT SettlementID FROM SalarySettlement WHERE WorkerID=@WorkerID AND SalaryMonth=@SalaryMonth LIMIT 1";
                 object existingId = null;
-                using (var cmd = new SQLiteCommand(check, conn))
+                using (var cmd = new SqliteCommand(check, conn))
                 {
                     cmd.Parameters.AddWithValue("@WorkerID", workerId);
                     cmd.Parameters.AddWithValue("@SalaryMonth", monthKey);
@@ -352,7 +357,7 @@ namespace AgriTrack
                 if (existingId != null && existingId != DBNull.Value)
                 {
                     string update = "UPDATE SalarySettlement SET GrossSalary=@GrossSalary, AdvanceAmount=@AdvanceAmount, NetSalary=@NetSalary WHERE SettlementID=@SettlementID";
-                    using (var cmd = new SQLiteCommand(update, conn))
+                    using (var cmd = new SqliteCommand(update, conn))
                     {
                         cmd.Parameters.AddWithValue("@GrossSalary", gross);
                         cmd.Parameters.AddWithValue("@AdvanceAmount", totalAdvances);
@@ -365,7 +370,7 @@ namespace AgriTrack
                 {
                     string insert = "INSERT INTO SalarySettlement (WorkerID, SalaryMonth, TotalKg, GrossSalary, AdvanceAmount, NetSalary, IsPaid) VALUES (@WorkerID, @SalaryMonth, @TotalKg, @GrossSalary, @AdvanceAmount, @NetSalary, 0)";
                     decimal totalKg = GetTotalKgForMonth(workerId, monthDate);
-                    using (var cmd = new SQLiteCommand(insert, conn))
+                    using (var cmd = new SqliteCommand(insert, conn))
                     {
                         cmd.Parameters.AddWithValue("@WorkerID", workerId);
                         cmd.Parameters.AddWithValue("@SalaryMonth", monthKey);
@@ -382,11 +387,11 @@ namespace AgriTrack
         private decimal GetTotalKgForMonth(string workerId, DateTime monthDate)
         {
             string monthKey = monthDate.ToString("yyyy-MM", CultureInfo.InvariantCulture);
-            using (var conn = new SQLiteConnection(connectionString))
+            using (var conn = new SqliteConnection(DatabaseHelper.ConnectionString))
             {
                 conn.Open();
                 string q = "SELECT IFNULL(SUM(TeaKg),0) FROM Harvest WHERE WorkerID=@WorkerID AND strftime('%Y-%m', HarvestDate)=@SalaryMonth";
-                using (var cmd = new SQLiteCommand(q, conn))
+                using (var cmd = new SqliteCommand(q, conn))
                 {
                     cmd.Parameters.AddWithValue("@WorkerID", workerId);
                     cmd.Parameters.AddWithValue("@SalaryMonth", monthKey);

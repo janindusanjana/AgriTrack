@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data.SQLite;
+using Microsoft.Data.Sqlite;
 using System.IO;
 using System.Windows.Forms;
 
@@ -19,7 +19,7 @@ namespace AgriTrack
         {
             try
             {
-                using (SQLiteConnection conn = new SQLiteConnection(ConnectionString))
+                using (SqliteConnection conn = new SqliteConnection(ConnectionString))
                 {
                     conn.Open();
                     MessageBox.Show("Success! AgriTrack is connected to the database.", "Database Test");

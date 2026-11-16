@@ -7,8 +7,11 @@ namespace AgriTrack.Admin_Forms
 {
     public partial class Daily_Harvest : Form
     {
+<<<<<<< Updated upstream
 
         private string connectionString = "Data Source=" + System.IO.Path.Combine(Application.StartupPath, "AgriTrackDB.db") + ";";
+=======
+>>>>>>> Stashed changes
 
         public Daily_Harvest()
         {
@@ -72,6 +75,16 @@ namespace AgriTrack.Admin_Forms
             LoadHarvestData(dateTimePicker1.Value.Date);
         }
 
+<<<<<<< Updated upstream
+=======
+        private void Settlment_Click(object sender, EventArgs e)
+        {
+            Settlement_UI frm = new Settlement_UI();
+            frm.Show();
+            this.Hide();
+        }
+
+>>>>>>> Stashed changes
 
         private void LoadHarvestData(DateTime selectedDate)
         {
@@ -96,8 +109,13 @@ namespace AgriTrack.Admin_Forms
 
             try
             {
+<<<<<<< Updated upstream
 
                 using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+=======
+                
+                using (SQLiteConnection conn = new SQLiteConnection(DatabaseHelper.ConnectionString))
+>>>>>>> Stashed changes
                 {
                     conn.Open();
                     using (SQLiteCommand cmd = new SQLiteCommand(query, conn))

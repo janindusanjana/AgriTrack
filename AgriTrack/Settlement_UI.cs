@@ -289,6 +289,61 @@ namespace AgriTrack
             this.Show();
         }
 
+<<<<<<< Updated upstream
+=======
+        private void LoadData()
+        {
+            using (SQLiteConnection con = new SQLiteConnection(connectionString))
+            {
+                con.Open();
+
+                string query = @"
+                    SELECT
+                        WorkerID,
+                        TotalKg,
+                        AdvanceAmount,
+                        NetSalary,
+                        CASE WHEN IsPaid=1 THEN 'Paid' ELSE 'Non-Paid' END AS Status
+                    FROM SalarySettlement
+                    ORDER BY WorkerID, SalaryMonth;
+                ";
+
+                using (SQLiteDataAdapter da = new SQLiteDataAdapter(query, con))
+                {
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+
+  
+                    dgvSettlement.DataSource = null;
+                    dgvSettlement.Columns.Clear();
+                    dgvSettlement.AutoGenerateColumns = true;
+                    dgvSettlement.DataSource = dt;
+
+             
+                    if (dgvSettlement.Columns["TotalKg"] != null)
+                        dgvSettlement.Columns["TotalKg"].DefaultCellStyle.Format = "N2";
+                    if (dgvSettlement.Columns["AdvanceAmount"] != null)
+                        dgvSettlement.Columns["AdvanceAmount"].DefaultCellStyle.Format = "N2";
+                    if (dgvSettlement.Columns["NetSalary"] != null)
+                        dgvSettlement.Columns["NetSalary"].DefaultCellStyle.Format = "N2";
+                }
+            }
+        }
+
+        private void Settlement_UI_Load(object sender, EventArgs e)
+        {
+
+            if (cmbstatus.Items.Count >= 2)
+            {
+                cmbstatus.SelectedIndex = 1;
+            }
+
+
+            dgvSettlement.AutoGenerateColumns = true;
+
+            LoadData();
+        }
+>>>>>>> Stashed changes
         private void button3_Click(object sender, EventArgs e)
         {
             DailyHarvestAdding dailyHarvestAdding = new DailyHarvestAdding();

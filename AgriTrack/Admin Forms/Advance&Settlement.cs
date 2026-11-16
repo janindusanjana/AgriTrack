@@ -8,9 +8,13 @@ namespace AgriTrack.Admin_Forms
 {
     public partial class Advance_Settlement : Form
     {
+<<<<<<< Updated upstream
 
         string connectionString = "Data Source=" + System.IO.Path.Combine(Application.StartupPath, "AgriTrackDB.db") + ";";
 
+=======
+       
+>>>>>>> Stashed changes
         public Advance_Settlement()
         {
             InitializeComponent();
@@ -82,7 +86,12 @@ namespace AgriTrack.Admin_Forms
                 INNER JOIN Worker w ON s.WorkerID = w.WorkerID
                 WHERE s.SalaryMonth = @SalaryMonth";
 
+<<<<<<< Updated upstream
             using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+=======
+          
+            using (SqliteConnection conn = new SqliteConnection(DatabaseHelper.ConnectionString))
+>>>>>>> Stashed changes
             {
                 using (SQLiteCommand cmd = new SQLiteCommand(query, conn))
                 {
@@ -141,7 +150,11 @@ namespace AgriTrack.Admin_Forms
                 SET IsPaid = @IsPaid 
                 WHERE WorkerID = @WorkerID AND SalaryMonth = @SalaryMonth";
 
+<<<<<<< Updated upstream
             using (SQLiteConnection conn = new SQLiteConnection(connectionString))
+=======
+            using (SqliteConnection conn = new SqliteConnection(DatabaseHelper.ConnectionString))
+>>>>>>> Stashed changes
             {
                 try
                 {
